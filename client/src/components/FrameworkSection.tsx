@@ -34,14 +34,14 @@ export default function FrameworkSection() {
       aiDependencyBarRef.current &&
       progressBarRef.current
     ) {
-      const humanControlValues = [100, 90, 75, 60, 40, 20];
-      const speedValues = [16, 30, 50, 70, 85, 95];
-      const aiDependencyValues = [0, 15, 35, 60, 80, 95];
+      const humanControlValues = [100, 90, 75, 60, 50, 40, 20];
+      const speedValues = [16, 30, 50, 70, 80, 85, 95];
+      const aiDependencyValues = [0, 15, 35, 60, 75, 80, 95];
       
       humanControlBarRef.current.style.width = `${humanControlValues[activeLevel]}%`;
       speedBarRef.current.style.width = `${speedValues[activeLevel]}%`;
       aiDependencyBarRef.current.style.width = `${aiDependencyValues[activeLevel]}%`;
-      progressBarRef.current.style.width = `${activeLevel * 20}%`;
+      progressBarRef.current.style.width = `${(activeLevel / 6) * 100}%`;
     }
   }, [activeLevel]);
   
@@ -63,11 +63,11 @@ export default function FrameworkSection() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/20 rounded-full bg-primary/5 text-primary text-sm font-medium">
-              6 níveis de adoção de IA
+              7 níveis de adoção de IA
             </div>
             <h2 className="gradient-text">Níveis do Framework DARE</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              Seis níveis progressivos de integração de IA no design, de abordagens totalmente manuais à automação avançada — cada um com seus casos de uso apropriados.
+              Sete níveis progressivos de integração de IA no design, de abordagens totalmente manuais à automação avançada — cada um com seus casos de uso apropriados.
             </p>
           </div>
           
@@ -263,7 +263,7 @@ export default function FrameworkSection() {
                 </Button>
                 
                 <span className="flex items-center text-sm text-gray-500 font-medium">
-                  Nível {levels[activeLevel]?.id} de {levels.length - 1}
+                  Nível {activeLevel === 0 ? 0 : activeLevel === 1 ? 1 : activeLevel === 2 ? 2 : activeLevel === 3 ? 3 : activeLevel === 4 ? '3.5' : activeLevel === 5 ? 4 : 5} de 5
                 </span>
                 
                 <Button
@@ -457,9 +457,9 @@ export default function FrameworkSection() {
                       <h4 className="font-bold text-gray-800 text-sm">Controle Humano</h4>
                     </div>
                     <div className="mt-2 h-4 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        style={{width: `${[100, 90, 75, 60, 40, 20][activeLevel]}%`}}
-                        className="h-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-700 ease-in-out" 
+                      <div
+                        style={{width: `${[100, 90, 75, 60, 50, 40, 20][activeLevel]}%`}}
+                        className="h-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-700 ease-in-out"
                       />
                     </div>
                     <div className="mt-1 flex justify-between text-xs text-gray-500">
@@ -467,16 +467,16 @@ export default function FrameworkSection() {
                       <span>Alto</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <div className="flex items-center mb-2">
                       <Zap className="h-4 w-4 text-blue-600 mr-2" />
                       <h4 className="font-bold text-gray-800 text-sm">Velocidade</h4>
                     </div>
                     <div className="mt-2 h-4 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        style={{width: `${[16, 30, 50, 70, 85, 95][activeLevel]}%`}}
-                        className="h-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-700 ease-in-out" 
+                      <div
+                        style={{width: `${[16, 30, 50, 70, 80, 85, 95][activeLevel]}%`}}
+                        className="h-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-700 ease-in-out"
                       />
                     </div>
                     <div className="mt-1 flex justify-between text-xs text-gray-500">
@@ -484,16 +484,16 @@ export default function FrameworkSection() {
                       <span>Alta</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <div className="flex items-center mb-2">
                       <Cpu className="h-4 w-4 text-amber-600 mr-2" />
                       <h4 className="font-bold text-gray-800 text-sm">Dependência de IA</h4>
                     </div>
                     <div className="mt-2 h-4 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        style={{width: `${[0, 15, 35, 60, 80, 95][activeLevel]}%`}}
-                        className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all duration-700 ease-in-out" 
+                      <div
+                        style={{width: `${[0, 15, 35, 60, 75, 80, 95][activeLevel]}%`}}
+                        className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all duration-700 ease-in-out"
                       />
                     </div>
                     <div className="mt-1 flex justify-between text-xs text-gray-500">

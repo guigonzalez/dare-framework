@@ -93,14 +93,15 @@ dare-framework/
 
 ## 📋 Níveis do Framework
 
-O DARE Framework apresenta 6 níveis de adoção de IA em design:
+O DARE Framework apresenta 7 níveis de adoção de IA em design:
 
 1. **Nível 0 - Manual Total:** Nenhuma IA, apenas ferramentas tradicionais
-2. **Nível 1 - IA Assistiva:** IA para tarefas operacionais
-3. **Nível 2 - Acelerador Visual:** IA gera partes do design
-4. **Nível 3 - Copiloto:** IA sugere layouts e fluxos
-5. **Nível 4 - Co-criação Modular:** IA monta telas inteiras
-6. **Nível 5 - Automação Guiada:** IA gera design completo via prompts
+2. **Nível 1 - IA Assistiva:** IA para tarefas operacionais (research, documentação)
+3. **Nível 2 - Acelerador Visual:** IA gera partes do design (assets, ilustrações)
+4. **Nível 3 - Copiloto:** IA sugere layouts e fluxos (prototipagem rápida)
+5. **Nível 3.5 - IA Colaborativa Avançada:** IA como parceira de pensamento em tempo real
+6. **Nível 4 - Co-criação Modular:** IA monta telas inteiras (prompt-to-prototype)
+7. **Nível 5 - Automação Guiada:** IA gera design completo via prompts (desenvolvimento multi-arquivo)
 
 ## 🔧 Configuração de Domínio Customizado
 

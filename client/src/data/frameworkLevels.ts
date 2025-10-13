@@ -30,9 +30,14 @@ export const frameworkLevels: FrameworkLevel[] = [
     shortName: "IA Assistiva",
     tagline: "A IA te ajuda, mas não cria.",
     description: "Uso pontual da IA para tarefas operacionais: resumir pesquisas, organizar dados, revisar textos, gerar insights.",
-    tools: ["ChatGPT", "FigJam AI", "Notion AI", "MonkeyLearn"],
+    tools: ["ChatGPT", "Claude 3.5 Sonnet", "Notion AI", "Figma AI", "Miro AI"],
+    appropriateUses: [
+      "Research e análise de dados",
+      "Documentação e síntese",
+      "Organização de insights"
+    ],
     pros: [
-      "Agiliza sem interferir no resultado visual",
+      "25-40% redução no tempo de research",
       "Mantém integridade criativa",
       "Baixo risco de derivação"
     ],
@@ -48,9 +53,14 @@ export const frameworkLevels: FrameworkLevel[] = [
     shortName: "Acelerador Visual",
     tagline: "Você cria, a IA preenche.",
     description: "A IA entra para gerar partes do design (imagens, textos, ícones, padrões). Designer controla a composição.",
-    tools: ["Midjourney", "DALL·E", "Runway", "Magician for Figma"],
+    tools: ["Midjourney V6", "DALL·E 3", "Adobe Firefly", "Figma Draw", "Ideogram 2.0"],
+    appropriateUses: [
+      "Criação de assets visuais",
+      "Ilustrações e ícones",
+      "Mockups e imagens conceituais"
+    ],
     pros: [
-      "Ganha-se tempo nas tarefas repetitivas e criativas",
+      "50-70% aceleração na criação de assets",
       "Expande possibilidades visuais",
       "Reduz dependência de bibliotecas de assets"
     ],
@@ -67,9 +77,14 @@ export const frameworkLevels: FrameworkLevel[] = [
     shortName: "Copiloto",
     tagline: "Você lidera, a IA propõe.",
     description: "A IA sugere layouts, fluxos, conteúdos e transições. O designer edita, mistura, ajusta.",
-    tools: ["Figma AI", "Galileo AI", "Uizard", "Firefly"],
+    tools: ["Figma AI", "Galileo AI", "Uizard", "Cursor AI", "Claude Artifacts"],
+    appropriateUses: [
+      "Prototipagem rápida",
+      "Exploração de variações",
+      "Wireframes e layouts iniciais"
+    ],
     pros: [
-      "Geração rápida de protótipos",
+      "60-80% redução no tempo de prototipagem",
       "Múltiplas variações instantâneas",
       "Aceleração significativa do processo criativo"
     ],
@@ -81,23 +96,52 @@ export const frameworkLevels: FrameworkLevel[] = [
     risks: "Atrofia das habilidades criativas fundamentais; homogeneização visual; perda de identidade de marca única."
   },
   {
+    id: 3.5,
+    name: "Nível 3.5 – IA Colaborativa Avançada",
+    shortName: "IA Colaborativa",
+    tagline: "IA como parceira de pensamento.",
+    description: "Co-edição simultânea entre humano e IA. Feedback contextual instantâneo sobre decisões de design. Iteração em tempo real com validação automática em workspace compartilhado.",
+    tools: ["Claude 3.5 + Artifacts", "Cursor Composer", "Figma AI Avançado"],
+    appropriateUses: [
+      "Co-criação iterativa",
+      "Validação em tempo real",
+      "Desenvolvimento colaborativo"
+    ],
+    pros: [
+      "70-90% melhoria na qualidade de iterações",
+      "Feedback contextual instantâneo",
+      "Colaboração em tempo real"
+    ],
+    cons: [
+      "Curva de aprendizado mais íngreme",
+      "Requer adaptação do workflow",
+      "Risco de sobre-dependência"
+    ],
+    risks: "Perda de controle criativo em iterações rápidas; sobre-dependência de validação por IA; necessidade de manter competências críticas ativas."
+  },
+  {
     id: 4,
     name: "Nível 4 – Co-criação Modular",
     shortName: "Co-criação Modular",
     tagline: "A IA monta, você direciona.",
     description: "IA gera telas inteiras, animações ou identidades parciais com base em prompts. Designer atua como diretor de arte.",
-    tools: ["Runway Gen-2", "Visily", "Design-to-code tools"],
+    tools: ["Figma Make", "V0 by Vercel", "Claude Artifacts", "Uizard", "Galileo AI"],
+    appropriateUses: [
+      "Prompt-to-prototype",
+      "Sistemas de design escaláveis",
+      "MVPs e sprints rápidos"
+    ],
     pros: [
-      "Criação em velocidade insana",
+      "80-95% redução no tempo concept-to-prototype",
       "Útil para sprints, MVPs e testes",
       "Amplia possibilidades para não-designers"
     ],
     cons: [
-      "Falta finesse",
+      "Falta finesse em detalhes",
       "Exige ajustes pesados para virar produto real",
-      "Design potencialmente desconectado dos objetivos de negócio"
+      "Design potencialmente desconectado dos objetivos"
     ],
-    risks: "Problemas de usabilidade não detectados; sistemas visuais incoerentes; limitação pela capacidade de articular prompts."
+    risks: "Problemas de usabilidade não detectados; sistemas visuais incoerentes; limitação pela capacidade de articular prompts; necessidade de checkpoints de revisão humana."
   },
   {
     id: 5,
@@ -105,17 +149,22 @@ export const frameworkLevels: FrameworkLevel[] = [
     shortName: "Automação Guiada",
     tagline: "Você descreve, a IA entrega.",
     description: "O design é quase totalmente gerado via linguagem natural. Criação, layout, conteúdo e até protótipo funcional vêm prontos.",
-    tools: ["V0.dev", "GPT-Engineer", "Modelos customizados"],
+    tools: ["Cursor Composer", "Figma Sites", "Bolt.new", "V0.dev", "GPT-Engineer"],
+    appropriateUses: [
+      "Desenvolvimento multi-arquivo",
+      "Design-to-website automático",
+      "MVPs completos"
+    ],
     pros: [
-      "Protótipos e páginas inteiras em minutos",
+      "90-98% automação de tarefas repetitivas",
       "Extremamente veloz para testes de conceito",
       "Democratiza o processo de design"
     ],
     cons: [
-      "Baixo controle",
-      "Outputs genéricos",
+      "Baixo controle granular",
+      "Outputs podem ser genéricos",
       "Revisão crítica obrigatória"
     ],
-    risks: "Desconexão entre design e necessidades de negócio; problemas de acessibilidade; experiências homogêneas; desvalorização da expertise de design."
+    risks: "Desconexão entre design e necessidades de negócio; problemas de acessibilidade; experiências homogêneas; desvalorização da expertise de design; necessidade de governança estruturada."
   }
 ];

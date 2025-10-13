@@ -51,158 +51,240 @@ export default function ResourcesSection() {
         `;
         break;
       case 1:
-        title = "Nível 1 - Assistência Básica";
+        title = "Nível 1 - IA Assistiva";
         content = `
-          <p><strong>No Nível 1, o designer utiliza IA como ferramenta organizacional e de pesquisa.</strong></p>
-          
-          <p>A IA é utilizada apenas para tarefas secundárias como organização de informações, análise de dados e geração de insights preliminares. Todo o trabalho visual e criativo continua sendo 100% realizado pelo designer.</p>
+          <p><strong>No Nível 1, a IA te ajuda, mas não cria.</strong></p>
+
+          <p>Uso pontual da IA para tarefas operacionais: resumir pesquisas, organizar dados, revisar textos, gerar insights. Todo o trabalho visual e criativo continua sendo 100% realizado pelo designer.</p>
+
+          <h4>Ferramentas principais:</h4>
+          <ul>
+            <li>ChatGPT - organização de pesquisas e resumos</li>
+            <li>Claude 3.5 Sonnet - research e insights avançados</li>
+            <li>Notion AI - documentação e síntese</li>
+            <li>Figma AI - auto-complete inteligente</li>
+            <li>Miro AI - construção de mapas mentais</li>
+          </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Projetos que necessitam de pesquisa e organização eficiente</li>
-            <li>Trabalhos com grandes volumes de informação a serem analisados</li>
-            <li>Situações que exigem criatividade humana mas se beneficiam de apoio estrutural</li>
+            <li>Research e análise de dados</li>
+            <li>Documentação e síntese</li>
+            <li>Organização de insights</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>Aceleração das fases de pesquisa e organização</li>
-            <li>Análise mais profunda de dados e tendências</li>
-            <li>Mantém a autoria criativa integralmente humana</li>
+            <li>25-40% redução no tempo de research</li>
+            <li>Mantém integridade criativa</li>
+            <li>Baixo risco de derivação</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
-            <li>Benefícios de produtividade limitados</li>
-            <li>Possíveis vieses na organização de informações pela IA</li>
-            <li>Necessidade de verificação humana das sugestões</li>
+            <li>Nenhuma aceleração no design em si</li>
+            <li>Benefícios limitados em processos puramente visuais</li>
           </ul>
 
-          <p><strong>Nível de risco:</strong> Mínimo, com questões éticas relacionadas apenas à fonte e qualidade dos dados utilizados.</p>
+          <p><strong>Riscos:</strong> Confiança excessiva em insights gerados por IA sem verificação; viés de dados influenciando decisões de design.</p>
         `;
         break;
       case 2:
-        title = "Nível 2 - Auxílio Pontual";
+        title = "Nível 2 - Acelerador Visual";
         content = `
-          <p><strong>No Nível 2, o designer incorpora geração de imagens por IA como fonte de inspiração visual.</strong></p>
-          
-          <p>A IA é usada para criar moodboards, referências visuais e elementos gráficos que servem como ponto de partida, mas o designer mantém total controle sobre o desenvolvimento e finalização do projeto.</p>
+          <p><strong>No Nível 2, você cria, a IA preenche.</strong></p>
+
+          <p>A IA entra para gerar partes do design (imagens, textos, ícones, padrões). Designer controla a composição.</p>
+
+          <h4>Ferramentas principais:</h4>
+          <ul>
+            <li>Midjourney V6 - geração de imagens com melhor consistência</li>
+            <li>DALL·E 3 - criação de assets visuais personalizados</li>
+            <li>Adobe Firefly - integrado ao Creative Suite</li>
+            <li>Figma Draw - ilustração vetorial assistida</li>
+            <li>Ideogram 2.0 - texto em imagens</li>
+          </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Projetos que necessitam de exploração visual rápida</li>
-            <li>Criação de moodboards e direções estéticas preliminares</li>
-            <li>Geração de ativos visuais complementares</li>
+            <li>Criação de assets visuais</li>
+            <li>Ilustrações e ícones</li>
+            <li>Mockups e imagens conceituais</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>Ampliação do repertório visual e possibilidades criativas</li>
-            <li>Aceleração na geração de referências e conceitos</li>
-            <li>Possibilidade de testar rapidamente diferentes direções visuais</li>
+            <li>50-70% aceleração na criação de assets</li>
+            <li>Expande possibilidades visuais</li>
+            <li>Reduz dependência de bibliotecas de assets</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
-            <li>Risco de homogeneização estética</li>
-            <li>Potenciais problemas de direitos autorais nas imagens geradas</li>
-            <li>Dependência da qualidade dos prompts para resultados satisfatórios</li>
+            <li>Risco de quebra de consistência</li>
+            <li>Visual potencialmente genérico</li>
+            <li>Dependência de prompts bem escritos</li>
           </ul>
 
-          <p><strong>Nível de risco:</strong> Moderado, principalmente relacionado a direitos autorais das imagens geradas e originalidade.</p>
+          <p><strong>Riscos:</strong> Questões de direitos autorais com imagens geradas; falta de consistência entre elementos visuais; estéticas derivativas.</p>
         `;
         break;
       case 3:
-        title = "Nível 3 - Design Acelerado";
+        title = "Nível 3 - Copiloto";
         content = `
-          <p><strong>No Nível 3, o designer utiliza IA para acelerar fluxos específicos do processo de design.</strong></p>
-          
-          <p>A IA é incorporada como ferramenta de auxílio em tarefas como criação de layouts, geração de variações, e refinamento de elementos. O designer mantém a direção criativa e toma as decisões finais, usando a IA como acelerador do processo.</p>
+          <p><strong>No Nível 3, você lidera, a IA propõe.</strong></p>
+
+          <p>A IA sugere layouts, fluxos, conteúdos e transições. O designer edita, mistura, ajusta.</p>
+
+          <h4>Ferramentas principais:</h4>
+          <ul>
+            <li>Figma AI - sugestões contextuais de componentes</li>
+            <li>Galileo AI - geração rápida de protótipos</li>
+            <li>Uizard - wireframes e layouts iniciais</li>
+            <li>Cursor AI - prototipagem rápida funcional</li>
+            <li>Claude Artifacts - parceiro de ideação</li>
+          </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Projetos com prazos apertados</li>
-            <li>Necessidade de testar múltiplas variações rapidamente</li>
-            <li>Refinamento e iteração de conceitos já estabelecidos</li>
+            <li>Prototipagem rápida</li>
+            <li>Exploração de variações</li>
+            <li>Wireframes e layouts iniciais</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>Significativo aumento de produtividade</li>
-            <li>Capacidade de explorar mais soluções em menos tempo</li>
-            <li>Automação de tarefas repetitivas</li>
+            <li>60-80% redução no tempo de prototipagem</li>
+            <li>Múltiplas variações instantâneas</li>
+            <li>Aceleração significativa do processo criativo</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
-            <li>Possível perda de nuances e detalhes específicos</li>
-            <li>Risco de soluções mais genéricas</li>
-            <li>Necessidade de supervisão constante da qualidade</li>
+            <li>Requer curadoria crítica</li>
+            <li>Risco de vício criativo (design preguiçoso)</li>
+            <li>Resultados podem parecer formulaicos</li>
           </ul>
 
-          <p><strong>Nível de risco:</strong> Moderado a alto, exigindo transparência com clientes sobre os processos auxiliados por IA.</p>
+          <p><strong>Riscos:</strong> Atrofia das habilidades criativas fundamentais; homogeneização visual; perda de identidade de marca única.</p>
+        `;
+        break;
+      case 3.5:
+        title = "Nível 3.5 - IA Colaborativa Avançada";
+        content = `
+          <p><strong>No Nível 3.5, a IA atua como parceira de pensamento em tempo real.</strong></p>
+
+          <p>Co-edição simultânea entre humano e IA. Feedback contextual instantâneo sobre decisões de design. Iteração em tempo real com validação automática em workspace compartilhado.</p>
+
+          <h4>Ferramentas principais:</h4>
+          <ul>
+            <li>Claude 3.5 + Artifacts - co-criação iterativa</li>
+            <li>Cursor Composer - desenvolvimento iterativo</li>
+            <li>Figma AI Avançado - sugestões em tempo real</li>
+          </ul>
+
+          <h4>Apropriado para:</h4>
+          <ul>
+            <li>Co-criação iterativa</li>
+            <li>Validação em tempo real</li>
+            <li>Desenvolvimento colaborativo</li>
+          </ul>
+
+          <h4>Prós:</h4>
+          <ul>
+            <li>70-90% melhoria na qualidade de iterações</li>
+            <li>Feedback contextual instantâneo</li>
+            <li>Colaboração em tempo real</li>
+          </ul>
+
+          <h4>Contras:</h4>
+          <ul>
+            <li>Curva de aprendizado mais íngreme</li>
+            <li>Requer adaptação do workflow</li>
+            <li>Risco de sobre-dependência</li>
+          </ul>
+
+          <p><strong>Riscos:</strong> Perda de controle criativo em iterações rápidas; sobre-dependência de validação por IA; necessidade de manter competências críticas ativas.</p>
         `;
         break;
       case 4:
-        title = "Nível 4 - Co-criação";
+        title = "Nível 4 - Co-criação Modular";
         content = `
-          <p><strong>No Nível 4, o designer trabalha em parceria direta com a IA, em um processo de co-criação.</strong></p>
-          
-          <p>A IA é utilizada para gerar layouts, interfaces e elementos visuais completos, que o designer então avalia, seleciona, refina e integra ao projeto. A responsabilidade criativa é compartilhada, com o designer atuando como curador e diretor.</p>
+          <p><strong>No Nível 4, a IA monta, você direciona.</strong></p>
+
+          <p>IA gera telas inteiras, animações ou identidades parciais com base em prompts. Designer atua como diretor de arte.</p>
+
+          <h4>Ferramentas principais:</h4>
+          <ul>
+            <li>Figma Make - prompt-to-prototype principal</li>
+            <li>V0 by Vercel - sistemas de design escaláveis</li>
+            <li>Claude Artifacts - co-criação iterativa</li>
+            <li>Uizard - wireframes em protótipos de alta fidelidade</li>
+            <li>Galileo AI - geração automática de UI</li>
+          </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Projetos experimentais ou inovadores</li>
-            <li>Situações onde a eficiência é prioridade máxima</li>
-            <li>Clientes abertos à integração profunda de IA no processo</li>
+            <li>Prompt-to-prototype</li>
+            <li>Sistemas de design escaláveis</li>
+            <li>MVPs e sprints rápidos</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>Produtividade extremamente alta</li>
-            <li>Possibilidade de resultados inesperados e inovadores</li>
-            <li>Capacidade de atender mais projetos simultaneamente</li>
+            <li>80-95% redução no tempo concept-to-prototype</li>
+            <li>Útil para sprints, MVPs e testes</li>
+            <li>Amplia possibilidades para não-designers</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
-            <li>Questões éticas sobre autoria e originalidade</li>
-            <li>Potencial homogeneização de soluções</li>
-            <li>Exigência de transparência total com clientes</li>
+            <li>Falta finesse em detalhes</li>
+            <li>Exige ajustes pesados para virar produto real</li>
+            <li>Design potencialmente desconectado dos objetivos</li>
           </ul>
 
-          <p><strong>Nível de risco:</strong> Alto, requerendo comunicação clara com clientes e acordos específicos sobre propriedade intelectual.</p>
+          <p><strong>Riscos:</strong> Problemas de usabilidade não detectados; sistemas visuais incoerentes; limitação pela capacidade de articular prompts; necessidade de checkpoints de revisão humana.</p>
         `;
         break;
       case 5:
-        title = "Nível 5 - Automação de Componentes";
+        title = "Nível 5 - Automação Guiada por Prompt";
         content = `
-          <p><strong>No Nível 5, a IA automatiza a criação de componentes funcionais e código a partir do design.</strong></p>
-          
-          <p>Além da co-criação visual, a IA é utilizada para transformar designs em código, gerar protótipos funcionais e automatizar a implementação. O designer supervisiona o processo, garantindo qualidade e consistência.</p>
+          <p><strong>No Nível 5, você descreve, a IA entrega.</strong></p>
+
+          <p>O design é quase totalmente gerado via linguagem natural. Criação, layout, conteúdo e até protótipo funcional vêm prontos.</p>
+
+          <h4>Ferramentas principais:</h4>
+          <ul>
+            <li>Cursor Composer - desenvolvimento multi-arquivo</li>
+            <li>Figma Sites - design-to-website automático</li>
+            <li>Bolt.new - MVPs completos</li>
+            <li>V0.dev - prototipagem rápida</li>
+            <li>GPT-Engineer - geração de código funcional</li>
+          </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Projetos que exigem rápida prototipação funcional</li>
-            <li>MVPs e produtos digitais com prazos curtos</li>
-            <li>Clientes com total abertura para métodos inovadores</li>
+            <li>Desenvolvimento multi-arquivo</li>
+            <li>Design-to-website automático</li>
+            <li>MVPs completos</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>Integração direta entre design e implementação</li>
-            <li>Extraordinária velocidade de entrega</li>
-            <li>Potencial para maior experimentação técnica</li>
+            <li>90-98% automação de tarefas repetitivas</li>
+            <li>Extremamente veloz para testes de conceito</li>
+            <li>Democratiza o processo de design</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
-            <li>Alta complexidade técnica</li>
-            <li>Desafios significativos de controle de qualidade</li>
-            <li>Questões profundas sobre o papel do designer</li>
+            <li>Baixo controle granular</li>
+            <li>Outputs podem ser genéricos</li>
+            <li>Revisão crítica obrigatória</li>
           </ul>
 
-          <p><strong>Nível de risco:</strong> Muito alto, exigindo acordos contratuais específicos e total transparência sobre o uso de IA em todo o processo.</p>
+          <p><strong>Riscos:</strong> Desconexão entre design e necessidades de negócio; problemas de acessibilidade; experiências homogêneas; desvalorização da expertise de design; necessidade de governança estruturada.</p>
         `;
         break;
       default:
@@ -234,7 +316,7 @@ export default function ResourcesSection() {
             <div className="flex items-center justify-between">
               <h3 className="font-bold text-lg">{title}</h3>
               <span className="bg-white text-blue-600 text-xs px-3 py-1 rounded-full font-medium shadow-sm">
-                Nível {level + 1}
+                Nível {level}
               </span>
             </div>
           </div>
@@ -289,7 +371,7 @@ export default function ResourcesSection() {
       <div className="container mx-auto px-4 relative z-20">
         <div className="text-center mb-16">
           <div className="inline-block p-2 px-4 rounded-full bg-blue-100/50 text-blue-700 font-medium text-sm mb-4">
-            Nível 1 até Nível 6
+            Nível 0 até Nível 5
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             Ferramentas Recomendadas
@@ -336,41 +418,50 @@ export default function ResourcesSection() {
                     "Processos analógicos de design, sem automação de IA"
                   ], true)}
                   
-                  {renderLevelCard(1, "Assistência Básica", [
-                    "ChatGPT para organização de pesquisas, resumos e insights",
-                    "Notion AI para documentação e organização de informações de projetos",
-                    "Miro AI Assist para construção de mapas mentais e brainstorming"
+                  {renderLevelCard(1, "IA Assistiva", [
+                    "ChatGPT para organização de pesquisas e resumos",
+                    "Claude 3.5 Sonnet para research e insights avançados",
+                    "Notion AI para documentação e síntese",
+                    "Figma AI para auto-complete inteligente",
+                    "Miro AI para construção de mapas mentais"
                   ], true)}
                   
-                  {renderLevelCard(2, "Auxílio Pontual", [
-                    "Midjourney para geração de imagens de alta qualidade e moodboards",
-                    "DALL-E para criação de assets visuais personalizados",
-                    "Leonardo.ai para geração de texturas, padrões e ilustrações",
-                    "GPT-Image 1 para geração de imagens realistas baseadas em prompts textuais",
-                    "Ideogram para criar imagens detalhadas e inovadoras a partir de descrições"
+                  {renderLevelCard(2, "Acelerador Visual", [
+                    "Midjourney V6 para geração de imagens com melhor consistência",
+                    "DALL·E 3 para criação de assets visuais personalizados",
+                    "Adobe Firefly integrado ao Creative Suite",
+                    "Figma Draw para ilustração vetorial assistida",
+                    "Ideogram 2.0 para texto em imagens"
                   ], true)}
                   
-                  {renderLevelCard(3, "Design Acelerado", [
-                    "Figma AI para autocompletar layouts, sugestões de design e organização de componentes",
-                    "Adobe Firefly para edição rápida e criação de imagens e gráficos",
-                    "Framer AI para prototipagem rápida e design interativo",
-                    "Sora para automação de fluxos de trabalho de design e colaboração em tempo real",
-                    "Lovable para otimizar a experiência de design colaborativo"
+                  {renderLevelCard(3, "Copiloto", [
+                    "Figma AI para sugestões contextuais de componentes",
+                    "Galileo AI para geração rápida de protótipos",
+                    "Uizard para wireframes e layouts iniciais",
+                    "Cursor AI para prototipagem rápida funcional",
+                    "Claude Artifacts para parceiro de ideação"
+                  ], true)}
+
+                  {renderLevelCard(3.5, "IA Colaborativa", [
+                    "Claude 3.5 + Artifacts para co-criação iterativa",
+                    "Cursor Composer para desenvolvimento iterativo",
+                    "Figma AI Avançado para sugestões em tempo real"
                   ], true)}
                   
-                  {renderLevelCard(4, "Co-criação", [
-                    "Galileo AI para geração automática de UI, criando layouts interativos",
-                    "Uizard para transformação de rascunhos e wireframes em protótipos de alta fidelidade",
-                    "Diagram para ideação visual, geração de ideias e conceitos gráficos",
-                    "v0 (Vercel) para criação de sistemas de design escaláveis",
-                    "Replit para gerar código funcional, para pequenos MVPs que necessitem de uma leve integração com banco de dados, porém exige um pouco de conhecimento técnico"
+                  {renderLevelCard(4, "Co-criação Modular", [
+                    "Figma Make para prompt-to-prototype principal",
+                    "V0 by Vercel para sistemas de design escaláveis",
+                    "Claude Artifacts para co-criação iterativa",
+                    "Uizard para wireframes em protótipos de alta fidelidade",
+                    "Galileo AI para geração automática de UI"
                   ], true)}
-                  
-                  {renderLevelCard(5, "Automação de Componentes", [
-                    "Builder.io para criação de componentes React automatizados e dinâmicos",
-                    "Anima para conversão de design para código (HTML, CSS, React)",
-                    "Locofy.ai para gerar código a partir de designs e layouts de UI",
-                    "Bolt para criação de MVPs rápidos e automação de design para código"
+
+                  {renderLevelCard(5, "Automação Guiada", [
+                    "Cursor Composer para desenvolvimento multi-arquivo",
+                    "Figma Sites para design-to-website automático",
+                    "Bolt.new para MVPs completos",
+                    "V0.dev para prototipagem rápida",
+                    "GPT-Engineer para geração de código funcional"
                   ], true)}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
@@ -387,11 +478,21 @@ export default function ResourcesSection() {
                     "Figma ou Adobe XD para wireframes simples e protótipos básicos",
                     "Processos analógicos de design, sem automação de IA"
                   ])}
-                  
-                  {renderLevelCard(1, "Assistência Básica", [
-                    "ChatGPT para organização de pesquisas, resumos e insights",
-                    "Notion AI para documentação e organização de informações de projetos",
-                    "Miro AI Assist para construção de mapas mentais e brainstorming"
+
+                  {renderLevelCard(1, "IA Assistiva", [
+                    "ChatGPT para organização de pesquisas e resumos",
+                    "Claude 3.5 Sonnet para research e insights avançados",
+                    "Notion AI para documentação e síntese",
+                    "Figma AI para auto-complete inteligente",
+                    "Miro AI para construção de mapas mentais"
+                  ])}
+
+                  {renderLevelCard(2, "Acelerador Visual", [
+                    "Midjourney V6 para geração de imagens com melhor consistência",
+                    "DALL·E 3 para criação de assets visuais personalizados",
+                    "Adobe Firefly integrado ao Creative Suite",
+                    "Figma Draw para ilustração vetorial assistida",
+                    "Ideogram 2.0 para texto em imagens"
                   ])}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
@@ -403,20 +504,18 @@ export default function ResourcesSection() {
             <TabsContent value="intermediate" className="mt-4">
               <div className="relative snap-x-container">
                 <div className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {renderLevelCard(2, "Auxílio Pontual", [
-                    "Midjourney para geração de imagens de alta qualidade e moodboards",
-                    "DALL-E para criação de assets visuais personalizados",
-                    "Leonardo.ai para geração de texturas, padrões e ilustrações",
-                    "GPT-Image 1 para geração de imagens realistas baseadas em prompts textuais",
-                    "Ideogram para criar imagens detalhadas e inovadoras a partir de descrições"
+                  {renderLevelCard(3, "Copiloto", [
+                    "Figma AI para sugestões contextuais de componentes",
+                    "Galileo AI para geração rápida de protótipos",
+                    "Uizard para wireframes e layouts iniciais",
+                    "Cursor AI para prototipagem rápida funcional",
+                    "Claude Artifacts para parceiro de ideação"
                   ])}
-                  
-                  {renderLevelCard(3, "Design Acelerado", [
-                    "Figma AI para autocompletar layouts, sugestões de design e organização de componentes",
-                    "Adobe Firefly para edição rápida e criação de imagens e gráficos",
-                    "Framer AI para prototipagem rápida e design interativo",
-                    "Sora para automação de fluxos de trabalho de design e colaboração em tempo real",
-                    "Lovable para otimizar a experiência de design colaborativo"
+
+                  {renderLevelCard(3.5, "IA Colaborativa", [
+                    "Claude 3.5 + Artifacts para co-criação iterativa",
+                    "Cursor Composer para desenvolvimento iterativo",
+                    "Figma AI Avançado para sugestões em tempo real"
                   ])}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
@@ -428,19 +527,20 @@ export default function ResourcesSection() {
             <TabsContent value="advanced" className="mt-4">
               <div className="relative snap-x-container">
                 <div className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {renderLevelCard(4, "Co-criação", [
-                    "Galileo AI para geração automática de UI, criando layouts interativos",
-                    "Uizard para transformação de rascunhos e wireframes em protótipos de alta fidelidade",
-                    "Diagram para ideação visual, geração de ideias e conceitos gráficos",
-                    "v0 (Vercel) para criação de sistemas de design escaláveis",
-                    "Replit para gerar código funcional, para pequenos MVPs que necessitem de uma leve integração com banco de dados, porém exige um pouco de conhecimento técnico"
+                  {renderLevelCard(4, "Co-criação Modular", [
+                    "Figma Make para prompt-to-prototype principal",
+                    "V0 by Vercel para sistemas de design escaláveis",
+                    "Claude Artifacts para co-criação iterativa",
+                    "Uizard para wireframes em protótipos de alta fidelidade",
+                    "Galileo AI para geração automática de UI"
                   ])}
-                  
-                  {renderLevelCard(5, "Automação de Componentes", [
-                    "Builder.io para criação de componentes React automatizados e dinâmicos",
-                    "Anima para conversão de design para código (HTML, CSS, React)",
-                    "Locofy.ai para gerar código a partir de designs e layouts de UI",
-                    "Bolt para criação de MVPs rápidos e automação de design para código"
+
+                  {renderLevelCard(5, "Automação Guiada", [
+                    "Cursor Composer para desenvolvimento multi-arquivo",
+                    "Figma Sites para design-to-website automático",
+                    "Bolt.new para MVPs completos",
+                    "V0.dev para prototipagem rápida",
+                    "GPT-Engineer para geração de código funcional"
                   ])}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
