@@ -74,11 +74,14 @@ export default function AboutSection() {
           >
             {/* Card 1 - Community */}
             <motion.div variants={cardVariants} className="relative group">
-              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.community.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
-              <div className={`relative bg-gradient-to-br ${cardThemes.community.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.community.hoverBorder} p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
-                <div className={`p-3 ${cardThemes.community.iconBg} rounded-full w-fit mb-4`}>
-                  <UsersIcon className={`h-6 w-6 bg-gradient-to-br ${cardThemes.community.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+              {/* Decorative circle with icon */}
+              <div className="absolute -top-6 left-6 z-10">
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${cardThemes.community.gradient} shadow-lg flex items-center justify-center`}>
+                  <UsersIcon className="h-8 w-8 text-white" />
                 </div>
+              </div>
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.community.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
+              <div className={`relative bg-gradient-to-br ${cardThemes.community.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.community.hoverBorder} p-6 pt-10 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
                 <h3 className="text-xl font-semibold text-gray-900">Orientado pela Comunidade</h3>
                 <p className="mt-2 text-gray-600">
                   Inspirado em modelos como Creative Commons, o DARE Framework é aberto para contribuição pública e adaptação, criando um sistema vivo que evolui com a tecnologia de IA.
@@ -92,11 +95,14 @@ export default function AboutSection() {
 
             {/* Card 2 - Human */}
             <motion.div variants={cardVariants} className="relative group">
-              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.human.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
-              <div className={`relative bg-gradient-to-br ${cardThemes.human.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.human.hoverBorder} p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
-                <div className={`p-3 ${cardThemes.human.iconBg} rounded-full w-fit mb-4`}>
-                  <BrainIcon className={`h-6 w-6 bg-gradient-to-br ${cardThemes.human.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+              {/* Decorative circle with icon */}
+              <div className="absolute -top-6 left-6 z-10">
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${cardThemes.human.gradient} shadow-lg flex items-center justify-center`}>
+                  <BrainIcon className="h-8 w-8 text-white" />
                 </div>
+              </div>
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.human.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
+              <div className={`relative bg-gradient-to-br ${cardThemes.human.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.human.hoverBorder} p-6 pt-10 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
                 <h3 className="text-xl font-semibold text-gray-900">Centrado no Humano</h3>
                 <p className="mt-2 text-gray-600">
                   O DARE enfatiza que a IA deve aprimorar—não substituir—a criatividade humana, estabelecendo diretrizes que preservam a integridade do trabalho de design enquanto aproveitam as vantagens da IA.
@@ -110,11 +116,14 @@ export default function AboutSection() {
 
             {/* Card 3 - Transparency */}
             <motion.div variants={cardVariants} className="relative group">
-              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.transparency.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
-              <div className={`relative bg-gradient-to-br ${cardThemes.transparency.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.transparency.hoverBorder} p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
-                <div className={`p-3 ${cardThemes.transparency.iconBg} rounded-full w-fit mb-4`}>
-                  <EyeIcon className={`h-6 w-6 bg-gradient-to-br ${cardThemes.transparency.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+              {/* Decorative circle with icon */}
+              <div className="absolute -top-6 left-6 z-10">
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${cardThemes.transparency.gradient} shadow-lg flex items-center justify-center`}>
+                  <EyeIcon className="h-8 w-8 text-white" />
                 </div>
+              </div>
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.transparency.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
+              <div className={`relative bg-gradient-to-br ${cardThemes.transparency.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.transparency.hoverBorder} p-6 pt-10 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
                 <h3 className="text-xl font-semibold text-gray-900">Transparência</h3>
                 <p className="mt-2 text-gray-600">
                   O framework fornece diretrizes claras sobre divulgação do uso de IA no trabalho de design, ajudando a estabelecer padrões éticos e construir confiança com clientes e usuários.
@@ -128,11 +137,14 @@ export default function AboutSection() {
 
             {/* Card 4 - Practical */}
             <motion.div variants={cardVariants} className="relative group">
-              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.practical.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
-              <div className={`relative bg-gradient-to-br ${cardThemes.practical.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.practical.hoverBorder} p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
-                <div className={`p-3 ${cardThemes.practical.iconBg} rounded-full w-fit mb-4`}>
-                  <LightbulbIcon className={`h-6 w-6 bg-gradient-to-br ${cardThemes.practical.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+              {/* Decorative circle with icon */}
+              <div className="absolute -top-6 left-6 z-10">
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${cardThemes.practical.gradient} shadow-lg flex items-center justify-center`}>
+                  <LightbulbIcon className="h-8 w-8 text-white" />
                 </div>
+              </div>
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cardThemes.practical.gradient} rounded-xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm`}></div>
+              <div className={`relative bg-gradient-to-br ${cardThemes.practical.bgGradient} backdrop-blur-sm border border-gray-200 ${cardThemes.practical.hoverBorder} p-6 pt-10 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
                 <h3 className="text-xl font-semibold text-gray-900">Prático</h3>
                 <p className="mt-2 text-gray-600">
                   Cada nível do framework inclui ferramentas, processos e considerações específicas, tornando-o imediatamente aplicável aos desafios de design do mundo real.

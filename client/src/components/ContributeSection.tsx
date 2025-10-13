@@ -106,16 +106,16 @@ export default function ContributeSection() {
             viewport={{ once: true, margin: "-100px" }}
           >
             {/* Suggest Changes Card */}
-            <motion.div variants={cardVariants} className="group relative">
+            <motion.div variants={cardVariants} className="group relative h-full">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm"></div>
-              <div className="relative bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200">
+              <div className="relative bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="flex-shrink-0 p-3 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 shadow-md">
                     <Edit3 className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="ml-4 text-xl font-semibold text-gray-900">Sugerir Mudanças</h3>
                 </div>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6 flex-grow">
                   Proponha modificações aos níveis existentes do framework, descrições ou exemplos através de issues no GitHub ou pull requests.
                 </p>
                 <a
@@ -133,16 +133,16 @@ export default function ContributeSection() {
             </motion.div>
 
             {/* Creator Card */}
-            <motion.div variants={cardVariants} className="group relative">
+            <motion.div variants={cardVariants} className="group relative h-full">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-20 group-hover:opacity-60 transition duration-300 blur-sm"></div>
-              <div className="relative bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200">
+              <div className="relative bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="flex-shrink-0 p-3 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 shadow-md">
                     <User className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="ml-4 text-xl font-semibold text-gray-900">Sobre o Criador</h3>
                 </div>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6 flex-grow">
                   Gui Gonzalez é um designer apaixonado por processos, que busca incorporar a IA de forma sadia no mercado de Design, para que um novo design surja junto com as mudanças de paradigma.
                 </p>
                 <a
