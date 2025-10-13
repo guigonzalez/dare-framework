@@ -86,7 +86,7 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex flex-col items-center ${
                     activeSection === item.href
                       ? scrolled
                         ? 'text-primary font-semibold'
@@ -96,7 +96,7 @@ export default function Header() {
                         : 'text-white hover:bg-white/10'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
                   {activeSection === item.href && (
                     <motion.span
                       layoutId="activeSection"
