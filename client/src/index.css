@@ -127,15 +127,17 @@
   }
 
   h1 {
-    @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+    @apply text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl;
+    letter-spacing: -0.02em;
   }
 
   h2 {
-    @apply text-3xl font-bold md:text-4xl;
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+    letter-spacing: -0.01em;
   }
 
   h3 {
-    @apply text-2xl font-bold md:text-3xl;
+    @apply text-2xl font-bold md:text-3xl lg:text-4xl;
   }
 
   p {
@@ -148,6 +150,34 @@
 
   .nav-button {
     @apply flex items-center justify-center h-8 w-8 bg-white/80 border border-gray-200 rounded-full z-10 shadow-sm backdrop-blur-sm cursor-pointer hover:bg-white hover:scale-110 transition-transform;
+  }
+
+  /* Text utilities */
+  .text-lead {
+    @apply text-xl md:text-2xl font-light leading-relaxed text-gray-600;
+  }
+
+  /* Gradients temáticos */
+  .gradient-ai {
+    @apply bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500;
+  }
+
+  .gradient-human {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500;
+  }
+
+  .gradient-balance {
+    @apply bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection colors */
+  ::selection {
+    @apply bg-primary/20 text-primary;
   }
 }
 

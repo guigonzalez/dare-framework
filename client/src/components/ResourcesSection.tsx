@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 import ResourceModal from "./ResourceModal";
 
 export default function ResourcesSection() {
@@ -12,6 +14,45 @@ export default function ResourcesSection() {
     title: "",
     content: ""
   });
+
+  // Refs for scroll containers
+  const scrollRefAll = useRef<HTMLDivElement>(null);
+  const scrollRefBasic = useRef<HTMLDivElement>(null);
+  const scrollRefIntermediate = useRef<HTMLDivElement>(null);
+  const scrollRefAdvanced = useRef<HTMLDivElement>(null);
+
+  // Scroll functions
+  const scroll = (direction: 'left' | 'right') => {
+    let scrollRef;
+    switch (activeTab) {
+      case 'all':
+        scrollRef = scrollRefAll;
+        break;
+      case 'basic':
+        scrollRef = scrollRefBasic;
+        break;
+      case 'intermediate':
+        scrollRef = scrollRefIntermediate;
+        break;
+      case 'advanced':
+        scrollRef = scrollRefAdvanced;
+        break;
+      default:
+        scrollRef = scrollRefAll;
+    }
+
+    if (scrollRef.current) {
+      const scrollAmount = 350;
+      const newPosition = direction === 'left'
+        ? scrollRef.current.scrollLeft - scrollAmount
+        : scrollRef.current.scrollLeft + scrollAmount;
+
+      scrollRef.current.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   // Função para abrir o modal com os dados do nível selecionado
   const openModal = (level: number) => {
@@ -411,7 +452,28 @@ export default function ResourcesSection() {
 
             <TabsContent value="all" className="mt-4">
               <div className="relative snap-x-container">
-                <div className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {/* Navigation Arrows */}
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('left')}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('right')}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <div ref={scrollRefAll} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                   {renderLevelCard(0, "Manual Total", [
                     "Caneta e papel para esboços iniciais",
                     "Figma ou Adobe XD para wireframes simples e protótipos básicos",
@@ -472,7 +534,28 @@ export default function ResourcesSection() {
 
             <TabsContent value="basic" className="mt-4">
               <div className="relative snap-x-container">
-                <div className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {/* Navigation Arrows */}
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('left')}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('right')}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <div ref={scrollRefBasic} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                   {renderLevelCard(0, "Manual Total", [
                     "Caneta e papel para esboços iniciais",
                     "Figma ou Adobe XD para wireframes simples e protótipos básicos",
@@ -503,7 +586,28 @@ export default function ResourcesSection() {
 
             <TabsContent value="intermediate" className="mt-4">
               <div className="relative snap-x-container">
-                <div className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {/* Navigation Arrows */}
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('left')}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('right')}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <div ref={scrollRefIntermediate} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                   {renderLevelCard(3, "Copiloto", [
                     "Figma AI para sugestões contextuais de componentes",
                     "Galileo AI para geração rápida de protótipos",
@@ -526,7 +630,28 @@ export default function ResourcesSection() {
 
             <TabsContent value="advanced" className="mt-4">
               <div className="relative snap-x-container">
-                <div className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {/* Navigation Arrows */}
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('left')}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scroll('right')}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors hidden md:flex items-center justify-center border border-gray-200"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5 text-gray-700" />
+                </motion.button>
+
+                <div ref={scrollRefAdvanced} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                   {renderLevelCard(4, "Co-criação Modular", [
                     "Figma Make para prompt-to-prototype principal",
                     "V0 by Vercel para sistemas de design escaláveis",

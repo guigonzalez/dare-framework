@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   return (
     <section className="relative bg-gradient-to-br from-primary/90 via-primary to-blue-700 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Animated background pattern */}
+      <motion.div
+        className="absolute inset-0 opacity-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.2 }}
+        transition={{ duration: 1.5 }}
+      >
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
           <defs>
             <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -17,42 +24,90 @@ export default function HeroSection() {
           <rect width="100%" height="100%" fill="url(#grid-pattern)" />
           <rect width="100%" height="100%" fill="url(#dots-pattern)" />
         </svg>
-      </div>
-      
+      </motion.div>
+
+      {/* Floating orbs */}
+      <motion.div
+        className="absolute top-20 left-10 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl"
+        animate={{
+          y: [0, 30, 0],
+          x: [0, 20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"
+        animate={{
+          y: [0, -40, 0],
+          x: [0, -30, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+
       {/* Content */}
       <div className="relative py-16 sm:py-24 md:py-28 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block mb-6 p-2 bg-white/10 backdrop-blur-sm rounded-full">
-              <div className="px-4 py-1 rounded-full bg-white/30 text-sm font-semibold text-white shadow-sm">
+            <motion.div
+              className="inline-block mb-6 p-2 bg-white/10 backdrop-blur-sm rounded-full"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="px-4 py-1 rounded-full bg-white/30 text-sm font-semibold text-white shadow-sm flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
                 Open Source - AI Made
               </div>
-            </div>
+            </motion.div>
 
-            <h1 className="text-white mb-6">
+            <motion.h1
+              className="text-white mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               <span className="block mb-2">Design AI Reliable</span>
-              <span className="block mb-2 pb-2.5 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <span className="block mb-2 pb-2.5 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
                 Engagement Framework
               </span>
-            </h1>
-            
-            <p className="mt-6 text-xl text-blue-100 max-w-2xl mx-auto">
+            </motion.h1>
+
+            <motion.p
+              className="mt-6 text-xl sm:text-2xl text-blue-50 max-w-2xl mx-auto font-light leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
               Um framework colaborativo para adoção estratégica de IA em processos de design—
               equilibrando inovação com criatividade humana.
-            </p>
-            
-            <div className="mt-12 flex items-center justify-center relative z-10">
-              <Button 
+            </motion.p>
+
+            <motion.div
+              className="mt-12 flex items-center justify-center relative z-10"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Button
                 size="lg"
-                variant="default" 
-                className="bg-white text-primary hover:bg-blue-50"
+                variant="default"
+                className="bg-white text-primary hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
                 asChild
               >
-                <a href="#framework">
+                <a href="#framework" className="flex items-center gap-2">
                   Explorar Framework
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

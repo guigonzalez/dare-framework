@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Github } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+  const [activeSection, setActiveSection] = useState("");
+
   // Configuração de navegação
   const navItems = [
     { href: "#about", label: "Sobre" },
@@ -16,17 +18,33 @@ export default function Header() {
     { href: "#manifesto", label: "Manifesto" },
     { href: "#contribute", label: "Contribuir" }
   ];
-  
-  // Handle scroll effect
+
+  // Handle scroll effect and active section
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
+
+      // Detect active section
+      const sections = navItems.map(item => {
+        const id = item.href.replace('#', '');
+        return document.getElementById(id);
+      });
+
+      sections.forEach((section, index) => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveSection(navItems[index].href);
+          }
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
   
@@ -47,13 +65,17 @@ export default function Header() {
           {/* Logo e menu principal */}
           <div className="flex items-center">
             <a href="/" className="flex-shrink-0 flex items-center group">
-              <div className={`p-1.5 mr-2 rounded-lg ${scrolled ? 'bg-primary/10' : 'bg-white/10'}`}>
-                <svg className={`h-6 w-6 ${scrolled ? 'text-primary' : 'text-white'}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <motion.div
+                className={`p-1.5 mr-2 rounded-lg ${scrolled ? 'bg-primary/10' : 'bg-white/10'}`}
+                whileHover={{ rotate: 12, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <svg className={`h-6 w-6 transition-colors ${scrolled ? 'text-primary' : 'text-white'}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
                   <path d="M12 6V11M12 16V11M12 11H16M12 11H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </div>
-              <span className={`text-lg font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+              </motion.div>
+              <span className={`text-lg font-bold transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>
                 DARE Framework
               </span>
             </a>
@@ -61,16 +83,29 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:ml-10 md:flex md:space-x-1">
               {navItems.map((item) => (
-                <a 
+                <a
                   key={item.href}
-                  href={item.href} 
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150 ${
-                    scrolled 
-                      ? 'text-gray-700 hover:text-primary hover:bg-gray-50' 
-                      : 'text-white hover:bg-white/10'
+                  href={item.href}
+                  className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    activeSection === item.href
+                      ? scrolled
+                        ? 'text-primary font-semibold'
+                        : 'text-white font-semibold'
+                      : scrolled
+                        ? 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                        : 'text-white hover:bg-white/10'
                   }`}
                 >
                   {item.label}
+                  {activeSection === item.href && (
+                    <motion.span
+                      layoutId="activeSection"
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-0.5 rounded-full ${
+                        scrolled ? 'bg-primary' : 'bg-white'
+                      }`}
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </a>
               ))}
             </nav>
