@@ -15,6 +15,7 @@ export default function Header() {
     { href: "#framework", label: "Framework" },
     { href: "#recursos", label: "Recursos" },
     { href: "#vantagens", label: "Vantagens" },
+    { href: "#agents", label: "Agentes" },
     { href: "#manifesto", label: "Manifesto" },
     { href: "#contribute", label: "Contribuir" }
   ];
