@@ -81,31 +81,22 @@ export default function Header() {
             </a>
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:ml-10 md:flex md:space-x-1">
+            <nav className="hidden md:ml-10 md:flex md:space-x-1 items-center">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 flex flex-col items-center ${
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                     activeSection === item.href
                       ? scrolled
-                        ? 'text-primary font-semibold'
-                        : 'text-white font-semibold'
+                        ? 'text-primary font-semibold underline decoration-2 underline-offset-4 decoration-primary'
+                        : 'text-white font-semibold underline decoration-2 underline-offset-4 decoration-white'
                       : scrolled
                         ? 'text-gray-700 hover:text-primary hover:bg-gray-50'
                         : 'text-white hover:bg-white/10'
                   }`}
                 >
-                  <span>{item.label}</span>
-                  {activeSection === item.href && (
-                    <motion.span
-                      layoutId="activeSection"
-                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-0.5 rounded-full ${
-                        scrolled ? 'bg-primary' : 'bg-white'
-                      }`}
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
+                  {item.label}
                 </a>
               ))}
             </nav>
