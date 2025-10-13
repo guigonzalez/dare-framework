@@ -112,6 +112,16 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
+  /* Improved focus indicators for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    @apply ring-2 ring-primary ring-offset-4 transition-all duration-200;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
   }
@@ -123,7 +133,7 @@
   h2 {
     @apply text-3xl font-bold md:text-4xl;
   }
-  
+
   h3 {
     @apply text-2xl font-bold md:text-3xl;
   }
@@ -135,7 +145,7 @@
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent;
   }
-  
+
   .nav-button {
     @apply flex items-center justify-center h-8 w-8 bg-white/80 border border-gray-200 rounded-full z-10 shadow-sm backdrop-blur-sm cursor-pointer hover:bg-white hover:scale-110 transition-transform;
   }

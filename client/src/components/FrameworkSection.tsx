@@ -62,7 +62,7 @@ export default function FrameworkSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/20 rounded-full bg-primary/5 text-primary text-sm font-medium">
+            <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
               7 níveis de adoção de IA
             </div>
             <h2 className="gradient-text">Níveis do Framework DARE</h2>
@@ -340,7 +340,7 @@ export default function FrameworkSection() {
           {/* Framework Visual */}
           <div className="mt-16">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/20 rounded-full bg-primary/5 text-primary text-sm font-medium">
+              <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                 Métricas evolutivas
               </div>
               <h3 className="text-2xl font-bold text-gray-900">Evolução do Framework</h3>
@@ -394,14 +394,19 @@ export default function FrameworkSection() {
                   {/* Metrics */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-gray-50 p-5 rounded-lg">
-                      <div className="flex items-center mb-3">
-                        <Brain className="h-5 w-5 text-green-600 mr-2" />
-                        <h4 className="font-bold text-gray-800">Controle Humano</h4>
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center">
+                          <Brain className="h-5 w-5 text-green-600 mr-2" />
+                          <h4 className="font-bold text-gray-800">Controle Humano</h4>
+                        </div>
+                        <span className="text-sm font-semibold text-green-700">
+                          {[100, 90, 75, 60, 50, 40, 20][activeLevel]}%
+                        </span>
                       </div>
                       <div className="mt-2 h-6 bg-gray-200 rounded-full overflow-hidden">
-                        <div 
+                        <div
                           ref={humanControlBarRef}
-                          className="h-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-700 ease-in-out w-[100%]" 
+                          className="h-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-700 ease-in-out w-[100%]"
                         />
                       </div>
                       <div className="mt-2 flex justify-between text-xs text-gray-500">
@@ -410,14 +415,19 @@ export default function FrameworkSection() {
                       </div>
                     </div>
                     <div className="bg-gray-50 p-5 rounded-lg">
-                      <div className="flex items-center mb-3">
-                        <Zap className="h-5 w-5 text-blue-600 mr-2" />
-                        <h4 className="font-bold text-gray-800">Velocidade</h4>
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center">
+                          <Zap className="h-5 w-5 text-blue-600 mr-2" />
+                          <h4 className="font-bold text-gray-800">Velocidade</h4>
+                        </div>
+                        <span className="text-sm font-semibold text-blue-700">
+                          {[16, 30, 50, 70, 80, 85, 95][activeLevel]}%
+                        </span>
                       </div>
                       <div className="mt-2 h-6 bg-gray-200 rounded-full overflow-hidden">
-                        <div 
+                        <div
                           ref={speedBarRef}
-                          className="h-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-700 ease-in-out w-[16%]" 
+                          className="h-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-700 ease-in-out w-[16%]"
                         />
                       </div>
                       <div className="mt-2 flex justify-between text-xs text-gray-500">
@@ -426,14 +436,19 @@ export default function FrameworkSection() {
                       </div>
                     </div>
                     <div className="bg-gray-50 p-5 rounded-lg">
-                      <div className="flex items-center mb-3">
-                        <Cpu className="h-5 w-5 text-amber-600 mr-2" />
-                        <h4 className="font-bold text-gray-800">Dependência de IA</h4>
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center">
+                          <Cpu className="h-5 w-5 text-amber-600 mr-2" />
+                          <h4 className="font-bold text-gray-800">Dependência de IA</h4>
+                        </div>
+                        <span className="text-sm font-semibold text-amber-700">
+                          {[0, 15, 35, 60, 75, 80, 95][activeLevel]}%
+                        </span>
                       </div>
                       <div className="mt-2 h-6 bg-gray-200 rounded-full overflow-hidden">
-                        <div 
+                        <div
                           ref={aiDependencyBarRef}
-                          className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all duration-700 ease-in-out w-[0%]" 
+                          className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all duration-700 ease-in-out w-[0%]"
                         />
                       </div>
                       <div className="mt-2 flex justify-between text-xs text-gray-500">

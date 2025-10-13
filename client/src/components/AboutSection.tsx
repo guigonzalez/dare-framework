@@ -6,7 +6,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/20 rounded-full bg-primary/5 text-primary text-sm font-medium">
+            <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
               O que é o DARE Framework?
             </div>
             <h2 className="gradient-text">Sobre o DARE Framework</h2>
@@ -86,12 +86,12 @@ export default function AboutSection() {
           </div>
           
           <div className="mt-16 text-center">
-            <div className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            <div className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               Um framework para todos os níveis de adoção
             </div>
             <h3 className="text-2xl font-bold text-gray-900">Do Totalmente Manual à Automação Guiada por IA</h3>
             <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-              O DARE Framework organiza a adoção de IA em um espectro de seis níveis distintos, ajudando equipes de design a navegar na integração da inteligência artificial de maneira controlada e ética.
+              O DARE Framework organiza a adoção de IA em um espectro de sete níveis distintos (0 a 5), ajudando equipes de design a navegar na integração da inteligência artificial de maneira controlada e ética.
             </p>
             
             <div className="mt-8 inline-flex shadow-sm overflow-hidden rounded-lg">
