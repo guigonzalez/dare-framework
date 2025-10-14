@@ -75,7 +75,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-6 pt-6 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} DARE Framework | <a href="https://br.linkedin.com/in/guigonzalez/pt" target="_blank" rel="noopener noreferrer" className="hover:text-white">Gui Gonzalez</a></p>
+          <p>© {new Date().getFullYear()} DARE Framework by <a href="https://uxer.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white">Uxer</a> | <a href="https://br.linkedin.com/in/guigonzalez/pt" target="_blank" rel="noopener noreferrer" className="hover:text-white">Gui Gonzalez</a></p>
         </div>
       </div>
     </footer>
