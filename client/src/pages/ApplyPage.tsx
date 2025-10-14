@@ -306,20 +306,24 @@ export default function ApplyPage() {
                         GPT Image 1 (Realista)
                       </h5>
                       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <p className="text-xs font-mono text-gray-700 leading-relaxed mb-4">
-                          <strong className="text-blue-900">CONTEXTO:</strong> Campanha de marca para empresa de tecnologia sustentável.<br/>
-                          <strong className="text-blue-900">TAREFA:</strong> Crie uma fotografia profissional corporativa em estúdio.<br/>
-                          <strong className="text-blue-900">ESPECIFICAÇÕES:</strong> Executivo masculino de 40 anos, terno azul marinho bem cortado, camisa branca, gravata discreta. Expressão confiante mas acessível, braços cruzados levemente.<br/>
-                          <strong className="text-blue-900">ESTILO:</strong> Background gradient cinza neutro. Iluminação suave tipo softbox, sem sombras duras. Shot 85mm, f/2.8, foco nítido.<br/>
-                          <strong className="text-blue-900">REFINAMENTOS:</strong> Estilo clean e moderno, cores corporativas, alta resolução para impressão.
-                        </p>
-                        <div className="mt-4 border-t border-blue-300 pt-4">
-                          <p className="text-xs font-semibold text-blue-900 mb-2">📸 Resultado:</p>
-                          <img
-                            src="/GPT Image 1 Result.png"
-                            alt="Resultado GPT Image 1 - Executivo corporativo"
-                            className="w-full rounded-lg shadow-md"
-                          />
+                        <div className="flex flex-col md:flex-row gap-4">
+                          <div className="flex-1">
+                            <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                              <strong className="text-blue-900">CONTEXTO:</strong> Campanha de marca para empresa de tecnologia sustentável.<br/>
+                              <strong className="text-blue-900">TAREFA:</strong> Crie uma fotografia profissional corporativa em estúdio.<br/>
+                              <strong className="text-blue-900">ESPECIFICAÇÕES:</strong> Executivo masculino de 40 anos, terno azul marinho bem cortado, camisa branca, gravata discreta. Expressão confiante mas acessível, braços cruzados levemente.<br/>
+                              <strong className="text-blue-900">ESTILO:</strong> Background gradient cinza neutro. Iluminação suave tipo softbox, sem sombras duras. Shot 85mm, f/2.8, foco nítido.<br/>
+                              <strong className="text-blue-900">REFINAMENTOS:</strong> Estilo clean e moderno, cores corporativas, alta resolução para impressão.
+                            </p>
+                          </div>
+                          <div className="md:w-48 flex-shrink-0">
+                            <p className="text-xs font-semibold text-blue-900 mb-2">📸 Resultado:</p>
+                            <img
+                              src="/GPT Image 1 Result.png"
+                              alt="Resultado GPT Image 1 - Executivo corporativo"
+                              className="w-full rounded-lg shadow-md"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -330,20 +334,24 @@ export default function ApplyPage() {
                         Nano Banana (Edição Inteligente)
                       </h5>
                       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <p className="text-xs font-mono text-gray-700 leading-relaxed mb-4">
-                          <strong className="text-blue-900">CONTEXTO:</strong> Personalização para redes sociais da empresa.<br/>
-                          <strong className="text-blue-900">TAREFA:</strong> Transforme esta pessoa em uma figura de ação colecionável estilo Funko Pop.<br/>
-                          <strong className="text-blue-900">ESPECIFICAÇÕES:</strong> Mantenha exatamente as mesmas características faciais e expressão. Adicione proporções caricatas típicas: cabeça grande (60% do corpo), corpo pequeno.<br/>
-                          <strong className="text-blue-900">ESTILO:</strong> Coloque em uma caixa de colecionador com janela transparente e fundo colorido vibrante (azul tecnológico #0066FF). Estilo 3D render realista com iluminação suave.<br/>
-                          <strong className="text-blue-900">REFINAMENTOS:</strong> Preserve o terno e gravata no estilo Funko, adicione pequenos detalhes de marca na caixa.
-                        </p>
-                        <div className="mt-4 border-t border-blue-300 pt-4">
-                          <p className="text-xs font-semibold text-blue-900 mb-2">🎨 Resultado:</p>
-                          <img
-                            src="/Nano Banana Result.png"
-                            alt="Resultado Nano Banana - Funko Pop style"
-                            className="w-full rounded-lg shadow-md"
-                          />
+                        <div className="flex flex-col md:flex-row gap-4">
+                          <div className="flex-1">
+                            <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                              <strong className="text-blue-900">CONTEXTO:</strong> Personalização para redes sociais da empresa.<br/>
+                              <strong className="text-blue-900">TAREFA:</strong> Transforme esta pessoa em uma figura de ação colecionável estilo Funko Pop.<br/>
+                              <strong className="text-blue-900">ESPECIFICAÇÕES:</strong> Mantenha exatamente as mesmas características faciais e expressão. Adicione proporções caricatas típicas: cabeça grande (60% do corpo), corpo pequeno.<br/>
+                              <strong className="text-blue-900">ESTILO:</strong> Coloque em uma caixa de colecionador com janela transparente e fundo colorido vibrante (azul tecnológico #0066FF). Estilo 3D render realista com iluminação suave.<br/>
+                              <strong className="text-blue-900">REFINAMENTOS:</strong> Preserve o terno e gravata no estilo Funko, adicione pequenos detalhes de marca na caixa.
+                            </p>
+                          </div>
+                          <div className="md:w-48 flex-shrink-0">
+                            <p className="text-xs font-semibold text-blue-900 mb-2">🎨 Resultado:</p>
+                            <img
+                              src="/Nano Banana Result.png"
+                              alt="Resultado Nano Banana - Funko Pop style"
+                              className="w-full rounded-lg shadow-md"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -393,23 +401,26 @@ export default function ApplyPage() {
                         Kling AI (Teste Rápido - 5-10s)
                       </h5>
                       <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                        <p className="text-xs font-mono text-gray-700 leading-relaxed mb-4">
-                          <strong className="text-purple-900">CONTEXTO:</strong> Vídeo promocional para aplicativo de design.<br/>
-                          <strong className="text-purple-900">TAREFA:</strong> Mostre jovem designer sorrindo trabalhando em tablet digital, desenhando logo colorido.<br/>
-                          <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Mesa organizada com plantas suculentas e xícara de café. Movimento: câmera fixa, designer gesticulando naturalmente com a caneta stylus.<br/>
-                          <strong className="text-purple-900">ESTILO:</strong> Luz natural suave entrando pela janela. Cores vibrantes mas harmoniosas (paleta pastel). Ambiente moderno e inspirador.<br/>
-                          <strong className="text-purple-900">REFINAMENTOS:</strong> Duração: 5 segundos. Foco no tablet e nas mãos. Máximo 2 elementos principais em movimento.
-                        </p>
-                        <div className="mt-4 border-t border-purple-300 pt-4">
-                          <p className="text-xs font-semibold text-purple-900 mb-2">🎬 Resultado:</p>
-                          <video
-                            controls
-                            className="w-full rounded-lg shadow-md"
-                            poster="/Kling AI Video Result.mp4"
-                          >
-                            <source src="/Kling AI Video Result.mp4" type="video/mp4" />
-                            Seu navegador não suporta vídeos HTML5.
-                          </video>
+                        <div className="flex flex-col md:flex-row gap-4">
+                          <div className="flex-1">
+                            <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                              <strong className="text-purple-900">CONTEXTO:</strong> Vídeo promocional para aplicativo de design.<br/>
+                              <strong className="text-purple-900">TAREFA:</strong> Mostre jovem designer sorrindo trabalhando em tablet digital, desenhando logo colorido.<br/>
+                              <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Mesa organizada com plantas suculentas e xícara de café. Movimento: câmera fixa, designer gesticulando naturalmente com a caneta stylus.<br/>
+                              <strong className="text-purple-900">ESTILO:</strong> Luz natural suave entrando pela janela. Cores vibrantes mas harmoniosas (paleta pastel). Ambiente moderno e inspirador.<br/>
+                              <strong className="text-purple-900">REFINAMENTOS:</strong> Duração: 5 segundos. Foco no tablet e nas mãos. Máximo 2 elementos principais em movimento.
+                            </p>
+                          </div>
+                          <div className="md:w-48 flex-shrink-0">
+                            <p className="text-xs font-semibold text-purple-900 mb-2">🎬 Resultado:</p>
+                            <video
+                              controls
+                              className="w-full rounded-lg shadow-md"
+                            >
+                              <source src="/Kling AI Video Result.mp4" type="video/mp4" />
+                              Seu navegador não suporta vídeos HTML5.
+                            </video>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -436,23 +447,26 @@ export default function ApplyPage() {
                         VEO 3 (Controle Total com Áudio)
                       </h5>
                       <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                        <p className="text-xs font-mono text-gray-700 leading-relaxed mb-4">
-                          <strong className="text-purple-900">CONTEXTO:</strong> Depoimento para case de sucesso B2B.<br/>
-                          <strong className="text-purple-900">TAREFA:</strong> Crie vídeo realista de consultora de marketing explicando estratégia para câmera.<br/>
-                          <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Ela olha para câmera e diz: "O segredo está na personalização da experiência do cliente. Quando você entende as necessidades reais, a conversão aumenta naturalmente." Gesticula naturalmente com as mãos, expressão confiante e acessível. Escritório moderno com whiteboards estratégicos ao fundo.<br/>
-                          <strong className="text-purple-900">ESTILO:</strong> Dolly shot suave aproximando lentamente durante a fala (de medium shot para medium close-up). Luz natural equilibrada com fill light suave. Profundidade de campo cinematográfica.<br/>
-                          <strong className="text-purple-900">REFINAMENTOS:</strong> Áudio claro e profissional: voz feminina confiante e calorosa, dicção perfeita. Som ambiente baixo: ar condicionado suave, leve eco de sala. Duração total: 10 segundos. Fade out suave no áudio.
-                        </p>
-                        <div className="mt-4 border-t border-purple-300 pt-4">
-                          <p className="text-xs font-semibold text-purple-900 mb-2">🎥 Resultado:</p>
-                          <video
-                            controls
-                            className="w-full rounded-lg shadow-md"
-                            poster="/VEO 3 Result.mp4"
-                          >
-                            <source src="/VEO 3 Result.mp4" type="video/mp4" />
-                            Seu navegador não suporta vídeos HTML5.
-                          </video>
+                        <div className="flex flex-col md:flex-row gap-4">
+                          <div className="flex-1">
+                            <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                              <strong className="text-purple-900">CONTEXTO:</strong> Depoimento para case de sucesso B2B.<br/>
+                              <strong className="text-purple-900">TAREFA:</strong> Crie vídeo realista de consultora de marketing explicando estratégia para câmera.<br/>
+                              <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Ela olha para câmera e diz: "O segredo está na personalização da experiência do cliente. Quando você entende as necessidades reais, a conversão aumenta naturalmente." Gesticula naturalmente com as mãos, expressão confiante e acessível. Escritório moderno com whiteboards estratégicos ao fundo.<br/>
+                              <strong className="text-purple-900">ESTILO:</strong> Dolly shot suave aproximando lentamente durante a fala (de medium shot para medium close-up). Luz natural equilibrada com fill light suave. Profundidade de campo cinematográfica.<br/>
+                              <strong className="text-purple-900">REFINAMENTOS:</strong> Áudio claro e profissional: voz feminina confiante e calorosa, dicção perfeita. Som ambiente baixo: ar condicionado suave, leve eco de sala. Duração total: 10 segundos. Fade out suave no áudio.
+                            </p>
+                          </div>
+                          <div className="md:w-48 flex-shrink-0">
+                            <p className="text-xs font-semibold text-purple-900 mb-2">🎥 Resultado:</p>
+                            <video
+                              controls
+                              className="w-full rounded-lg shadow-md"
+                            >
+                              <source src="/VEO 3 Result.mp4" type="video/mp4" />
+                              Seu navegador não suporta vídeos HTML5.
+                            </video>
+                          </div>
                         </div>
                       </div>
                     </div>
