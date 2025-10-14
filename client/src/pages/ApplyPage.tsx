@@ -336,9 +336,10 @@ export default function ApplyPage() {
                       </p>
 
                       <a
-                        href="#licensing"
+                        href="mailto:guiperezgo@gmail.com?subject=Interesse em Licenciamento DARE"
                         className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
                       >
+                        <Mail className="w-4 h-4 mr-2" />
                         Solicitar proposta
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
@@ -379,9 +380,10 @@ export default function ApplyPage() {
                       </p>
 
                       <a
-                        href="#consulting"
+                        href="mailto:guiperezgo@gmail.com?subject=Interesse em Consultoria DARE"
                         className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
                       >
+                        <Mail className="w-4 h-4 mr-2" />
                         Agendar conversa
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
@@ -402,87 +404,6 @@ export default function ApplyPage() {
                   💡 Comece pelo teste gratuito e evolua no seu ritmo
                 </p>
               </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Forms Section */}
-        <section id="contato" className="py-16 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Maturity Test Form */}
-                <motion.div
-                  id="maturity"
-                  className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-8"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Rocket className="w-12 h-12 text-blue-600 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">DARE Maturity Model</h3>
-                  <p className="text-gray-600 mb-6">
-                    Faça o teste de maturidade e descubra qual nível DARE é ideal para sua organização. Baseado em 5 dimensões críticas.
-                  </p>
-                  <a
-                    href="/aplicar/teste-maturidade"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
-                  >
-                    <ArrowRight className="w-5 h-5 mr-2" />
-                    Fazer o Teste Agora
-                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </motion.div>
-
-                {/* Licensing Form */}
-                <motion.div
-                  id="licensing"
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                >
-                  <Building2 className="w-12 h-12 text-purple-600 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Licenciamento</h3>
-                  <p className="text-gray-600 mb-6">
-                    Empresas, consultorias e escolas podem licenciar o DARE como metodologia aplicada.
-                  </p>
-                  <a
-                    href="mailto:guiperezgo@gmail.com?subject=Interesse em Licenciamento DARE"
-                    className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
-                  >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Falar sobre licenciamento
-                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </motion.div>
-
-                {/* Consulting Form */}
-                <motion.div
-                  id="consulting"
-                  className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-8"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <Users className="w-12 h-12 text-emerald-600 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Consultoria</h3>
-                  <p className="text-gray-600 mb-6">
-                    Workshops e imersões práticas aplicando o DARE em desafios reais da sua organização.
-                  </p>
-                  <a
-                    href="mailto:guiperezgo@gmail.com?subject=Interesse em Consultoria DARE"
-                    className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
-                  >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Agendar conversa
-                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </motion.div>
-              </div>
             </div>
           </div>
         </section>
