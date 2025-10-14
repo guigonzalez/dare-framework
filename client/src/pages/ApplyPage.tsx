@@ -111,7 +111,7 @@ export default function ApplyPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <a
-                  href="#tiers"
+                  href="#modelos"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
                 >
                   Quer aplicar o DARE no seu time?
