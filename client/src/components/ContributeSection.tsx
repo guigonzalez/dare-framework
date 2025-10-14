@@ -267,16 +267,7 @@ export default function ContributeSection() {
                   </li>
                 </ol>
 
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a
-                    href="/aplicar"
-                    className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
-                  >
-                    Aplicar o DARE no seu Time
-                    <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                <div className="mt-8 flex justify-center">
                   <a
                     href="https://github.com/guigonzalez/dare-framework"
                     target="_blank"
