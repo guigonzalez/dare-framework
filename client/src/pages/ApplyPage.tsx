@@ -336,11 +336,10 @@ export default function ApplyPage() {
                       </p>
 
                       <a
-                        href="mailto:guiperezgo@gmail.com?subject=Interesse em Licenciamento DARE"
+                        href="/aplicar/proposta"
                         className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
                       >
-                        <Mail className="w-4 h-4 mr-2" />
-                        Solicitar proposta
+                        Calcular investimento
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
