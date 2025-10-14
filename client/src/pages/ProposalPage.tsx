@@ -25,6 +25,7 @@ const pricingTiers: PricingTier[] = [
     description: "Para times enxutos que querem estruturar IA desde o início",
     features: [
       "Acesso completo ao DARE Framework",
+      "Treinamento in company estruturado",
       "Material didático e templates",
       "Suporte por e-mail",
       "Updates e melhorias contínuas",
@@ -41,6 +42,7 @@ const pricingTiers: PricingTier[] = [
     description: "Para empresas em crescimento que precisam escalar com método",
     features: [
       "Tudo do plano Startup",
+      "Treinamento in company aprofundado",
       "Onboarding guiado (2 sessões)",
       "Suporte prioritário",
       "Acesso a webinars exclusivos",
@@ -58,6 +60,7 @@ const pricingTiers: PricingTier[] = [
     description: "Para organizações que querem o DARE como padrão corporativo",
     features: [
       "Tudo do plano Growth",
+      "Treinamento in company customizado",
       "Customização do framework",
       "Suporte dedicado 24/7",
       "Workshops presenciais (trimestral)",
@@ -153,7 +156,10 @@ Atenciosamente,
               <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
                 Transforme o DARE na linguagem comum de IA responsável de toda sua organização
               </p>
-              <p className="text-base text-gray-500 max-w-2xl mx-auto">
+              <p className="text-base text-gray-500 mb-2 max-w-2xl mx-auto">
+                <strong>Inclui treinamento in company estruturado</strong> para capacitar seus colaboradores
+              </p>
+              <p className="text-sm text-gray-400 max-w-2xl mx-auto">
                 Calcule o investimento baseado no tamanho da sua empresa e receba uma proposta personalizada
               </p>
             </motion.div>
@@ -461,7 +467,20 @@ Atenciosamente,
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Como funciona o licenciamento?</h3>
                 <p className="text-gray-600">
-                  O licenciamento é anual e renovável. Você recebe acesso completo ao DARE Framework, materiais didáticos, templates e suporte durante todo o período da licença.
+                  O licenciamento é anual e renovável. Você recebe acesso completo ao DARE Framework, treinamento in company estruturado para seus colaboradores, materiais didáticos, templates e suporte durante todo o período da licença.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-white rounded-xl p-6 shadow-md border border-gray-200"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.05 }}
+              >
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">O treinamento in company está incluso?</h3>
+                <p className="text-gray-600">
+                  Sim! Todos os planos incluem treinamento in company estruturado. O nível de personalização varia por tier: treinamento estruturado no Startup, aprofundado no Growth, e totalmente customizado no Enterprise.
                 </p>
               </motion.div>
 
@@ -483,7 +502,7 @@ Atenciosamente,
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">E se minha empresa crescer durante o ano?</h3>
                 <p className="text-gray-600">
@@ -496,7 +515,7 @@ Atenciosamente,
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Qual o processo após solicitar a proposta?</h3>
                 <p className="text-gray-600">
