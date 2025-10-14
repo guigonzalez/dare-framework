@@ -121,7 +121,7 @@ export default function Header() {
           
           {/* CTA e controles */}
           <div className="flex items-center space-x-3">
-            {/* <a
+            <a
               href="/aplicar"
               className={`hidden md:inline-flex items-center px-4 py-2 font-medium rounded-lg transition-all duration-300 ${
                 scrolled
@@ -130,7 +130,7 @@ export default function Header() {
               }`}
             >
               Aplicar o DARE
-            </a> */}
+            </a>
 
             <a
               href="https://github.com/guigonzalez/dare-framework"
