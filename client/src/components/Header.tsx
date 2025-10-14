@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Github } from "lucide-react";
 import { motion } from "framer-motion";
@@ -8,9 +8,14 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [location] = useLocation();
 
-  // Configuração de navegação
-  const navItems = [
+  // Detectar se estamos na home ou em outra página
+  const isHomePage = location === "/";
+  const isApplyPage = location === "/aplicar";
+
+  // Configuração de navegação para HomePage
+  const homeNavItems = [
     { href: "#about", label: "Sobre" },
     { href: "#framework", label: "Framework" },
     { href: "#recursos", label: "Recursos" },
@@ -19,6 +24,17 @@ export default function Header() {
     { href: "#manifesto", label: "Manifesto" },
     { href: "#contribute", label: "Contribuir" }
   ];
+
+  // Configuração de navegação para ApplyPage
+  const applyNavItems = [
+    { href: "#about", label: "Visão Geral" },
+    { href: "#aplicacoes", label: "Aplicações" },
+    { href: "#modelos", label: "Modelos" },
+    { href: "#contato", label: "Contato" }
+  ];
+
+  // Escolher os itens de navegação baseado na página
+  const navItems = isApplyPage ? applyNavItems : homeNavItems;
 
   // Handle scroll effect and active section
   useEffect(() => {
@@ -88,7 +104,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                    activeSection === item.href
+                    activeSection === item.href && isHomePage
                       ? scrolled
                         ? 'text-primary font-semibold underline decoration-2 underline-offset-4 decoration-primary'
                         : 'text-white font-semibold underline decoration-2 underline-offset-4 decoration-white'
@@ -163,12 +179,12 @@ export default function Header() {
             : 'bg-black/90 backdrop-blur-md'
         }`}>
           {navItems.map((item) => (
-            <a 
+            <a
               key={item.href}
-              href={item.href} 
+              href={item.href}
               className={`block py-2.5 px-4 mb-1 text-base font-medium rounded-md ${
-                scrolled 
-                  ? 'text-gray-700 hover:text-primary hover:bg-gray-50' 
+                scrolled
+                  ? 'text-gray-700 hover:text-primary hover:bg-gray-50'
                   : 'text-white hover:bg-white/10'
               }`}
               onClick={() => setIsMobileMenuOpen(false)}

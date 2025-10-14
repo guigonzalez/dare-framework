@@ -1,23 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const tiers = [
   {
-    name: "DARE as a Service",
-    subtitle: "Plataforma guiada por IA",
+    name: "DARE Maturity Model",
+    subtitle: "Ferramenta de Avaliação Estratégica",
     status: "Em breve",
-    description: "Ferramenta digital que permite aplicar o DARE Framework de forma guiada, com scoring automático e relatórios profissionais.",
+    description: "Teste interativo de maturidade que avalia 5 dimensões críticas para determinar o nível ideal de adoção de IA na sua organização.",
     features: [
-      "Etapas guiadas do framework com orientação de IA",
-      "Scoring automático de maturidade e confiabilidade",
-      "Exportação de relatórios de decisão",
-      "Dashboard de acompanhamento por time",
-      "1 projeto gratuito para teste"
+      "25 perguntas estratégicas com sistema de pontuação científico",
+      "Avaliação em 5 dimensões: Técnica, Organizacional, Equipe, Negócio e Marca",
+      "Algoritmo ponderado que mapeia direto para níveis DARE (0-5)",
+      "Resultados com gráfico radar e recomendações específicas",
+      "Relatório personalizado para download"
     ],
-    cta: "Seja Beta Tester",
-    ctaLink: "#beta",
+    cta: "Fazer o Teste",
+    ctaLink: "#maturity",
     gradient: "from-blue-500 to-cyan-500",
     bgGradient: "from-blue-50 to-cyan-50"
   },
@@ -77,12 +75,9 @@ const realApplications = [
 
 export default function ApplyPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-gray-50 to-white">
-      <Header />
-
-      <main className="flex-grow">
+    <main className="flex-grow bg-gradient-to-b from-white via-gray-50 to-white">
         {/* Hero Section */}
-        <section className="relative py-16 sm:py-24 overflow-hidden">
+        <section id="about" className="relative py-16 sm:py-24 overflow-hidden">
           {/* Decorative background */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -112,7 +107,7 @@ export default function ApplyPage() {
         </section>
 
         {/* Real Applications Section */}
-        <section className="py-16 bg-white">
+        <section id="aplicacoes" className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -171,7 +166,7 @@ export default function ApplyPage() {
         </section>
 
         {/* Tiers Section */}
-        <section id="tiers" className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <section id="modelos" className="py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <motion.div
@@ -243,13 +238,13 @@ export default function ApplyPage() {
         </section>
 
         {/* Contact Forms Section */}
-        <section id="beta" className="py-16 bg-white">
+        <section id="contato" className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Beta Tester Form */}
+                {/* Maturity Test Form */}
                 <motion.div
-                  id="beta"
+                  id="maturity"
                   className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-8"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -257,16 +252,16 @@ export default function ApplyPage() {
                   transition={{ duration: 0.6 }}
                 >
                   <Rocket className="w-12 h-12 text-blue-600 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">DARE as a Service</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">DARE Maturity Model</h3>
                   <p className="text-gray-600 mb-6">
-                    Seja um dos primeiros a testar a plataforma guiada por IA. Vagas limitadas para beta testers.
+                    Faça o teste de maturidade e descubra qual nível DARE é ideal para sua organização. Baseado em 5 dimensões críticas.
                   </p>
                   <a
-                    href="mailto:contato@dareframework.com.br?subject=Quero ser Beta Tester do DARE"
+                    href="mailto:contato@dareframework.com.br?subject=Quero fazer o DARE Maturity Test"
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
                   >
                     <Mail className="w-5 h-5 mr-2" />
-                    Inscrever-se para Beta
+                    Fazer o Teste
                     <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </motion.div>
@@ -350,9 +345,6 @@ export default function ApplyPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </main>
   );
 }
