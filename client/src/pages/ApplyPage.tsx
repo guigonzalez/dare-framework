@@ -224,9 +224,14 @@ export default function ApplyPage() {
                   <Zap className="w-7 h-7 text-primary" />
                   A Anatomia do Prompt Perfeito
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-4">
                   Todo prompt eficaz segue uma estrutura hierárquica de 5 componentes que determina a qualidade do resultado:
                 </p>
+                <div className="bg-blue-50 border-l-4 border-primary rounded-r-lg p-4 mb-6">
+                  <p className="text-sm text-gray-700">
+                    <strong>💡 Nota:</strong> Existem diversas anatomias e estruturas de prompts no mercado. No DARE Framework, optamos por essa estrutura de 5 componentes por ser a mais ampla e funcional para diferentes ferramentas de IA, facilitando processos e garantindo consistência nos resultados.
+                  </p>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-4">
