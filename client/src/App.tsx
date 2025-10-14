@@ -6,6 +6,7 @@ import HomePage from "@/pages/HomePage";
 import ApplyPage from "@/pages/ApplyPage";
 import MaturityTestPage from "@/pages/MaturityTestPage";
 import VibeCodingPage from "@/pages/VibeCodingPage";
+import PromptEngineeringPage from "@/pages/PromptEngineeringPage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/aplicar" component={ApplyPage} />
       <Route path="/aplicar/teste-maturidade" component={MaturityTestPage} />
       <Route path="/aplicar/vibe-coding" component={VibeCodingPage} />
+      <Route path="/aplicar/prompt-engineering" component={PromptEngineeringPage} />
       <Route component={NotFound} />
     </Switch>
   );

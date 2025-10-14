@@ -29,6 +29,8 @@ export default function Header() {
   const applyNavItems = [
     { href: "#about", label: "Visão Geral" },
     { href: "#aplicacoes", label: "Aplicações" },
+    { href: "/aplicar/vibe-coding", label: "Vibe Coding" },
+    { href: "/aplicar/prompt-engineering", label: "Prompt Engineering" },
     { href: "#modelos", label: "Modelos" },
     { href: "#contato", label: "Contato" }
   ];
