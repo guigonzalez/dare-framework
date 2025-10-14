@@ -379,10 +379,11 @@ export default function ApplyPage() {
                       </p>
 
                       <a
-                        href="mailto:guiperezgo@gmail.com?subject=Interesse em Consultoria DARE"
+                        href="https://calendar.app.google/7zs5wDSwXJRvgv2V6"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
                       >
-                        <Mail className="w-4 h-4 mr-2" />
                         Agendar conversa
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
