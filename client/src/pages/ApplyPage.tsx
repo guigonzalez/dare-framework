@@ -476,7 +476,7 @@ export default function ApplyPage() {
                   Vamos conversar sobre como o DARE pode trazer clareza antes da automação
                 </p>
                 <a
-                  href="mailto:contato@dareframework.com.br?subject=Quero aplicar o DARE"
+                  href="mailto:guiperezgo@gmail.com?subject=Quero aplicar o DARE"
                   className="inline-flex items-center px-8 py-4 bg-white text-primary font-medium rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
                 >
                   Entre em Contato
