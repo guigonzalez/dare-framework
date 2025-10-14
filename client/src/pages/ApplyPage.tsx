@@ -431,13 +431,27 @@ export default function ApplyPage() {
                         SORA 2 (Cinematográfico)
                       </h5>
                       <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
-                          <strong className="text-purple-900">CONTEXTO:</strong> Vídeo institucional para startup tech.<br/>
-                          <strong className="text-purple-900">TAREFA:</strong> Crie um wide shot cinematográfico de uma executiva confiante caminhando por um escritório moderno.<br/>
-                          <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Escritório com vidro e aço, arquitetura contemporânea. Movimento de câmera: smooth tracking shot acompanhando lateralmente a 2 metros de distância. Equipe trabalhando colaborativamente ao fundo, ligeiramente desfocado (bokeh f/2.8).<br/>
-                          <strong className="text-purple-900">ESTILO:</strong> Luz natural suave das 16h, reflexos sutis no vidro. Paleta de cores neutra e profissional (cinzas, brancos, toques de azul corporativo). Atmosfera inspiradora e dinâmica.<br/>
-                          <strong className="text-purple-900">REFINAMENTOS:</strong> Duração: 8 segundos. Som ambiente: rumor baixo de escritório (conversas distantes), passos no piso de madeira, som sutil de teclados. Transição suave no início e fim.
-                        </p>
+                        <div className="flex flex-col md:flex-row gap-4">
+                          <div className="flex-1">
+                            <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                              <strong className="text-purple-900">CONTEXTO:</strong> Vídeo institucional para startup tech.<br/>
+                              <strong className="text-purple-900">TAREFA:</strong> Crie um wide shot cinematográfico de uma executiva confiante caminhando por um escritório moderno.<br/>
+                              <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Escritório com vidro e aço, arquitetura contemporânea. Movimento de câmera: smooth tracking shot acompanhando lateralmente a 2 metros de distância. Equipe trabalhando colaborativamente ao fundo, ligeiramente desfocado (bokeh f/2.8).<br/>
+                              <strong className="text-purple-900">ESTILO:</strong> Luz natural suave das 16h, reflexos sutis no vidro. Paleta de cores neutra e profissional (cinzas, brancos, toques de azul corporativo). Atmosfera inspiradora e dinâmica.<br/>
+                              <strong className="text-purple-900">REFINAMENTOS:</strong> Duração: 8 segundos. Som ambiente: rumor baixo de escritório (conversas distantes), passos no piso de madeira, som sutil de teclados. Transição suave no início e fim.
+                            </p>
+                          </div>
+                          <div className="md:w-48 flex-shrink-0">
+                            <p className="text-xs font-semibold text-purple-900 mb-2">🎬 Resultado:</p>
+                            <video
+                              controls
+                              className="w-full rounded-lg shadow-md"
+                            >
+                              <source src="/Sora 2 Result.mp4" type="video/mp4" />
+                              Seu navegador não suporta vídeos HTML5.
+                            </video>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
