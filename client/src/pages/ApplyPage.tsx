@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award, Lightbulb, Image, Video, FileText, Zap, ChevronRight } from "lucide-react";
 
 const tiers = [
   {
@@ -172,8 +172,500 @@ export default function ApplyPage() {
           </div>
         </section>
 
+        {/* Educational Resources Section */}
+        <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                  <Lightbulb className="w-4 h-4 mr-2" />
+                  Recursos Educacionais
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                  Guia de Prompt Engineering para Design
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Aprenda a estrutura perfeita para criar prompts eficazes e dominar as ferramentas de IA de 2025
+                </p>
+              </motion.div>
+
+              {/* Anatomia do Prompt Perfeito */}
+              <motion.div
+                className="bg-white rounded-2xl border-2 border-gray-200 shadow-lg p-8 mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <Zap className="w-7 h-7 text-primary" />
+                  A Anatomia do Prompt Perfeito
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Todo prompt eficaz segue uma estrutura hierárquica de 5 componentes que determina a qualidade do resultado:
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-4">
+                    <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm mb-3">1</div>
+                    <h4 className="font-bold text-blue-900 mb-2">CONTEXTO</h4>
+                    <p className="text-sm text-blue-700">Cenário e objetivo do projeto</p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-xl p-4">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-sm mb-3">2</div>
+                    <h4 className="font-bold text-green-900 mb-2">TAREFA</h4>
+                    <p className="text-sm text-green-700">Ação específica desejada</p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-200 rounded-xl p-4">
+                    <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-sm mb-3">3</div>
+                    <h4 className="font-bold text-orange-900 mb-2">ESPECIFICAÇÕES</h4>
+                    <p className="text-sm text-orange-700">Detalhes técnicos precisos</p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 rounded-xl p-4">
+                    <div className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold text-sm mb-3">4</div>
+                    <h4 className="font-bold text-purple-900 mb-2">ESTILO</h4>
+                    <p className="text-sm text-purple-700">Direção visual e atmosfera</p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 border-2 border-cyan-200 rounded-xl p-4">
+                    <div className="w-8 h-8 rounded-full bg-cyan-500 text-white flex items-center justify-center font-bold text-sm mb-3">5</div>
+                    <h4 className="font-bold text-cyan-900 mb-2">REFINAMENTOS</h4>
+                    <p className="text-sm text-cyan-700">Ajustes e restrições finais</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Workflows por Tipo de Conteúdo */}
+              <div className="space-y-8 mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 text-center">Workflows e Exemplos Práticos</h3>
+
+                {/* Imagens */}
+                <motion.div
+                  className="bg-white border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                      <Image className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Workflow para Imagens</h4>
+                      <p className="text-sm text-gray-600">DALL-E 3 → GPT Image 1 → Nano Banana</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs">1</span>
+                        GPT Image 1 (Realista)
+                      </h5>
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-blue-900">CONTEXTO:</strong> Campanha de marca para empresa de tecnologia sustentável.<br/>
+                          <strong className="text-blue-900">TAREFA:</strong> Crie uma fotografia profissional corporativa em estúdio.<br/>
+                          <strong className="text-blue-900">ESPECIFICAÇÕES:</strong> Executivo masculino de 40 anos, terno azul marinho bem cortado, camisa branca, gravata discreta. Expressão confiante mas acessível, braços cruzados levemente.<br/>
+                          <strong className="text-blue-900">ESTILO:</strong> Background gradient cinza neutro. Iluminação suave tipo softbox, sem sombras duras. Shot 85mm, f/2.8, foco nítido.<br/>
+                          <strong className="text-blue-900">REFINAMENTOS:</strong> Estilo clean e moderno, cores corporativas, alta resolução para impressão.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs">2</span>
+                        Nano Banana (Edição Inteligente)
+                      </h5>
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-blue-900">CONTEXTO:</strong> Personalização para redes sociais da empresa.<br/>
+                          <strong className="text-blue-900">TAREFA:</strong> Transforme esta pessoa em uma figura de ação colecionável estilo Funko Pop.<br/>
+                          <strong className="text-blue-900">ESPECIFICAÇÕES:</strong> Mantenha exatamente as mesmas características faciais e expressão. Adicione proporções caricatas típicas: cabeça grande (60% do corpo), corpo pequeno.<br/>
+                          <strong className="text-blue-900">ESTILO:</strong> Coloque em uma caixa de colecionador com janela transparente e fundo colorido vibrante (azul tecnológico #0066FF). Estilo 3D render realista com iluminação suave.<br/>
+                          <strong className="text-blue-900">REFINAMENTOS:</strong> Preserve o terno e gravata no estilo Funko, adicione pequenos detalhes de marca na caixa.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-blue-100 to-cyan-100 border border-blue-300 rounded-lg p-4">
+                      <p className="text-sm text-blue-900">
+                        <strong>💡 Dica:</strong> Use GPT Image 1 para imagens realistas e conservadoras. Evite elementos fantasiosos e use termos técnicos de fotografia para melhores resultados.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Vídeos */}
+                <motion.div
+                  className="bg-white border-2 border-purple-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                      <Video className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Workflow para Vídeos</h4>
+                      <p className="text-sm text-gray-600">Kling AI → SORA 2 → VEO 3</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">1</span>
+                        Kling AI (Teste Rápido - 5-10s)
+                      </h5>
+                      <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-purple-900">CONTEXTO:</strong> Vídeo promocional para aplicativo de design.<br/>
+                          <strong className="text-purple-900">TAREFA:</strong> Mostre jovem designer sorrindo trabalhando em tablet digital, desenhando logo colorido.<br/>
+                          <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Mesa organizada com plantas suculentas e xícara de café. Movimento: câmera fixa, designer gesticulando naturalmente com a caneta stylus.<br/>
+                          <strong className="text-purple-900">ESTILO:</strong> Luz natural suave entrando pela janela. Cores vibrantes mas harmoniosas (paleta pastel). Ambiente moderno e inspirador.<br/>
+                          <strong className="text-purple-900">REFINAMENTOS:</strong> Duração: 5 segundos. Foco no tablet e nas mãos. Máximo 2 elementos principais em movimento.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">2</span>
+                        SORA 2 (Cinematográfico)
+                      </h5>
+                      <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-purple-900">CONTEXTO:</strong> Vídeo institucional para startup tech.<br/>
+                          <strong className="text-purple-900">TAREFA:</strong> Crie um wide shot cinematográfico de uma executiva confiante caminhando por um escritório moderno.<br/>
+                          <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Escritório com vidro e aço, arquitetura contemporânea. Movimento de câmera: smooth tracking shot acompanhando lateralmente a 2 metros de distância. Equipe trabalhando colaborativamente ao fundo, ligeiramente desfocado (bokeh f/2.8).<br/>
+                          <strong className="text-purple-900">ESTILO:</strong> Luz natural suave das 16h, reflexos sutis no vidro. Paleta de cores neutra e profissional (cinzas, brancos, toques de azul corporativo). Atmosfera inspiradora e dinâmica.<br/>
+                          <strong className="text-purple-900">REFINAMENTOS:</strong> Duração: 8 segundos. Som ambiente: rumor baixo de escritório (conversas distantes), passos no piso de madeira, som sutil de teclados. Transição suave no início e fim.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">3</span>
+                        VEO 3 (Controle Total com Áudio)
+                      </h5>
+                      <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-purple-900">CONTEXTO:</strong> Depoimento para case de sucesso B2B.<br/>
+                          <strong className="text-purple-900">TAREFA:</strong> Crie vídeo realista de consultora de marketing explicando estratégia para câmera.<br/>
+                          <strong className="text-purple-900">ESPECIFICAÇÕES:</strong> Ela olha para câmera e diz: "O segredo está na personalização da experiência do cliente. Quando você entende as necessidades reais, a conversão aumenta naturalmente." Gesticula naturalmente com as mãos, expressão confiante e acessível. Escritório moderno com whiteboards estratégicos ao fundo.<br/>
+                          <strong className="text-purple-900">ESTILO:</strong> Dolly shot suave aproximando lentamente durante a fala (de medium shot para medium close-up). Luz natural equilibrada com fill light suave. Profundidade de campo cinematográfica.<br/>
+                          <strong className="text-purple-900">REFINAMENTOS:</strong> Áudio claro e profissional: voz feminina confiante e calorosa, dicção perfeita. Som ambiente baixo: ar condicionado suave, leve eco de sala. Duração total: 10 segundos. Fade out suave no áudio.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-300 rounded-lg p-4">
+                      <p className="text-sm text-purple-900">
+                        <strong>💡 Dicas para Vídeo:</strong> Use Kling AI para protótipos rápidos (máx. 10s, movimentos simples). SORA 2 para qualidade cinematográfica (descreva movimentos de câmera como diretor). VEO 3 quando precisar de diálogos específicos (coloque falas entre aspas e descreva áudio em camadas).
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Textos */}
+                <motion.div
+                  className="bg-white border-2 border-emerald-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">Workflow para Textos</h4>
+                      <p className="text-sm text-gray-600">ChatGPT → Claude</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-emerald-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs">1</span>
+                        ChatGPT (Copy Estratégico)
+                      </h5>
+                      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-emerald-900">CONTEXTO:</strong> Landing page para SaaS B2B de gestão de projetos com IA. Público: CTOs e gerentes de produto de empresas tech com 50-500 funcionários.<br/>
+                          <strong className="text-emerald-900">TAREFA:</strong> Crie um copy persuasivo para o hero section focado no benefício principal: redução de 40% no tempo de planejamento de sprints.<br/>
+                          <strong className="text-emerald-900">ESPECIFICAÇÕES:</strong> Headline (máx. 12 palavras) + subheadline (máx. 25 palavras) + 2 bullet points de benefícios específicos. Use dados quantificados quando possível.<br/>
+                          <strong className="text-emerald-900">ESTILO:</strong> Tom: profissional mas acessível, confiante sem arrogância. Linguagem clara e direta. Evite jargões desnecessários. Foco em resultados mensuráveis, não features.<br/>
+                          <strong className="text-emerald-900">REFINAMENTOS:</strong> Inclua um CTA claro e orientado à ação. Destaque o diferencial da IA sem usar buzzwords genéricos. Formato markdown para facilitar implementação.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-emerald-900 mb-2 flex items-center gap-2">
+                        <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs">2</span>
+                        Claude (Análise e Refinamento)
+                      </h5>
+                      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                        <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                          <strong className="text-emerald-900">CONTEXTO:</strong> Você é um copywriter sênior especializado em SaaS B2B. Analise este copy criado para uma landing page.<br/>
+                          <strong className="text-emerald-900">TAREFA:</strong> Avalie criticamente este copy considerando: (1) Clareza da proposta de valor, (2) Força do CTA, (3) Conexão emocional com o público-alvo, (4) Diferenciação competitiva.<br/>
+                          <strong className="text-emerald-900">ESPECIFICAÇÕES:</strong> Para cada elemento, forneça: nota de 1-10, pontos fortes identificados, fraquezas específicas com exemplos, sugestões concretas de melhoria.<br/>
+                          <strong className="text-emerald-900">ESTILO:</strong> Análise objetiva e construtiva. Use exemplos práticos. Evite críticas genéricas.<br/>
+                          <strong className="text-emerald-900">REFINAMENTOS:</strong> Conclua com uma versão otimizada do copy implementando suas sugestões. Explique brevemente cada mudança feita e o raciocínio por trás dela.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-300 rounded-lg p-4">
+                      <p className="text-sm text-emerald-900">
+                        <strong>💡 Dica:</strong> Use ChatGPT para geração inicial rápida e criativa. Claude é superior para análise profunda, refinamento e quando você precisa de raciocínio estruturado. Combine os dois em ciclos iterativos para resultados otimizados.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Templates Prontos por Contexto */}
+              <motion.div
+                className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-8 mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <BookOpen className="w-7 h-7 text-amber-600" />
+                  Templates Prontos por Contexto
+                </h3>
+
+                <div className="space-y-6">
+                  {/* Social Media */}
+                  <div className="bg-white rounded-xl p-6 border border-amber-200">
+                    <h4 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
+                      <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">Social Media</span>
+                    </h4>
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                      <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                        [FERRAMENTA: GPT Image 1]<br/><br/>
+                        <strong>CONTEXTO:</strong> Post para Instagram de [marca/produto].<br/>
+                        <strong>TAREFA:</strong> Crie fotografia lifestyle autêntica mostrando [produto] sendo usado naturalmente por [público-alvo demográfico específico].<br/>
+                        <strong>ESPECIFICAÇÕES:</strong> [Ambiente específico - ex: "café moderno", "home office aconchegante"]. Momento candido e espontâneo. Composição: regra dos terços, espaço negativo no [posição] para texto overlay.<br/>
+                        <strong>ESTILO:</strong> Luz natural suave. Cores: [paleta da marca com códigos hex]. Atmosfera aspiracional mas acessível.<br/>
+                        <strong>REFINAMENTOS:</strong> Formato quadrado 1:1, alta resolução. Foco no produto mas contexto natural.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Corporate */}
+                  <div className="bg-white rounded-xl p-6 border border-amber-200">
+                    <h4 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
+                      <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">Corporate</span>
+                    </h4>
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                      <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                        [FERRAMENTA: SORA 2]<br/><br/>
+                        <strong>CONTEXTO:</strong> Vídeo corporativo para [empresa] demonstrando [valor da empresa - ex: "inovação", "colaboração"].<br/>
+                        <strong>TAREFA:</strong> Mostre [cena específica com funcionários - ex: "time de designers colaborando em projeto"]. <br/>
+                        <strong>ESPECIFICAÇÕES:</strong> Smooth tracking shot percorrendo o ambiente. Escritório moderno, luz natural. Funcionários diversos interagindo genuinamente. Duração: 6-8 segundos.<br/>
+                        <strong>ESTILO:</strong> Cinematográfico profissional. Paleta neutra e sofisticada. Atmosfera inspiradora e humana.<br/>
+                        <strong>REFINAMENTOS:</strong> Áudio: música instrumental sutil de fundo, sons naturais de escritório baixos. Transições suaves.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* E-commerce */}
+                  <div className="bg-white rounded-xl p-6 border border-amber-200">
+                    <h4 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
+                      <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">E-commerce</span>
+                    </h4>
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                      <p className="text-xs font-mono text-gray-700 leading-relaxed">
+                        [FERRAMENTA: Nano Banana]<br/><br/>
+                        <strong>CONTEXTO:</strong> Foto de produto para loja online.<br/>
+                        <strong>TAREFA:</strong> Coloque este [produto] (preserve exatamente como está) em [contexto de uso ideal - ex: "mesa de jantar elegante", "setup de escritório minimalista"].<br/>
+                        <strong>ESPECIFICAÇÕES:</strong> Ambiente: [descrição detalhada do cenário]. Mantenha proporções e cores originais do produto. Adicione [props relevantes - ex: "laptop, caderno, planta suculenta"].<br/>
+                        <strong>ESTILO:</strong> Iluminação de produto profissional. Atmosfera: [mood específico - ex: "clean e moderno", "aconchegante e acolhedor"].<br/>
+                        <strong>REFINAMENTOS:</strong> Fundo levemente desfocado (f/4) para destacar produto. Sombras naturais e sutis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Troubleshooting */}
+              <motion.div
+                className="bg-white border-2 border-red-200 rounded-2xl p-8 mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <Zap className="w-7 h-7 text-red-600" />
+                  Troubleshooting: Problemas Comuns e Soluções
+                </h3>
+
+                <div className="space-y-6">
+                  {/* Problema 1 */}
+                  <div className="border-l-4 border-red-400 pl-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <span className="text-red-600 font-bold text-lg">❌</span>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-red-900 mb-2">Problema: Texto ilegível em imagens</h4>
+                        <p className="text-sm text-gray-600 mb-3">
+                          Quando o texto gerado aparece distorcido, borrado ou com erros ortográficos.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 font-bold text-lg">✅</span>
+                        <div className="flex-1">
+                          <h5 className="font-bold text-green-900 mb-2">Solução:</h5>
+                          <ul className="text-sm text-gray-700 space-y-2">
+                            <li><strong>• Use aspas duplas:</strong> "TEXTO EXATO AQUI"</li>
+                            <li><strong>• Especifique posição:</strong> "text centered at top", "text in bottom-right corner"</li>
+                            <li><strong>• Limite palavras:</strong> Máximo 3-4 palavras por vez</li>
+                            <li><strong>• Exemplo prático:</strong> 'Add text "SALE 50% OFF" centered at top in bold red letters'</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Problema 2 */}
+                  <div className="border-l-4 border-red-400 pl-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <span className="text-red-600 font-bold text-lg">❌</span>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-red-900 mb-2">Problema: Movimentos não naturais em vídeo</h4>
+                        <p className="text-sm text-gray-600 mb-3">
+                          Personagens ou objetos se movem de forma artificial, robótica ou fisicamente impossível.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 font-bold text-lg">✅</span>
+                        <div className="flex-1">
+                          <h5 className="font-bold text-green-900 mb-2">Solução:</h5>
+                          <ul className="text-sm text-gray-700 space-y-2">
+                            <li><strong>• Descreva física realista:</strong> "following natural physics", "smooth and gradual movement"</li>
+                            <li><strong>• Evite ações complexas:</strong> Uma ação principal por vez, não múltiplos movimentos simultâneos</li>
+                            <li><strong>• Use movimentos sequenciais:</strong> "first she looks left, then slowly turns to camera"</li>
+                            <li><strong>• Exemplo prático:</strong> "Person walking naturally at normal pace, arms swinging gently, following real-world physics"</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Problema 3 */}
+                  <div className="border-l-4 border-red-400 pl-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <span className="text-red-600 font-bold text-lg">❌</span>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-red-900 mb-2">Problema: Inconsistência de estilo entre gerações</h4>
+                        <p className="text-sm text-gray-600 mb-3">
+                          Cada imagem ou vídeo gerado tem estilo completamente diferente, quebrando a identidade visual.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 font-bold text-lg">✅</span>
+                        <div className="flex-1">
+                          <h5 className="font-bold text-green-900 mb-2">Solução:</h5>
+                          <ul className="text-sm text-gray-700 space-y-2">
+                            <li><strong>• Use templates padronizados:</strong> Crie um prompt base e apenas mude o conteúdo específico</li>
+                            <li><strong>• Especifique elementos constantes:</strong> "maintain exact same [lighting/color palette/style]"</li>
+                            <li><strong>• Referência imagens anteriores:</strong> "using the same visual style as previous image"</li>
+                            <li><strong>• Inclua código de cores:</strong> Use hex codes específicos (#FF5733) em vez de nomes de cores</li>
+                            <li><strong>• Exemplo de template:</strong> Salve "Product photography: white background, soft lighting from top-left at 45°, f/8, colors: #FFFFFF bg, #0066FF accent" e reutilize</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Principais Takeaways */}
+              <motion.div
+                className="bg-gradient-to-br from-primary/10 to-blue-50 border-2 border-primary/30 rounded-2xl p-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Takeaways</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700">
+                      <strong>Cada ferramenta tem seu contexto ideal</strong> - não use SORA 2 para vídeos simples nem Kling AI para cinema
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700">
+                      <strong>Estrutura é mais importante que criatividade</strong> - siga as 5 etapas da anatomia do prompt
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700">
+                      <strong>Especificidade técnica gera resultados profissionais</strong> - inclua dimensões, cores hex, configurações de câmera
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700">
+                      <strong>Combine ferramentas para workflows poderosos</strong> - use Nano Banana para editar outputs do GPT Image 1
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700">
+                      <strong>Templates mantêm consistência</strong> - padronize prompts para projetos da mesma marca
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700">
+                      <strong>Troubleshooting economiza tempo</strong> - conheça as soluções para problemas comuns antes que aconteçam
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-6 border-t border-primary/20">
+                  <p className="text-sm text-gray-600 italic">
+                    💡 O prompt engineering é a nova linguagem do design. Designers que dominam essa habilidade criarão trabalhos mais precisos, eficientes e impactantes, mantendo sua criatividade humana como diferencial insubstituível.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Journey Section */}
-        <section id="modelos" className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <section id="modelos" className="py-16 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
               <motion.div
