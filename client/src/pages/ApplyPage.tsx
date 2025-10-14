@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award, Lightbulb, Image, Video, FileText, Zap, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award, Lightbulb, Image, Video, FileText, Zap, ChevronRight, ChevronDown } from "lucide-react";
 
 const tiers = [
   {
@@ -71,6 +72,12 @@ const realApplications = [
 ];
 
 export default function ApplyPage() {
+  const [openWorkflow, setOpenWorkflow] = useState<string | null>(null);
+
+  const toggleWorkflow = (workflow: string) => {
+    setOpenWorkflow(openWorkflow === workflow ? null : workflow);
+  };
+
   return (
     <main className="flex-grow bg-gradient-to-b from-white via-gray-50 to-white">
         {/* Hero Section */}
@@ -245,28 +252,39 @@ export default function ApplyPage() {
               </motion.div>
 
               {/* Workflows por Tipo de Conteúdo */}
-              <div className="space-y-8 mb-12">
-                <h3 className="text-2xl font-bold text-gray-900 text-center">Workflows e Exemplos Práticos</h3>
+              <div className="space-y-4 mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Workflows e Exemplos Práticos</h3>
 
                 {/* Imagens */}
                 <motion.div
-                  className="bg-white border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  className="bg-white border-2 border-blue-200 rounded-xl overflow-hidden transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                      <Image className="w-6 h-6 text-white" />
+                  <button
+                    onClick={() => toggleWorkflow('images')}
+                    className="w-full flex items-center justify-between p-6 hover:bg-blue-50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                        <Image className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="text-xl font-bold text-gray-900">Workflow para Imagens</h4>
+                        <p className="text-sm text-gray-600">DALL-E 3 → GPT Image 1 → Nano Banana</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Workflow para Imagens</h4>
-                      <p className="text-sm text-gray-600">DALL-E 3 → GPT Image 1 → Nano Banana</p>
-                    </div>
-                  </div>
+                    <ChevronDown
+                      className={`w-6 h-6 text-blue-600 transition-transform duration-300 ${
+                        openWorkflow === 'images' ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
 
-                  <div className="space-y-4">
+                  {openWorkflow === 'images' && (
+                    <div className="px-6 pb-6 space-y-4 border-t border-blue-200">
                     <div>
                       <h5 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
                         <span className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs">1</span>
@@ -304,28 +322,40 @@ export default function ApplyPage() {
                         <strong>💡 Dica:</strong> Use GPT Image 1 para imagens realistas e conservadoras. Evite elementos fantasiosos e use termos técnicos de fotografia para melhores resultados.
                       </p>
                     </div>
-                  </div>
+                    </div>
+                  )}
                 </motion.div>
 
                 {/* Vídeos */}
                 <motion.div
-                  className="bg-white border-2 border-purple-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  className="bg-white border-2 border-purple-200 rounded-xl overflow-hidden transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                      <Video className="w-6 h-6 text-white" />
+                  <button
+                    onClick={() => toggleWorkflow('videos')}
+                    className="w-full flex items-center justify-between p-6 hover:bg-purple-50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                        <Video className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="text-xl font-bold text-gray-900">Workflow para Vídeos</h4>
+                        <p className="text-sm text-gray-600">Kling AI → SORA 2 → VEO 3</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Workflow para Vídeos</h4>
-                      <p className="text-sm text-gray-600">Kling AI → SORA 2 → VEO 3</p>
-                    </div>
-                  </div>
+                    <ChevronDown
+                      className={`w-6 h-6 text-purple-600 transition-transform duration-300 ${
+                        openWorkflow === 'videos' ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
 
-                  <div className="space-y-4">
+                  {openWorkflow === 'videos' && (
+                    <div className="px-6 pb-6 space-y-4 border-t border-purple-200">
                     <div>
                       <h5 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
                         <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs">1</span>
@@ -379,28 +409,40 @@ export default function ApplyPage() {
                         <strong>💡 Dicas para Vídeo:</strong> Use Kling AI para protótipos rápidos (máx. 10s, movimentos simples). SORA 2 para qualidade cinematográfica (descreva movimentos de câmera como diretor). VEO 3 quando precisar de diálogos específicos (coloque falas entre aspas e descreva áudio em camadas).
                       </p>
                     </div>
-                  </div>
+                    </div>
+                  )}
                 </motion.div>
 
                 {/* Textos */}
                 <motion.div
-                  className="bg-white border-2 border-emerald-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                  className="bg-white border-2 border-emerald-200 rounded-xl overflow-hidden transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                      <FileText className="w-6 h-6 text-white" />
+                  <button
+                    onClick={() => toggleWorkflow('text')}
+                    className="w-full flex items-center justify-between p-6 hover:bg-emerald-50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+                        <FileText className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="text-xl font-bold text-gray-900">Workflow para Textos</h4>
+                        <p className="text-sm text-gray-600">ChatGPT → Claude</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">Workflow para Textos</h4>
-                      <p className="text-sm text-gray-600">ChatGPT → Claude</p>
-                    </div>
-                  </div>
+                    <ChevronDown
+                      className={`w-6 h-6 text-emerald-600 transition-transform duration-300 ${
+                        openWorkflow === 'text' ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
 
-                  <div className="space-y-4">
+                  {openWorkflow === 'text' && (
+                    <div className="px-6 pb-6 space-y-4 border-t border-emerald-200">
                     <div>
                       <h5 className="font-semibold text-emerald-900 mb-2 flex items-center gap-2">
                         <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs">1</span>
@@ -438,7 +480,8 @@ export default function ApplyPage() {
                         <strong>💡 Dica:</strong> Use ChatGPT para geração inicial rápida e criativa. Claude é superior para análise profunda, refinamento e quando você precisa de raciocínio estruturado. Combine os dois em ciclos iterativos para resultados otimizados.
                       </p>
                     </div>
-                  </div>
+                    </div>
+                  )}
                 </motion.div>
               </div>
 
