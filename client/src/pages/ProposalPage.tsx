@@ -168,7 +168,7 @@ Atenciosamente,
       </section>
 
       {/* Calculator Section */}
-      <section className="py-16 bg-white">
+      <section id="calculadora" className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -297,7 +297,7 @@ Atenciosamente,
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section id="beneficios" className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -369,7 +369,7 @@ Atenciosamente,
       </section>
 
       {/* All Tiers Comparison */}
-      <section className="py-16 bg-white">
+      <section id="planos" className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -442,7 +442,7 @@ Atenciosamente,
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section id="faq" className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <motion.div
