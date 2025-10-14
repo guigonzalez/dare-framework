@@ -105,14 +105,25 @@ export default function Header() {
           
           {/* CTA e controles */}
           <div className="flex items-center space-x-3">
-            <a 
-              href="https://github.com/guigonzalez/dare-framework" 
-              target="_blank" 
+            <a
+              href="/aplicar"
+              className={`hidden md:inline-flex items-center px-4 py-2 font-medium rounded-lg transition-all duration-300 ${
+                scrolled
+                  ? 'bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md'
+                  : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
+              }`}
+            >
+              Aplicar o DARE
+            </a>
+
+            <a
+              href="https://github.com/guigonzalez/dare-framework"
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
               className={`p-2 rounded-full transition-colors ${
-                scrolled 
-                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' 
+                scrolled
+                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   : 'text-white hover:bg-white/10'
               }`}
             >

@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
+import ApplyPage from "@/pages/ApplyPage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
+      <Route path="/aplicar" component={ApplyPage} />
       <Route component={NotFound} />
     </Switch>
   );
