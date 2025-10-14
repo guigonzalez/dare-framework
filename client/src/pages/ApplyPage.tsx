@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award } from "lucide-react";
 
 const tiers = [
   {
     name: "DARE Maturity Model",
-    subtitle: "Ferramenta de Avaliação Estratégica",
+    subtitle: "Descubra seu nível ideal",
     status: "Em breve",
-    description: "Teste interativo de maturidade que avalia 5 dimensões críticas para determinar o nível ideal de adoção de IA na sua organização.",
+    isProfessional: false,
+    description: "Avaliação científica que determina exatamente qual nível DARE sua organização está pronta para adotar.",
     features: [
-      "25 perguntas estratégicas com sistema de pontuação científico",
-      "Avaliação em 5 dimensões: Técnica, Organizacional, Equipe, Negócio e Marca",
-      "Algoritmo ponderado que mapeia direto para níveis DARE (0-5)",
-      "Resultados com gráfico radar e recomendações específicas",
-      "Relatório personalizado para download"
+      "Teste de 15 minutos com pontuação automática",
+      "Recomendação precisa baseada em 5 dimensões",
+      "Relatório visual com seu nível ideal"
     ],
     cta: "Fazer o Teste",
     ctaLink: "#maturity",
@@ -21,15 +20,14 @@ const tiers = [
   },
   {
     name: "Licenciamento Corporativo",
-    subtitle: "DARE como processo interno",
+    subtitle: "DARE como padrão do time",
     status: "Disponível",
-    description: "Implemente o DARE como metodologia oficial de IA responsável em squads, consultorias e organizações.",
+    isProfessional: true,
+    description: "Transforme o DARE na linguagem comum de IA responsável da sua organização.",
     features: [
-      "Licença anual de uso do framework",
-      "Workshops e imersões corporativas",
-      "Certificação DARE Certified Practitioner",
-      "Suporte estratégico contínuo",
-      "Customização para seu contexto"
+      "Licença anual com workshops inclusos",
+      "Certificação oficial para o time",
+      "Suporte direto do criador"
     ],
     cta: "Solicitar Proposta",
     ctaLink: "#licensing",
@@ -38,15 +36,14 @@ const tiers = [
   },
   {
     name: "Consultoria Estratégica",
-    subtitle: "Aplicação em casos reais",
+    subtitle: "Implementação guiada",
     status: "Disponível",
-    description: "Imersões práticas aplicando o método DARE em desafios reais de design e IA da sua organização.",
+    isProfessional: true,
+    description: "Aplique o DARE em projetos reais com mentoria especializada do início ao fim.",
     features: [
-      "Workshop hands-on com casos reais",
-      "Diagnóstico de maturidade em IA",
+      "Workshop prático com seus desafios",
       "Roadmap personalizado de adoção",
-      "Mentoria de implementação",
-      "Acesso prioritário a atualizações"
+      "Acompanhamento na implementação"
     ],
     cta: "Agendar Conversa",
     ctaLink: "#consulting",
@@ -57,19 +54,19 @@ const tiers = [
 
 const realApplications = [
   {
-    company: "Startups de Design",
-    use: "Estruturam decisões de IA em MVPs com transparência para investidores",
+    company: "Startups que deixam a IA explicar suas decisões",
+    use: "não apenas executá-las",
     result: "60% mais clareza em governança de IA desde o início"
   },
   {
-    company: "Squads de Produto",
-    use: "Aplicam o DARE para avaliar quando automatizar vs. co-criar com IA",
+    company: "Squads que sabem quando automatizar",
+    use: "e quando pensar junto com a IA",
     result: "Redução de 40% em retrabalho por escolhas mal fundamentadas"
   },
   {
-    company: "Consultorias de Inovação",
-    use: "Usam o framework como linguagem comum em projetos de transformação digital",
-    result: "Alinhamento de expectativas cliente-agência em 70% menos tempo"
+    company: "Consultorias que falam a mesma língua da IA",
+    use: "e do cliente",
+    result: "Alinhamento de expectativas em 70% menos tempo"
   }
 ];
 
@@ -93,14 +90,24 @@ export default function ApplyPage() {
               >
                 <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Aplique o DARE na sua Organização
+                  Framework Open Source
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  Transforme IA em Vantagem Competitiva
+                  A IA não substitui o designer — ela amplifica quem pensa com método
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  O DARE não é um curso — é um framework aplicado que gera valor quando usado. De diagnósticos guiados a licenciamento corporativo, escolha como integrar a metodologia no seu contexto.
+                <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+                  O DARE Framework ajuda times a estruturar decisões de IA com confiabilidade, propósito e retorno.
                 </p>
+                <p className="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
+                  Usado por times de design, produto e inovação para transformar IA em raciocínio estratégico — não em hype.
+                </p>
+                <a
+                  href="#modelos"
+                  className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+                >
+                  Descubra como aplicar o DARE
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </motion.div>
             </div>
           </div>
@@ -118,10 +125,10 @@ export default function ApplyPage() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                  Aplicações Reais do DARE
+                  Quem usa o DARE
                 </h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  O DARE vem sendo usado por times de produto, inovação e dados para estruturar decisões confiáveis em IA. De startups a corporações, o framework ajuda equipes a desenhar soluções onde a IA é parte do raciocínio, não apenas da automação.
+                  Times que transformam IA em raciocínio estratégico
                 </p>
               </motion.div>
 
@@ -165,74 +172,171 @@ export default function ApplyPage() {
           </div>
         </section>
 
-        {/* Tiers Section */}
+        {/* Journey Section */}
         <section id="modelos" className="py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <motion.div
-                className="text-center mb-12"
+                className="text-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                  Três Formas de Integrar o DARE
+                  Como o DARE se expande na sua organização
                 </h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Escolha o modelo que se adapta ao seu contexto — de ferramenta digital a metodologia corporativa
+                  Uma jornada progressiva: de entender sua maturidade até transformar o DARE em padrão do time
                 </p>
               </motion.div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {tiers.map((tier, index) => (
+              {/* Journey Flow */}
+              <div className="relative">
+                {/* Connection Line */}
+                <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-emerald-200 z-0"></div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 relative z-10">
+                  {/* Step 1 - Maturity Model */}
                   <motion.div
-                    key={index}
-                    className="group relative"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="relative"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.6 }}
                   >
-                    <div className={`absolute -inset-0.5 bg-gradient-to-r ${tier.gradient} rounded-2xl opacity-20 group-hover:opacity-40 transition duration-300 blur-sm`}></div>
-                    <div className={`relative bg-gradient-to-br ${tier.bgGradient} border border-gray-200 rounded-xl p-8 h-full flex flex-col shadow-sm hover:shadow-lg transition-all duration-300`}>
-                      <div className="mb-6">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-2xl font-bold text-gray-900">{tier.name}</h3>
-                          <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                            tier.status === "Em breve"
-                              ? "bg-blue-100 text-blue-700"
-                              : "bg-emerald-100 text-emerald-700"
-                          }`}>
-                            {tier.status}
-                          </span>
+                    <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
+                      {/* Step number */}
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            1
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900">Descubra</h3>
+                            <p className="text-sm text-blue-600 font-medium">15 minutos</p>
+                          </div>
                         </div>
-                        <p className="text-sm font-medium text-gray-600 mb-3">{tier.subtitle}</p>
-                        <p className="text-gray-700">{tier.description}</p>
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
+                          Em breve
+                        </span>
                       </div>
 
-                      <div className="flex-grow mb-6">
-                        <ul className="space-y-3">
-                          {tier.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 bg-gradient-to-r ${tier.gradient} bg-clip-text text-transparent`} />
-                              <span className="text-sm text-gray-700">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">DARE Maturity Model</h4>
+                      <p className="text-gray-600 text-sm mb-6">
+                        Teste científico que determina qual nível DARE sua organização está pronta para adotar
+                      </p>
 
                       <a
-                        href={tier.ctaLink}
-                        className={`w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r ${tier.gradient} text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group/cta`}
+                        href="/aplicar/teste-maturidade"
+                        className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
                       >
-                        {tier.cta}
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover/cta:translate-x-1 transition-transform" />
+                        Fazer o teste gratuito
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
                   </motion.div>
-                ))}
+
+                  {/* Step 2 - Licensing */}
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                  >
+                    <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 h-full relative overflow-hidden">
+                      {/* Professional badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
+                          <Award className="w-3 h-3 mr-1" />
+                          Pro
+                        </span>
+                      </div>
+
+                      {/* Step number */}
+                      <div className="flex items-start gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                          2
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900">Adote</h3>
+                          <p className="text-sm text-purple-600 font-medium">Licença anual</p>
+                        </div>
+                      </div>
+
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Licenciamento Corporativo</h4>
+                      <p className="text-gray-600 text-sm mb-6">
+                        Transforme o DARE na linguagem comum de IA responsável de toda sua organização
+                      </p>
+
+                      <a
+                        href="#licensing"
+                        className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
+                      >
+                        Solicitar proposta
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </motion.div>
+
+                  {/* Step 3 - Consulting */}
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 h-full relative overflow-hidden">
+                      {/* Professional badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
+                          <Award className="w-3 h-3 mr-1" />
+                          Pro
+                        </span>
+                      </div>
+
+                      {/* Step number */}
+                      <div className="flex items-start gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                          3
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900">Implemente</h3>
+                          <p className="text-sm text-emerald-600 font-medium">Hands-on</p>
+                        </div>
+                      </div>
+
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Consultoria Estratégica</h4>
+                      <p className="text-gray-600 text-sm mb-6">
+                        Aplique o DARE em projetos reais com mentoria especializada do início ao fim
+                      </p>
+
+                      <a
+                        href="#consulting"
+                        className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
+                      >
+                        Agendar conversa
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
+
+              {/* Bottom message */}
+              <motion.div
+                className="mt-12 text-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <p className="text-gray-500 text-sm">
+                  💡 Comece pelo teste gratuito e evolua no seu ritmo
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -257,11 +361,11 @@ export default function ApplyPage() {
                     Faça o teste de maturidade e descubra qual nível DARE é ideal para sua organização. Baseado em 5 dimensões críticas.
                   </p>
                   <a
-                    href="mailto:contato@dareframework.com.br?subject=Quero fazer o DARE Maturity Test"
+                    href="/aplicar/teste-maturidade"
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
                   >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Fazer o Teste
+                    <ArrowRight className="w-5 h-5 mr-2" />
+                    Fazer o Teste Agora
                     <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </motion.div>
@@ -318,6 +422,60 @@ export default function ApplyPage() {
           </div>
         </section>
 
+        {/* DARE Open Section */}
+        <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  DARE Open
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                  O DARE é um framework aberto
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                  Qualquer pessoa pode estudar, aplicar e contribuir. Empresas e escolas podem licenciar o uso comercial do método.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a
+                    href="/#manifesto"
+                    className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group"
+                  >
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Leia o Manifesto
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <a
+                    href="https://github.com/guigonzalez/dare-framework"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 group"
+                  >
+                    <Github className="w-5 h-5 mr-2" />
+                    Contribua no GitHub
+                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <a
+                    href="/#contribute"
+                    className="inline-flex items-center px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-all duration-300 group"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Junte-se à comunidade
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-16 bg-gradient-to-r from-primary via-purple-600 to-blue-600">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,10 +487,10 @@ export default function ApplyPage() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Pronto para Integrar o DARE?
+                  Seu time ainda está automatizando o que não entende?
                 </h2>
                 <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                  Entre em contato e descubra como o framework pode transformar a forma como sua organização trabalha com IA
+                  Vamos conversar sobre como o DARE pode trazer clareza antes da automação
                 </p>
                 <a
                   href="mailto:contato@dareframework.com.br?subject=Quero aplicar o DARE"

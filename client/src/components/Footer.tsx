@@ -29,7 +29,7 @@ export default function Footer() {
               </div>
               <div className="ml-3">
                 <h2 className="text-xl font-bold">DARE Framework</h2>
-                <p className="text-xs text-gray-400">Design AI Reliable Engagement</p>
+                <p className="text-xs text-gray-400">Criado para transformar IA em decisões humanas mais confiáveis</p>
               </div>
             </div>
             <div className="mt-4 flex space-x-4">
@@ -56,9 +56,9 @@ export default function Footer() {
                 Licença CC BY-SA 4.0
               </p>
             </div>
-            <a href="#diretrizes" className="inline-flex items-center text-primary hover:text-primary/80">
+            <a href="/#contribute" className="inline-flex items-center text-primary hover:text-primary/80">
               <Heart className="h-4 w-4 mr-1" />
-              <span>Como contribuir</span>
+              <span>Participe do DARE Open</span>
             </a>
           </div>
         </div>
