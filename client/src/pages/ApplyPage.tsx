@@ -73,9 +73,19 @@ const realApplications = [
 
 export default function ApplyPage() {
   const [openWorkflow, setOpenWorkflow] = useState<string | null>(null);
+  const [openTemplate, setOpenTemplate] = useState<string | null>(null);
+  const [openTroubleshoot, setOpenTroubleshoot] = useState<string | null>(null);
 
   const toggleWorkflow = (workflow: string) => {
     setOpenWorkflow(openWorkflow === workflow ? null : workflow);
+  };
+
+  const toggleTemplate = (template: string) => {
+    setOpenTemplate(openTemplate === template ? null : template);
+  };
+
+  const toggleTroubleshoot = (issue: string) => {
+    setOpenTroubleshoot(openTroubleshoot === issue ? null : issue);
   };
 
   return (
@@ -487,24 +497,36 @@ export default function ApplyPage() {
 
               {/* Templates Prontos por Contexto */}
               <motion.div
-                className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-8 mb-12"
+                className="mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-3">
                   <BookOpen className="w-7 h-7 text-amber-600" />
                   Templates Prontos por Contexto
                 </h3>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {/* Social Media */}
-                  <div className="bg-white rounded-xl p-6 border border-amber-200">
-                    <h4 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
-                      <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">Social Media</span>
-                    </h4>
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <div className="bg-white rounded-xl border-2 border-amber-200 overflow-hidden">
+                    <button
+                      onClick={() => toggleTemplate('social')}
+                      className="w-full flex items-center justify-between p-6 hover:bg-amber-50 transition-colors"
+                    >
+                      <h4 className="font-bold text-amber-900 flex items-center gap-2">
+                        <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">Social Media</span>
+                      </h4>
+                      <ChevronDown
+                        className={`w-6 h-6 text-amber-600 transition-transform duration-300 ${
+                          openTemplate === 'social' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openTemplate === 'social' && (
+                      <div className="px-6 pb-6 border-t border-amber-200">
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
                       <p className="text-xs font-mono text-gray-700 leading-relaxed">
                         [FERRAMENTA: GPT Image 1]<br/><br/>
                         <strong>CONTEXTO:</strong> Post para Instagram de [marca/produto].<br/>
@@ -513,15 +535,29 @@ export default function ApplyPage() {
                         <strong>ESTILO:</strong> Luz natural suave. Cores: [paleta da marca com códigos hex]. Atmosfera aspiracional mas acessível.<br/>
                         <strong>REFINAMENTOS:</strong> Formato quadrado 1:1, alta resolução. Foco no produto mas contexto natural.
                       </p>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Corporate */}
-                  <div className="bg-white rounded-xl p-6 border border-amber-200">
-                    <h4 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
-                      <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">Corporate</span>
-                    </h4>
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <div className="bg-white rounded-xl border-2 border-amber-200 overflow-hidden">
+                    <button
+                      onClick={() => toggleTemplate('corporate')}
+                      className="w-full flex items-center justify-between p-6 hover:bg-amber-50 transition-colors"
+                    >
+                      <h4 className="font-bold text-amber-900 flex items-center gap-2">
+                        <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">Corporate</span>
+                      </h4>
+                      <ChevronDown
+                        className={`w-6 h-6 text-amber-600 transition-transform duration-300 ${
+                          openTemplate === 'corporate' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openTemplate === 'corporate' && (
+                      <div className="px-6 pb-6 border-t border-amber-200">
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
                       <p className="text-xs font-mono text-gray-700 leading-relaxed">
                         [FERRAMENTA: SORA 2]<br/><br/>
                         <strong>CONTEXTO:</strong> Vídeo corporativo para [empresa] demonstrando [valor da empresa - ex: "inovação", "colaboração"].<br/>
@@ -530,15 +566,29 @@ export default function ApplyPage() {
                         <strong>ESTILO:</strong> Cinematográfico profissional. Paleta neutra e sofisticada. Atmosfera inspiradora e humana.<br/>
                         <strong>REFINAMENTOS:</strong> Áudio: música instrumental sutil de fundo, sons naturais de escritório baixos. Transições suaves.
                       </p>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* E-commerce */}
-                  <div className="bg-white rounded-xl p-6 border border-amber-200">
-                    <h4 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
-                      <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">E-commerce</span>
-                    </h4>
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <div className="bg-white rounded-xl border-2 border-amber-200 overflow-hidden">
+                    <button
+                      onClick={() => toggleTemplate('ecommerce')}
+                      className="w-full flex items-center justify-between p-6 hover:bg-amber-50 transition-colors"
+                    >
+                      <h4 className="font-bold text-amber-900 flex items-center gap-2">
+                        <span className="px-3 py-1 bg-amber-100 rounded-full text-sm">E-commerce</span>
+                      </h4>
+                      <ChevronDown
+                        className={`w-6 h-6 text-amber-600 transition-transform duration-300 ${
+                          openTemplate === 'ecommerce' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openTemplate === 'ecommerce' && (
+                      <div className="px-6 pb-6 border-t border-amber-200">
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
                       <p className="text-xs font-mono text-gray-700 leading-relaxed">
                         [FERRAMENTA: Nano Banana]<br/><br/>
                         <strong>CONTEXTO:</strong> Foto de produto para loja online.<br/>
@@ -547,37 +597,49 @@ export default function ApplyPage() {
                         <strong>ESTILO:</strong> Iluminação de produto profissional. Atmosfera: [mood específico - ex: "clean e moderno", "aconchegante e acolhedor"].<br/>
                         <strong>REFINAMENTOS:</strong> Fundo levemente desfocado (f/4) para destacar produto. Sombras naturais e sutis.
                       </p>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
 
               {/* Troubleshooting */}
               <motion.div
-                className="bg-white border-2 border-red-200 rounded-2xl p-8 mb-12"
+                className="mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-3">
                   <Zap className="w-7 h-7 text-red-600" />
                   Troubleshooting: Problemas Comuns e Soluções
                 </h3>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {/* Problema 1 */}
-                  <div className="border-l-4 border-red-400 pl-6">
-                    <div className="flex items-start gap-3 mb-3">
-                      <span className="text-red-600 font-bold text-lg">❌</span>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-red-900 mb-2">Problema: Texto ilegível em imagens</h4>
-                        <p className="text-sm text-gray-600 mb-3">
+                  <div className="bg-white rounded-xl border-2 border-red-200 overflow-hidden">
+                    <button
+                      onClick={() => toggleTroubleshoot('text')}
+                      className="w-full flex items-start gap-3 p-6 hover:bg-red-50 transition-colors"
+                    >
+                      <span className="text-red-600 font-bold text-lg flex-shrink-0">❌</span>
+                      <div className="flex-1 text-left">
+                        <h4 className="font-bold text-red-900 mb-1">Problema: Texto ilegível em imagens</h4>
+                        <p className="text-sm text-gray-600">
                           Quando o texto gerado aparece distorcido, borrado ou com erros ortográficos.
                         </p>
                       </div>
-                    </div>
-                    <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4">
+                      <ChevronDown
+                        className={`w-6 h-6 text-red-600 flex-shrink-0 transition-transform duration-300 ${
+                          openTroubleshoot === 'text' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openTroubleshoot === 'text' && (
+                      <div className="px-6 pb-6 border-t border-red-200">
+                        <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4 mt-4">
                       <div className="flex items-start gap-3">
                         <span className="text-green-600 font-bold text-lg">✅</span>
                         <div className="flex-1">
@@ -590,21 +652,33 @@ export default function ApplyPage() {
                           </ul>
                         </div>
                       </div>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Problema 2 */}
-                  <div className="border-l-4 border-red-400 pl-6">
-                    <div className="flex items-start gap-3 mb-3">
-                      <span className="text-red-600 font-bold text-lg">❌</span>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-red-900 mb-2">Problema: Movimentos não naturais em vídeo</h4>
-                        <p className="text-sm text-gray-600 mb-3">
+                  <div className="bg-white rounded-xl border-2 border-red-200 overflow-hidden">
+                    <button
+                      onClick={() => toggleTroubleshoot('movement')}
+                      className="w-full flex items-start gap-3 p-6 hover:bg-red-50 transition-colors"
+                    >
+                      <span className="text-red-600 font-bold text-lg flex-shrink-0">❌</span>
+                      <div className="flex-1 text-left">
+                        <h4 className="font-bold text-red-900 mb-1">Problema: Movimentos não naturais em vídeo</h4>
+                        <p className="text-sm text-gray-600">
                           Personagens ou objetos se movem de forma artificial, robótica ou fisicamente impossível.
                         </p>
                       </div>
-                    </div>
-                    <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4">
+                      <ChevronDown
+                        className={`w-6 h-6 text-red-600 flex-shrink-0 transition-transform duration-300 ${
+                          openTroubleshoot === 'movement' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openTroubleshoot === 'movement' && (
+                      <div className="px-6 pb-6 border-t border-red-200">
+                        <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4 mt-4">
                       <div className="flex items-start gap-3">
                         <span className="text-green-600 font-bold text-lg">✅</span>
                         <div className="flex-1">
@@ -617,21 +691,33 @@ export default function ApplyPage() {
                           </ul>
                         </div>
                       </div>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Problema 3 */}
-                  <div className="border-l-4 border-red-400 pl-6">
-                    <div className="flex items-start gap-3 mb-3">
-                      <span className="text-red-600 font-bold text-lg">❌</span>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-red-900 mb-2">Problema: Inconsistência de estilo entre gerações</h4>
-                        <p className="text-sm text-gray-600 mb-3">
+                  <div className="bg-white rounded-xl border-2 border-red-200 overflow-hidden">
+                    <button
+                      onClick={() => toggleTroubleshoot('consistency')}
+                      className="w-full flex items-start gap-3 p-6 hover:bg-red-50 transition-colors"
+                    >
+                      <span className="text-red-600 font-bold text-lg flex-shrink-0">❌</span>
+                      <div className="flex-1 text-left">
+                        <h4 className="font-bold text-red-900 mb-1">Problema: Inconsistência de estilo entre gerações</h4>
+                        <p className="text-sm text-gray-600">
                           Cada imagem ou vídeo gerado tem estilo completamente diferente, quebrando a identidade visual.
                         </p>
                       </div>
-                    </div>
-                    <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4">
+                      <ChevronDown
+                        className={`w-6 h-6 text-red-600 flex-shrink-0 transition-transform duration-300 ${
+                          openTroubleshoot === 'consistency' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openTroubleshoot === 'consistency' && (
+                      <div className="px-6 pb-6 border-t border-red-200">
+                        <div className="bg-green-50 border-l-4 border-green-400 pl-6 py-4 mt-4">
                       <div className="flex items-start gap-3">
                         <span className="text-green-600 font-bold text-lg">✅</span>
                         <div className="flex-1">
@@ -645,7 +731,9 @@ export default function ApplyPage() {
                           </ul>
                         </div>
                       </div>
-                    </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
