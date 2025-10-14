@@ -1079,7 +1079,7 @@ export default function ApplyPage() {
                     Empresas, consultorias e escolas podem licenciar o DARE como metodologia aplicada.
                   </p>
                   <a
-                    href="mailto:contato@dareframework.com.br?subject=Interesse em Licenciamento DARE"
+                    href="mailto:guiperezgo@gmail.com?subject=Interesse em Licenciamento DARE"
                     className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
                   >
                     <Mail className="w-5 h-5 mr-2" />
@@ -1103,7 +1103,7 @@ export default function ApplyPage() {
                     Workshops e imersões práticas aplicando o DARE em desafios reais da sua organização.
                   </p>
                   <a
-                    href="mailto:contato@dareframework.com.br?subject=Interesse em Consultoria DARE"
+                    href="mailto:guiperezgo@gmail.com?subject=Interesse em Consultoria DARE"
                     className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
                   >
                     <Mail className="w-5 h-5 mr-2" />
