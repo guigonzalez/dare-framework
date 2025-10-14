@@ -5,6 +5,7 @@ import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import ApplyPage from "@/pages/ApplyPage";
 import MaturityTestPage from "@/pages/MaturityTestPage";
+import VibeCodingPage from "@/pages/VibeCodingPage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={HomePage} />
       <Route path="/aplicar" component={ApplyPage} />
       <Route path="/aplicar/teste-maturidade" component={MaturityTestPage} />
+      <Route path="/aplicar/vibe-coding" component={VibeCodingPage} />
       <Route component={NotFound} />
     </Switch>
   );
