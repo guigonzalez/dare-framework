@@ -15,8 +15,8 @@ export default function Header() {
   const isApplyPage = location === "/aplicar";
   const isVibeCodingPage = location === "/aplicar/vibe-coding";
   const isPromptEngineeringPage = location === "/aplicar/prompt-engineering";
-  const isProposalPage = location === "/aplicar/proposta";
-  const isMaturityTestPage = location === "/aplicar/teste-maturidade";
+  // TEMPORARILY HIDDEN: const isProposalPage = location === "/aplicar/proposta";
+  // TEMPORARILY HIDDEN: const isMaturityTestPage = location === "/aplicar/teste-maturidade";
 
   // Configuração de navegação para HomePage
   const homeNavItems = [
@@ -34,8 +34,8 @@ export default function Header() {
     { href: "/aplicar#about", label: "Visão Geral" },
     { href: "/aplicar#aplicacoes", label: "Aplicações" },
     { href: "/aplicar/vibe-coding", label: "Vibe Coding" },
-    { href: "/aplicar/prompt-engineering", label: "Prompt Engineering" },
-    { href: "/aplicar#modelos", label: "Modelos" }
+    { href: "/aplicar/prompt-engineering", label: "Prompt Engineering" }
+    // TEMPORARILY HIDDEN: { href: "/aplicar#modelos", label: "Modelos" }
   ];
 
   // Configuração de navegação para VibeCodingPage
@@ -56,7 +56,8 @@ export default function Header() {
     { href: "/aplicar/prompt-engineering#troubleshooting", label: "Troubleshooting" }
   ];
 
-  // Configuração de navegação para ProposalPage
+  // TEMPORARILY HIDDEN - ProposalPage navigation
+  /*
   const proposalNavItems = [
     { href: "/aplicar", label: "← Voltar" },
     { href: "/aplicar/proposta#calculadora", label: "Calculadora" },
@@ -64,21 +65,24 @@ export default function Header() {
     { href: "/aplicar/proposta#planos", label: "Planos" },
     { href: "/aplicar/proposta#faq", label: "FAQ" }
   ];
+  */
 
-  // Configuração de navegação para MaturityTestPage
+  // TEMPORARILY HIDDEN - MaturityTestPage navigation
+  /*
   const maturityTestNavItems = [
     { href: "/aplicar", label: "← Voltar" },
     { href: "/aplicar/teste-maturidade#teste", label: "Fazer Teste" },
     { href: "/aplicar/teste-maturidade#sobre", label: "Sobre o Teste" }
   ];
+  */
 
   // Escolher os itens de navegação baseado na página
   let navItems = homeNavItems;
   if (isApplyPage) navItems = applyNavItems;
   else if (isVibeCodingPage) navItems = vibeCodingNavItems;
   else if (isPromptEngineeringPage) navItems = promptEngineeringNavItems;
-  else if (isProposalPage) navItems = proposalNavItems;
-  else if (isMaturityTestPage) navItems = maturityTestNavItems;
+  // TEMPORARILY HIDDEN: else if (isProposalPage) navItems = proposalNavItems;
+  // TEMPORARILY HIDDEN: else if (isMaturityTestPage) navItems = maturityTestNavItems;
 
   // Handle scroll effect and active section
   useEffect(() => {

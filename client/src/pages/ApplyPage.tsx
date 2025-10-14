@@ -51,6 +51,8 @@ export default function ApplyPage() {
                 <p className="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
                   Usado por times de design, produto e inovação para transformar IA em raciocínio estratégico — não em hype.
                 </p>
+                {/* TEMPORARILY HIDDEN - Link to #modelos section */}
+                {/*
                 <a
                   href="#modelos"
                   className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
@@ -58,6 +60,7 @@ export default function ApplyPage() {
                   Descubra como aplicar o DARE
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
+                */}
               </motion.div>
             </div>
           </div>
@@ -103,6 +106,8 @@ export default function ApplyPage() {
                 ))}
               </div>
 
+              {/* TEMPORARILY HIDDEN - Link to #modelos section */}
+              {/*
               <motion.div
                 className="text-center"
                 initial={{ opacity: 0 }}
@@ -118,6 +123,7 @@ export default function ApplyPage() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </motion.div>
+              */}
             </div>
           </div>
         </section>
@@ -237,7 +243,8 @@ export default function ApplyPage() {
           </div>
         </section>
 
-        {/* Journey Section */}
+        {/* Journey Section - TEMPORARILY HIDDEN - Remove comment tags to restore */}
+        {/*
         <section id="modelos" className="py-16 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
@@ -256,13 +263,10 @@ export default function ApplyPage() {
                 </p>
               </motion.div>
 
-              {/* Journey Flow */}
               <div className="relative">
-                {/* Connection Line */}
                 <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-emerald-200 z-0"></div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 relative z-10">
-                  {/* Step 1 - Maturity Model */}
                   <motion.div
                     className="relative"
                     initial={{ opacity: 0, x: -20 }}
@@ -271,7 +275,6 @@ export default function ApplyPage() {
                     transition={{ duration: 0.6 }}
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
-                      {/* Step number */}
                       <div className="flex items-start justify-between mb-6">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
@@ -302,7 +305,6 @@ export default function ApplyPage() {
                     </div>
                   </motion.div>
 
-                  {/* Step 2 - Licensing */}
                   <motion.div
                     className="relative"
                     initial={{ opacity: 0, y: 20 }}
@@ -311,7 +313,6 @@ export default function ApplyPage() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 h-full relative overflow-hidden">
-                      {/* Professional badge */}
                       <div className="absolute top-4 right-4">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
                           <Award className="w-3 h-3 mr-1" />
@@ -319,7 +320,6 @@ export default function ApplyPage() {
                         </span>
                       </div>
 
-                      {/* Step number */}
                       <div className="flex items-start gap-3 mb-6">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           2
@@ -345,7 +345,6 @@ export default function ApplyPage() {
                     </div>
                   </motion.div>
 
-                  {/* Step 3 - Consulting */}
                   <motion.div
                     className="relative"
                     initial={{ opacity: 0, x: 20 }}
@@ -354,7 +353,6 @@ export default function ApplyPage() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 h-full relative overflow-hidden">
-                      {/* Professional badge */}
                       <div className="absolute top-4 right-4">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
                           <Award className="w-3 h-3 mr-1" />
@@ -362,7 +360,6 @@ export default function ApplyPage() {
                         </span>
                       </div>
 
-                      {/* Step number */}
                       <div className="flex items-start gap-3 mb-6">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           3
@@ -392,7 +389,6 @@ export default function ApplyPage() {
                 </div>
               </div>
 
-              {/* Bottom message */}
               <motion.div
                 className="mt-12 text-center"
                 initial={{ opacity: 0 }}
@@ -407,6 +403,7 @@ export default function ApplyPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* DARE Open Section */}
         <section className="py-16 bg-gradient-to-b from-white to-gray-50">
