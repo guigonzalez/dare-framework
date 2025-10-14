@@ -79,7 +79,7 @@ export default function VibeCodingPage() {
   return (
     <main className="flex-grow bg-gradient-to-b from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-24 overflow-hidden">
+      <section id="introducao" className="relative py-16 sm:py-24 overflow-hidden">
         {/* Decorative background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -112,7 +112,7 @@ export default function VibeCodingPage() {
       </section>
 
       {/* Vibe Loop Section */}
-      <section className="py-16 bg-white">
+      <section id="vibe-loop" className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -163,7 +163,7 @@ export default function VibeCodingPage() {
       </section>
 
       {/* Tools Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section id="ferramentas" className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -233,7 +233,7 @@ export default function VibeCodingPage() {
       </section>
 
       {/* Prompt Structures Section */}
-      <section className="py-16 bg-white">
+      <section id="prompts" className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <motion.div

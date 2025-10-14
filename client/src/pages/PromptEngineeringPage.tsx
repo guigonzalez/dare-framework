@@ -57,6 +57,7 @@ export default function PromptEngineeringPage() {
           <div className="max-w-6xl mx-auto">
             {/* Anatomia do Prompt Perfeito */}
             <motion.div
+              id="anatomia"
               className="bg-white rounded-2xl border-2 border-gray-200 shadow-lg p-8 mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +111,7 @@ export default function PromptEngineeringPage() {
             </motion.div>
 
             {/* Workflows por Tipo de Conteúdo */}
-            <div className="space-y-4 mb-12">
+            <div id="workflows" className="space-y-4 mb-12">
               <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Workflows e Exemplos Práticos</h3>
 
               {/* Imagens */}
@@ -411,6 +412,7 @@ export default function PromptEngineeringPage() {
 
             {/* Templates Prontos por Contexto */}
             <motion.div
+              id="templates"
               className="mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -520,6 +522,7 @@ export default function PromptEngineeringPage() {
 
             {/* Troubleshooting */}
             <motion.div
+              id="troubleshooting"
               className="mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
