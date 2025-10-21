@@ -534,7 +534,6 @@ export default function ApplyPage() {
             </div>
           </div>
         </section>
-        */}
 
         {/* DARE Open Section */}
         <section className="py-16 bg-gradient-to-b from-white to-gray-50">
