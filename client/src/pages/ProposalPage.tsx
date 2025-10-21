@@ -280,7 +280,9 @@ Atenciosamente,
               {/* CTA Button */}
               <div className="text-center">
                 <a
-                  href={`mailto:guiperezgo@gmail.com?subject=${encodeURIComponent(generateEmailSubject())}&body=${encodeURIComponent(generateEmailBody())}`}
+                  href="https://www.linkedin.com/in/guigonzalez/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
                 >
                   <Mail className="w-5 h-5 mr-2" />
@@ -544,7 +546,9 @@ Atenciosamente,
                 Solicite sua proposta personalizada e descubra como o DARE pode estruturar o uso de IA no seu time
               </p>
               <a
-                href={`mailto:guiperezgo@gmail.com?subject=${encodeURIComponent(generateEmailSubject())}&body=${encodeURIComponent(generateEmailBody())}`}
+                href="https://www.linkedin.com/in/guigonzalez/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
               >
                 <Mail className="w-5 h-5 mr-2" />

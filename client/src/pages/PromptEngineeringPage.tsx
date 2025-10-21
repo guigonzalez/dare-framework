@@ -729,7 +729,9 @@ export default function PromptEngineeringPage() {
                 Fale com a gente sobre workshops e treinamentos personalizados
               </p>
               <a
-                href="mailto:guiperezgo@gmail.com?subject=Interesse em Prompt Engineering"
+                href="https://www.linkedin.com/in/guigonzalez/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-white text-primary font-medium rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
               >
                 Entre em Contato
