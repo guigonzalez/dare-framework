@@ -13,6 +13,7 @@ export default function Header() {
   // Detectar em qual página estamos
   const isHomePage = location === "/";
   const isApplyPage = location === "/aplicar";
+  const isDarePillarsPage = location === "/aplicar/pilares";
   const isVibeCodingPage = location === "/aplicar/vibe-coding";
   const isPromptEngineeringPage = location === "/aplicar/prompt-engineering";
   // TEMPORARILY HIDDEN: const isProposalPage = location === "/aplicar/proposta";
@@ -33,9 +34,19 @@ export default function Header() {
   const applyNavItems = [
     { href: "/aplicar#about", label: "Visão Geral" },
     { href: "/aplicar#aplicacoes", label: "Aplicações" },
+    { href: "/aplicar/pilares", label: "4 Pilares DARE" },
     { href: "/aplicar/vibe-coding", label: "Vibe Coding" },
     { href: "/aplicar/prompt-engineering", label: "Prompt Engineering" }
     // TEMPORARILY HIDDEN: { href: "/aplicar#modelos", label: "Modelos" }
+  ];
+
+  // Configuração de navegação para DarePillarsPage
+  const darePillarsNavItems = [
+    { href: "/aplicar", label: "← Voltar" },
+    { href: "/aplicar/pilares#decisao", label: "Decisão" },
+    { href: "/aplicar/pilares#automacao", label: "Automação" },
+    { href: "/aplicar/pilares#relevancia", label: "Relevância" },
+    { href: "/aplicar/pilares#engajamento", label: "Engajamento" }
   ];
 
   // Configuração de navegação para VibeCodingPage
@@ -79,6 +90,7 @@ export default function Header() {
   // Escolher os itens de navegação baseado na página
   let navItems = homeNavItems;
   if (isApplyPage) navItems = applyNavItems;
+  else if (isDarePillarsPage) navItems = darePillarsNavItems;
   else if (isVibeCodingPage) navItems = vibeCodingNavItems;
   else if (isPromptEngineeringPage) navItems = promptEngineeringNavItems;
   // TEMPORARILY HIDDEN: else if (isProposalPage) navItems = proposalNavItems;
