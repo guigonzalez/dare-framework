@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, CheckCircle, TrendingUp, Target, Users, Shield, Award, BarChart3, Download } from "lucide-react";
+import { ArrowRight, CheckCircle, TrendingUp, Target, Users, Shield, Award, Download, Bot, User } from "lucide-react";
 
 // Estrutura das perguntas por dimensão
 const dimensions = [
@@ -315,23 +315,135 @@ const dareNiveis = [
   { nivel: 5, nome: "Automação Guiada", range: [91, 100], description: "IA autônoma com supervisão" }
 ];
 
+// Flatten all questions into a single array
+const allQuestions = dimensions.flatMap(dim =>
+  dim.questions.map(q => ({
+    ...q,
+    dimensionId: dim.id,
+    dimensionName: dim.name,
+    dimensionIcon: dim.icon
+  }))
+);
+
+// Transition messages between dimensions
+const transitionMessages: Record<string, string> = {
+  technical: "Ótimo! Agora vamos falar sobre a Capacidade Organizacional da sua empresa.",
+  organizational: "Perfeito! Vamos entender melhor a Competência da sua Equipe.",
+  team: "Excelente! Agora sobre o Contexto de Negócio.",
+  business: "Muito bem! Por fim, vamos explorar o Contexto de Marca.",
+};
+
+type Message = {
+  id: string;
+  type: 'ai' | 'user' | 'intro' | 'transition';
+  content: string;
+  options?: Array<{ value: number; label: string }>;
+  questionId?: string;
+};
+
 export default function MaturityTestPage() {
-  const [currentStep, setCurrentStep] = useState(0); // 0 = intro, 1-5 = dimensions, 6 = results
+  const [started, setStarted] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [isTyping, setIsTyping] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const currentDimension = currentStep > 0 && currentStep <= 5 ? dimensions[currentStep - 1] : null;
-  const totalSteps = dimensions.length;
-  const progress = currentStep === 0 ? 0 : ((currentStep - 1) / totalSteps) * 100;
-
-  const handleAnswer = (questionId: string, value: number) => {
-    setAnswers(prev => ({ ...prev, [questionId]: value }));
+  const scrollToBottom = () => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: "smooth"
+      });
+    }
   };
 
-  const canProceed = () => {
-    if (currentStep === 0) return true;
-    if (!currentDimension) return false;
-    return currentDimension.questions.every(q => answers[q.id] !== undefined);
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
+
+  const addAIMessage = (content: string, options?: Array<{ value: number; label: string }>, questionId?: string, type: 'ai' | 'transition' = 'ai') => {
+    setIsTyping(true);
+    setTimeout(() => {
+      setMessages(prev => [...prev, {
+        id: `msg-${Date.now()}`,
+        type,
+        content,
+        options,
+        questionId
+      }]);
+      setIsTyping(false);
+    }, 800); // Simulate typing delay
+  };
+
+  const handleStart = () => {
+    setStarted(true);
+    const introMessage = "Olá! 👋 Sou o assistente virtual do DARE Framework. Vou fazer algumas perguntas para entender o nível de maturidade da sua organização em relação à adoção de IA. São 25 perguntas rápidas, levará cerca de 15 minutos. Vamos começar?";
+
+    setMessages([{
+      id: 'intro',
+      type: 'intro',
+      content: introMessage,
+      options: undefined
+    }]);
+
+    // Start with first question after intro
+    setTimeout(() => {
+      const firstQuestion = allQuestions[0];
+      addAIMessage(firstQuestion.question, firstQuestion.options, firstQuestion.id);
+    }, 1200);
+  };
+
+  const handleAnswer = (questionId: string, value: number, label: string) => {
+    // Add user's answer to chat
+    setMessages(prev => [...prev, {
+      id: `user-${Date.now()}`,
+      type: 'user',
+      content: label,
+      questionId
+    }]);
+
+    // Store answer
+    setAnswers(prev => ({ ...prev, [questionId]: value }));
+
+    const nextIndex = currentQuestionIndex + 1;
+
+    // Check if we completed a dimension and need a transition
+    if (nextIndex < allQuestions.length) {
+      const currentDimension = allQuestions[currentQuestionIndex].dimensionId;
+      const nextDimension = allQuestions[nextIndex].dimensionId;
+
+      if (currentDimension !== nextDimension) {
+        // Add transition message
+        setTimeout(() => {
+          addAIMessage(transitionMessages[currentDimension], undefined, undefined, 'transition');
+
+          // Then add next question
+          setTimeout(() => {
+            const nextQuestion = allQuestions[nextIndex];
+            addAIMessage(nextQuestion.question, nextQuestion.options, nextQuestion.id);
+            setCurrentQuestionIndex(nextIndex);
+          }, 1200);
+        }, 600);
+      } else {
+        // Same dimension, just ask next question
+        setTimeout(() => {
+          const nextQuestion = allQuestions[nextIndex];
+          addAIMessage(nextQuestion.question, nextQuestion.options, nextQuestion.id);
+          setCurrentQuestionIndex(nextIndex);
+        }, 600);
+      }
+    } else {
+      // All questions answered, show final message and results
+      setTimeout(() => {
+        addAIMessage("Perfeito! Terminamos todas as perguntas. Estou analisando suas respostas para gerar seu relatório de maturidade...");
+
+        setTimeout(() => {
+          setShowResults(true);
+        }, 2000);
+      }, 600);
+    }
   };
 
   const calculateResults = () => {
@@ -350,27 +462,13 @@ export default function MaturityTestPage() {
     return { finalScore: Math.round(finalScore), recommendedLevel };
   };
 
-  const handleNext = () => {
-    if (currentStep === totalSteps) {
-      setShowResults(true);
-    } else {
-      setCurrentStep(prev => prev + 1);
-    }
-  };
-
-  const handleBack = () => {
-    if (currentStep > 0) {
-      setCurrentStep(prev => prev - 1);
-    }
-  };
-
   const results = showResults ? calculateResults() : null;
 
-  if (currentStep === 0) {
-    // Intro Screen
+  // Intro Screen
+  if (!started) {
     return (
-      <main className="flex-grow bg-white">
-        <section className="py-12 sm:py-16">
+      <main className="flex-grow bg-gradient-to-br from-gray-50 to-gray-100">
+        <section className="py-12 sm:py-16 min-h-[80vh] flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -379,68 +477,47 @@ export default function MaturityTestPage() {
                 transition={{ duration: 0.5 }}
                 className="text-center"
               >
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary to-purple-600 text-white mb-6">
+                  <Bot className="w-10 h-10" />
+                </div>
+
                 <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                   DARE Maturity Test
                 </h1>
 
-                <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-                  Avaliação científica para determinar qual nível DARE sua organização está pronta para adotar
+                <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                  Avaliação conversacional para determinar qual nível DARE sua organização está pronta para adotar
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
-                  {dimensions.map((dim, idx) => {
-                    const Icon = dim.icon;
-                    return (
-                      <motion.div
-                        key={dim.id}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: idx * 0.05 }}
-                        className="bg-gray-50 border border-gray-200 rounded-lg p-5"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className={`p-2 rounded-lg bg-gradient-to-br ${dim.color}`}>
-                            <Icon className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="font-medium text-gray-900 text-sm">{dim.name}</h3>
-                            <p className="text-xs text-gray-500">5 perguntas • {dim.weight * 100}% do peso</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8 text-left max-w-2xl mx-auto">
-                  <h3 className="font-semibold text-gray-900 mb-3 text-sm">O que você vai receber:</h3>
-                  <ul className="space-y-2 text-gray-600 text-sm">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Nível DARE recomendado (0-5)</span>
+                <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-8 text-left max-w-2xl mx-auto">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-lg">Como funciona:</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span>Conversa natural com assistente virtual</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Análise de maturidade por dimensão</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span>25 perguntas sobre 5 dimensões de maturidade</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Recomendações personalizadas</span>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span>Relatório completo com nível DARE recomendado</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span>Gratuito • Sem cadastro • ~15 minutos</span>
                     </li>
                   </ul>
                 </div>
 
                 <button
-                  onClick={handleNext}
-                  className="inline-flex items-center px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all duration-200 group"
+                  onClick={handleStart}
+                  className="inline-flex items-center px-8 py-4 bg-primary text-white font-medium text-lg rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl group"
                 >
-                  Começar Avaliação (15 min)
+                  Iniciar Conversa
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-
-                <p className="mt-4 text-sm text-gray-500">
-                  Gratuito • Sem cadastro
-                </p>
               </motion.div>
             </div>
           </div>
@@ -449,8 +526,8 @@ export default function MaturityTestPage() {
     );
   }
 
+  // Results Screen
   if (showResults && results) {
-    // Results Screen
     return (
       <main className="flex-grow bg-white">
         <section className="py-12">
@@ -576,23 +653,21 @@ export default function MaturityTestPage() {
     );
   }
 
-  // Question Screen
-  if (!currentDimension) return null;
-
-  const Icon = currentDimension.icon;
+  // Chat Interface
+  const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
 
   return (
-    <main className="flex-grow bg-white">
+    <main className="flex-grow bg-gradient-to-br from-gray-50 to-gray-100">
       <section className="py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {/* Progress Bar */}
-            <div className="mb-8">
+            <div className="mb-6 bg-white rounded-lg shadow-sm border border-gray-200 p-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">
-                  Dimensão {currentStep} de {totalSteps}
+                <span className="text-sm font-medium text-gray-700">
+                  Progresso: {currentQuestionIndex + 1} de {allQuestions.length}
                 </span>
-                <span className="text-sm text-gray-600">
+                <span className="text-sm font-semibold text-primary">
                   {Math.round(progress)}%
                 </span>
               </div>
@@ -600,92 +675,110 @@ export default function MaturityTestPage() {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
-                  className="h-full bg-primary"
+                  transition={{ duration: 0.3 }}
+                  className="h-full bg-gradient-to-r from-primary to-purple-600"
                 />
               </div>
             </div>
 
-            {/* Dimension Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-gray-50 rounded-lg p-6 mb-8 border border-gray-200"
+            {/* Chat Container */}
+            <div
+              ref={chatContainerRef}
+              className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 min-h-[600px] max-h-[700px] overflow-y-auto"
             >
-              <div className="flex items-center gap-3">
-                <div className={`p-3 rounded-lg bg-gradient-to-br ${currentDimension.color}`}>
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">{currentDimension.name}</h2>
-                  <p className="text-sm text-gray-600">{currentDimension.weight * 100}% do peso total</p>
-                </div>
-              </div>
-            </motion.div>
+              <div className="space-y-4">
+                {messages.map((message, index) => (
+                  <motion.div
+                    key={message.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div className={`flex gap-3 max-w-[85%] ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                      {/* Avatar */}
+                      <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
+                        message.type === 'user'
+                          ? 'bg-gray-700'
+                          : 'bg-gradient-to-br from-primary to-purple-600'
+                      }`}>
+                        {message.type === 'user' ? (
+                          <User className="w-4 h-4 text-white" />
+                        ) : (
+                          <Bot className="w-4 h-4 text-white" />
+                        )}
+                      </div>
 
-            {/* Questions */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentDimension.id}
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                className="space-y-6 mb-8"
-              >
-                {currentDimension.questions.map((question, idx) => (
-                  <div key={question.id} className="bg-white rounded-lg border border-gray-200 p-5">
-                    <h3 className="text-base font-medium text-gray-900 mb-4">
-                      {idx + 1}. {question.question}
-                    </h3>
+                      {/* Message Content */}
+                      <div className={`flex flex-col gap-2 ${message.type === 'user' ? 'items-end' : 'items-start'}`}>
+                        <div className={`rounded-2xl px-4 py-3 ${
+                          message.type === 'user'
+                            ? 'bg-gray-700 text-white'
+                            : message.type === 'transition'
+                            ? 'bg-gradient-to-r from-purple-50 to-pink-50 text-gray-800 border border-purple-200'
+                            : 'bg-gray-100 text-gray-800'
+                        }`}>
+                          <p className="text-sm leading-relaxed whitespace-pre-line">
+                            {message.content}
+                          </p>
+                        </div>
 
-                    <div className="space-y-2">
-                      {question.options.map(option => (
-                        <label
-                          key={option.value}
-                          className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer transition-all duration-150 ${
-                            answers[question.id] === option.value
-                              ? `border-primary bg-primary/5`
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-                          }`}
-                        >
-                          <input
-                            type="radio"
-                            name={question.id}
-                            value={option.value}
-                            checked={answers[question.id] === option.value}
-                            onChange={() => handleAnswer(question.id, option.value)}
-                            className="mt-0.5 w-4 h-4 text-primary"
-                          />
-                          <span className="text-sm text-gray-700 flex-1">{option.label}</span>
-                        </label>
-                      ))}
+                        {/* Options */}
+                        {message.options && index === messages.length - 1 && (
+                          <div className="flex flex-col gap-2 w-full mt-2">
+                            {message.options.map((option) => (
+                              <motion.button
+                                key={option.value}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.2, delay: option.value * 0.1 }}
+                                onClick={() => handleAnswer(message.questionId!, option.value, option.label)}
+                                className="text-left px-4 py-3 bg-white border-2 border-gray-200 rounded-xl hover:border-primary hover:bg-primary/5 transition-all duration-200 text-sm text-gray-700 hover:text-gray-900"
+                              >
+                                {option.label}
+                              </motion.button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </motion.div>
-            </AnimatePresence>
 
-            {/* Navigation */}
-            <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-              <button
-                onClick={handleBack}
-                className="inline-flex items-center px-5 py-2.5 text-gray-700 font-medium rounded-lg hover:bg-gray-100 transition-all duration-200"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Voltar
-              </button>
-
-              <button
-                onClick={handleNext}
-                disabled={!canProceed()}
-                className={`inline-flex items-center px-6 py-2.5 font-medium rounded-lg transition-all duration-200 ${
-                  canProceed()
-                    ? 'bg-primary text-white hover:bg-primary/90'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
-              >
-                {currentStep === totalSteps ? 'Ver Resultados' : 'Próxima Dimensão'}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </button>
+                {/* Typing Indicator */}
+                {isTyping && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex justify-start"
+                  >
+                    <div className="flex gap-3 max-w-[85%]">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                        <Bot className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="bg-gray-100 rounded-2xl px-4 py-3">
+                        <div className="flex gap-1">
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
+                            className="w-2 h-2 bg-gray-400 rounded-full"
+                          />
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
+                            className="w-2 h-2 bg-gray-400 rounded-full"
+                          />
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
+                            className="w-2 h-2 bg-gray-400 rounded-full"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </div>
           </div>
         </div>
