@@ -237,6 +237,102 @@ export default function ApplyPage() {
           </div>
         </section>
 
+        {/* DARE Pillars Featured Section */}
+        <section className="py-16 bg-gradient-to-br from-primary/10 via-purple-50 to-blue-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                className="text-center mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Framework Essencial
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                  Entenda os 4 Pilares do DARE
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Uma estrutura completa sobre como domar a IA no design: Decisão, Automação, Relevância e Engajamento
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-purple-600 to-blue-600 rounded-2xl opacity-40 group-hover:opacity-70 transition duration-500 blur-lg"></div>
+                <div className="relative bg-white rounded-2xl p-8 shadow-2xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Left side - Description */}
+                    <div className="flex flex-col justify-center">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        Domine a IA com Método
+                      </h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        Descubra como estruturar decisões de IA com clareza estratégica. Explore os princípios, perguntas-chave e anti-padrões de cada pilar do framework DARE.
+                      </p>
+                      <ul className="space-y-3 mb-6">
+                        <li className="flex items-center text-sm text-gray-700">
+                          <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                          <span><strong>Decisão:</strong> O que a IA deve fazer?</span>
+                        </li>
+                        <li className="flex items-center text-sm text-gray-700">
+                          <CheckCircle className="w-5 h-5 text-purple-600 mr-3 flex-shrink-0" />
+                          <span><strong>Automação:</strong> Como a IA vai executar?</span>
+                        </li>
+                        <li className="flex items-center text-sm text-gray-700">
+                          <CheckCircle className="w-5 h-5 text-emerald-600 mr-3 flex-shrink-0" />
+                          <span><strong>Relevância:</strong> A IA está entregando valor?</span>
+                        </li>
+                        <li className="flex items-center text-sm text-gray-700">
+                          <CheckCircle className="w-5 h-5 text-orange-600 mr-3 flex-shrink-0" />
+                          <span><strong>Engajamento:</strong> O time adota e evolui?</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Right side - Visual & CTA */}
+                    <div className="flex flex-col justify-center items-center">
+                      <div className="grid grid-cols-2 gap-4 mb-6 w-full max-w-xs">
+                        <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl p-4 text-white text-center shadow-lg">
+                          <div className="text-3xl font-bold mb-1">D</div>
+                          <div className="text-xs">Decisão</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white text-center shadow-lg">
+                          <div className="text-3xl font-bold mb-1">A</div>
+                          <div className="text-xs">Automação</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl p-4 text-white text-center shadow-lg">
+                          <div className="text-3xl font-bold mb-1">R</div>
+                          <div className="text-xs">Relevância</div>
+                        </div>
+                        <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-xl p-4 text-white text-center shadow-lg">
+                          <div className="text-3xl font-bold mb-1">E</div>
+                          <div className="text-xs">Engajamento</div>
+                        </div>
+                      </div>
+                      <a
+                        href="/aplicar/pilares"
+                        className="inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-primary via-purple-600 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group/btn"
+                      >
+                        Explorar os 4 Pilares
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Journey Section */}
         <section id="modelos" className="py-16 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
