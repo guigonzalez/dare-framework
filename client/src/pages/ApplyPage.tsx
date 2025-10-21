@@ -367,20 +367,10 @@ export default function ApplyPage() {
                     transition={{ duration: 0.6 }}
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
-                      {/* Step number */}
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                            1
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-gray-900">Descubra</h3>
-                            <p className="text-sm text-blue-600 font-medium">15 minutos</p>
-                          </div>
-                        </div>
-                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
-                          Em breve
-                        </span>
+                      {/* Header */}
+                      <div className="mb-6">
+                        <h3 className="text-xl font-bold text-gray-900 mb-1">Descubra</h3>
+                        <p className="text-sm text-blue-600 font-medium">15 minutos</p>
                       </div>
 
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">DARE Maturity Model</h4>
