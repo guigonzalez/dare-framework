@@ -354,10 +354,10 @@ export default function ApplyPage() {
 
               {/* Journey Flow */}
               <div className="relative">
-                {/* Connection Line */}
-                <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-emerald-200 z-0"></div>
+                {/* Connection Line - Hidden when only 1 card */}
+                {/* <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-emerald-200 z-0"></div> */}
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 relative z-10">
+                <div className="grid grid-cols-1 gap-8 relative z-10 max-w-xl mx-auto">
                   {/* Step 1 - Maturity Model */}
                   <motion.div
                     className="relative"
@@ -398,8 +398,8 @@ export default function ApplyPage() {
                     </div>
                   </motion.div>
 
-                  {/* Step 2 - Licensing */}
-                  <motion.div
+                  {/* Step 2 - Licensing - HIDDEN */}
+                  {/* <motion.div
                     className="relative"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -407,7 +407,6 @@ export default function ApplyPage() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 h-full relative overflow-hidden">
-                      {/* Professional badge */}
                       <div className="absolute top-4 right-4">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
                           <Award className="w-3 h-3 mr-1" />
@@ -415,7 +414,6 @@ export default function ApplyPage() {
                         </span>
                       </div>
 
-                      {/* Step number */}
                       <div className="flex items-start gap-3 mb-6">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           2
@@ -439,10 +437,10 @@ export default function ApplyPage() {
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
 
-                  {/* Step 3 - Consulting */}
-                  <motion.div
+                  {/* Step 3 - Consulting - HIDDEN */}
+                  {/* <motion.div
                     className="relative"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -450,7 +448,6 @@ export default function ApplyPage() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 h-full relative overflow-hidden">
-                      {/* Professional badge */}
                       <div className="absolute top-4 right-4">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
                           <Award className="w-3 h-3 mr-1" />
@@ -458,7 +455,6 @@ export default function ApplyPage() {
                         </span>
                       </div>
 
-                      {/* Step number */}
                       <div className="flex items-start gap-3 mb-6">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           3
@@ -484,7 +480,7 @@ export default function ApplyPage() {
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                 </div>
               </div>
 
