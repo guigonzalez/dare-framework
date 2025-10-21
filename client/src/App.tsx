@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import ApplyPage from "@/pages/ApplyPage";
-// TEMPORARILY HIDDEN: import MaturityTestPage from "@/pages/MaturityTestPage";
+import MaturityTestPage from "@/pages/MaturityTestPage";
 import VibeCodingPage from "@/pages/VibeCodingPage";
 import PromptEngineeringPage from "@/pages/PromptEngineeringPage";
 import ProposalPage from "@/pages/ProposalPage";
