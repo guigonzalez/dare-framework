@@ -369,22 +369,63 @@ export default function ApplyPage() {
                     <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
                       {/* Header */}
                       <div className="mb-6">
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">Descubra</h3>
-                        <p className="text-sm text-blue-600 font-medium">15 minutos</p>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-1">Descubra seu Nível DARE</h3>
+                        <p className="text-sm text-blue-600 font-medium">15 minutos • Gratuito • Sem cadastro</p>
                       </div>
 
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">DARE Maturity Model</h4>
-                      <p className="text-gray-600 text-sm mb-6">
-                        Teste científico que determina qual nível DARE sua organização está pronta para adotar
+                      <h4 className="text-xl font-semibold text-gray-900 mb-3">DARE Maturity Model</h4>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                        Avaliação científica baseada em <strong>5 dimensões organizacionais</strong> que determina com precisão qual nível DARE (0-5) sua empresa está pronta para adotar — sem chutômetro, com método.
                       </p>
 
-                      <a
-                        href="/aplicar/teste-maturidade"
-                        className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
-                      >
-                        Fazer o teste gratuito
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </a>
+                      {/* Conversational Form Highlight */}
+                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-4 mb-5 border border-blue-200">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
+                            <MessageCircle className="w-5 h-5 text-blue-600" />
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-semibold text-gray-900 mb-1">Interface Conversacional com IA</h5>
+                            <p className="text-xs text-gray-600 leading-relaxed">
+                              Experiência de chat humanizada com assistente virtual que simula uma conversa real. Sistema inteligente de perguntas progressivas com feedback em tempo real e transições contextuais entre dimensões.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Technical Benefits */}
+                      <div className="space-y-2 mb-6">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-xs text-gray-700"><strong>25 perguntas estratégicas</strong> cobrindo Maturidade Técnica, Capacidade Organizacional, Competência da Equipe, Contexto de Negócio e Marca</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-xs text-gray-700"><strong>Algoritmo de scoring ponderado</strong> que normaliza respostas e aplica pesos diferenciados por dimensão</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-xs text-gray-700"><strong>Relatório detalhado</strong> com análise por dimensão, score final (0-100) e recomendação de nível com roadmap de evolução</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-xs text-gray-700"><strong>Validação científica:</strong> baseado em frameworks de maturidade organizacional e adoção de tecnologia</p>
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="space-y-3">
+                        <a
+                          href="/aplicar/teste-maturidade"
+                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+                        >
+                          Iniciar Teste Conversacional
+                          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <p className="text-center text-xs text-gray-500">
+                          Usado por times de design, produto e inovação para decisões estruturadas de IA
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
 
