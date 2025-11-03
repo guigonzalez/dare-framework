@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Github } from "lucide-react";
+import { Menu, X, Github, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Header() {
@@ -183,10 +183,10 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             <a
               href="/aplicar"
-              className={`hidden md:inline-flex items-center px-4 py-2 font-medium rounded-lg transition-all duration-300 ${
+              className={`hidden md:inline-flex items-center px-4 py-2 font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95 ${
                 scrolled
-                  ? 'bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md'
-                  : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm'
+                  ? 'bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md focus:ring-primary'
+                  : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm focus:ring-white/50'
               }`}
             >
               Aplicar o DARE
@@ -196,24 +196,25 @@ export default function Header() {
               href="https://github.com/guigonzalez/dare-framework"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
-              className={`p-2 rounded-full transition-colors ${
+              aria-label="Ver repositório no GitHub"
+              className={`p-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95 ${
                 scrolled
-                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                  : 'text-white hover:bg-white/10'
+                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:ring-gray-400'
+                  : 'text-white hover:bg-white/10 focus:ring-white/50'
               }`}
             >
               <Github className="h-5 w-5" />
             </a>
             
             {/* Mobile menu toggle */}
-            <button 
-              type="button" 
+            <button
+              type="button"
               aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-              className={`md:hidden p-2 rounded-full transition-colors ${
-                scrolled 
-                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' 
-                  : 'text-white hover:bg-white/10'
+              aria-expanded={isMobileMenuOpen}
+              className={`md:hidden p-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95 ${
+                scrolled
+                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:ring-gray-400'
+                  : 'text-white hover:bg-white/10 focus:ring-white/50'
               }`}
               onClick={toggleMobileMenu}
             >
@@ -228,30 +229,64 @@ export default function Header() {
       </div>
       
       {/* Mobile menu */}
-      <div 
+      <div
         className={`md:hidden transition-all duration-200 ease-in-out overflow-hidden ${
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className={`py-3 px-3 shadow-md ${
-          scrolled 
-            ? 'bg-white' 
+          scrolled
+            ? 'bg-white'
             : 'bg-black/90 backdrop-blur-md'
         }`}>
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`block py-2.5 px-4 mb-1 text-base font-medium rounded-md ${
+              className={`block py-3 px-4 mb-1 text-base font-medium rounded-md transition-all duration-200 active:scale-98 ${
                 scrolled
-                  ? 'text-gray-700 hover:text-primary hover:bg-gray-50'
-                  : 'text-white hover:bg-white/10'
+                  ? 'text-gray-700 hover:text-primary hover:bg-gray-50 active:bg-gray-100'
+                  : 'text-white hover:bg-white/10 active:bg-white/20'
               }`}
+              style={{ minHeight: '44px' }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </a>
           ))}
+
+          {/* Mobile CTA Section */}
+          <div className={`mt-3 pt-3 border-t ${
+            scrolled ? 'border-gray-200' : 'border-white/10'
+          }`}>
+            <a
+              href="/aplicar"
+              className={`flex items-center justify-center gap-2 py-3.5 px-4 text-center font-semibold rounded-lg transition-all duration-300 shadow-sm active:scale-95 ${
+                scrolled
+                  ? 'bg-primary text-white hover:bg-primary/90 hover:shadow-md'
+                  : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
+              }`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Aplicar o DARE
+              <ArrowRight className="h-4 w-4" />
+            </a>
+
+            <a
+              href="https://github.com/guigonzalez/dare-framework"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-2 py-2.5 px-4 mt-2 text-center text-sm font-medium rounded-md transition-colors ${
+                scrolled
+                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  : 'text-white/80 hover:text-white hover:bg-white/10'
+              }`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Github className="h-4 w-4" />
+              Ver no GitHub
+            </a>
+          </div>
         </div>
       </div>
     </header>
