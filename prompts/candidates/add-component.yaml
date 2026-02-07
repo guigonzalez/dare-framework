@@ -1,0 +1,31 @@
+# Candidate: Adicionar componente React
+# Em avaliação para registry
+
+id: add-component
+name: Adicionar componente React
+status: candidate
+
+prompt: |
+  Ao adicionar componente em client/src/components/:
+  1. Usar PascalCase para o nome do arquivo
+  2. Se for UI primitivo, colocar em components/ui/ (shadcn)
+  3. Se for seção de página, usar sufixo Section (ex: MyFeatureSection)
+  4. Incluir tipos TypeScript para props
+  5. Usar Framer Motion para animações quando fizer sentido
+  6. Seguir padrões de acessibilidade (Radix/shadcn)
+
+  Estrutura mínima:
+  - Importações
+  - Interface de props
+  - Componente com export default
+
+promoted_from: exploration/add-component
+
+eval_notes: |
+  - Testado ao criar componente de exemplo
+  - Verificado contra componentes existentes (AgentsSection, FrameworkSection)
+
+eval_score: 4
+tested_at: "2026-02-07"
+
+use: Desenvolvimento / Cursor / agentes

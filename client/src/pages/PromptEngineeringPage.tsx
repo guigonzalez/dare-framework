@@ -44,7 +44,7 @@ export default function PromptEngineeringPage() {
                 Guia de Prompt Engineering para Design
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Aprenda a estrutura perfeita para criar prompts eficazes e dominar as ferramentas de IA de 2025
+                Aprenda a estrutura perfeita para criar prompts eficazes e dominar as ferramentas de IA de 2026
               </p>
             </motion.div>
           </div>
@@ -132,7 +132,7 @@ export default function PromptEngineeringPage() {
                     </div>
                     <div className="text-left">
                       <h4 className="text-xl font-bold text-gray-900">Workflow para Imagens</h4>
-                      <p className="text-sm text-gray-600">DALL-E 3 → GPT Image 1 → Nano Banana</p>
+                      <p className="text-sm text-gray-600">GPT Image 1 → Nano Banana</p>
                     </div>
                   </div>
                   <ChevronDown

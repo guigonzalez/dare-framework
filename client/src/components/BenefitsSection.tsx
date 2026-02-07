@@ -8,8 +8,8 @@ const benefits = [
     description: "Do research à automação completa, ganhos progressivos que se amplificam a cada nível.",
     metrics: [
       { level: "Nível 1-2", value: "25-70%", label: "Aceleração em research e assets" },
-      { level: "Nível 3-4", value: "60-95%", label: "Redução no tempo concept-to-prototype" },
-      { level: "Nível 5", value: "90-98%", label: "Automação de tarefas repetitivas" }
+{ level: "Nível 3", value: "60-90%", label: "Prompt-to-Prototype" },
+  { level: "Nível 4", value: "90-98%", label: "Orquestração de Agentes com MCP" }
     ],
     gradient: "from-blue-500 to-cyan-500",
     bgGradient: "from-blue-50 to-cyan-50"
@@ -19,7 +19,7 @@ const benefits = [
     title: "Qualidade de Iteração",
     description: "Feedback contextual instantâneo e colaboração em tempo real elevam a qualidade das soluções.",
     metrics: [
-      { level: "Co-criação", value: "70-90%", label: "Melhoria na qualidade de iterações" },
+      { level: "Prompt-to-Prototype", value: "70-90%", label: "Melhoria na qualidade de iterações" },
       { level: "IA Colaborativa", value: "3x", label: "Mais variações exploradas" },
       { level: "Validação", value: "-40%", label: "Redução em ciclos de revisão" }
     ],
@@ -31,7 +31,7 @@ const benefits = [
     title: "Controle Estratégico",
     description: "Escolha o nível ideal para cada projeto, mantendo controle criativo e transparência.",
     metrics: [
-      { level: "Framework", value: "7 Níveis", label: "De manual total à automação" },
+      { level: "Framework", value: "5 Níveis", label: "Do manual total aos agentes" },
       { level: "Flexibilidade", value: "100%", label: "Controle sobre o processo" },
       { level: "Adaptação", value: "5x", label: "Capacidade de escala" }
     ],
@@ -117,7 +117,7 @@ export default function BenefitsSection() {
             </div>
             <h2 className="gradient-text mb-4">Vantagens do DARE Framework</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Métricas reais baseadas nas evoluções do mercado de IA em 2025
+              Métricas reais baseadas nas evoluções do mercado de IA em 2026
             </p>
           </motion.div>
 
@@ -183,7 +183,7 @@ export default function BenefitsSection() {
                 Pronto para Transformar seu Workflow?
               </h3>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Explore os 7 níveis do framework e descubra qual se adequa melhor ao seu projeto
+                Explore os 5 níveis do framework e descubra qual se adequa melhor ao seu projeto
               </p>
               <a
                 href="#framework"

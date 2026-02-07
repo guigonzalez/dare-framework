@@ -1,4 +1,5 @@
 import { Github, BookOpen, FileText, Briefcase, Code, Heart } from 'lucide-react';
+import { config } from "@/data/config";
 
 export default function Footer() {
   return (
@@ -63,14 +64,36 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Navigation Links */}
-        <div className="mt-8 pt-6 border-t border-gray-700 flex flex-wrap justify-center gap-x-8 gap-y-4 text-gray-400 text-sm">
-          <a href="#about" className="hover:text-white transition">Sobre</a>
-          <a href="#framework" className="hover:text-white transition">Framework</a>
-          <a href="#recursos" className="hover:text-white transition">Recursos</a>
-          <a href="#vantagens" className="hover:text-white transition">Vantagens</a>
-          <a href="#manifesto" className="hover:text-white transition">Manifesto</a>
-          <a href="#contribute" className="hover:text-white transition">Contribuir</a>
+        {/* Navigation - Framework e DARE OS em conjunto */}
+        <div className="mt-8 pt-6 border-t border-gray-700">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-gray-400 text-sm">
+            <span className="text-gray-500 font-medium w-full text-center mb-2">Framework</span>
+            <a href="/#about" className="hover:text-white transition">Sobre</a>
+            <a href="/#framework" className="hover:text-white transition">Níveis 2026</a>
+            <a href="/#recursos" className="hover:text-white transition">Recursos</a>
+            <a href="/#manifesto" className="hover:text-white transition">Manifesto</a>
+            <a href="/#contribute" className="hover:text-white transition">Contribuir</a>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-gray-400 text-sm mt-4">
+            <span className="text-gray-500 font-medium w-full text-center mb-2">DARE OS</span>
+            <a href="/aplicar" className="hover:text-white transition">Visão Geral</a>
+            {config.DARE_OS_MVP && (
+              <>
+                <a href="/aplicar/wizard" className="hover:text-white transition">Wizard</a>
+                <a href="/aplicar/dare-os" className="hover:text-white transition">Ciclo</a>
+                <a href="/aplicar/packs" className="hover:text-white transition">Packs</a>
+                <a href="/aplicar/agentes" className="hover:text-white transition">Agentes & MCP</a>
+                <a href="/aplicar/anti-padroes" className="hover:text-white transition">Anti-padrões</a>
+                <a href="/aplicar/referencia" className="hover:text-white transition">Referência</a>
+              </>
+            )}
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-gray-400 text-sm mt-4">
+            <span className="text-gray-500 font-medium w-full text-center mb-2">Guias</span>
+            <a href="/aplicar/pilares" className="hover:text-white transition">4 Pilares</a>
+            <a href="/aplicar/vibe-coding" className="hover:text-white transition">Vibe Coding</a>
+            <a href="/aplicar/prompt-engineering" className="hover:text-white transition">Prompt Engineering</a>
+          </div>
         </div>
 
         {/* Bottom bar */}

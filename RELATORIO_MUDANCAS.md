@@ -74,7 +74,7 @@
 **Funcionalidades:**
 - Anatomia do Prompt Perfeito (5 componentes: CONTEXTO → AÇÃO → FORMATO → ESTILO → REFINAMENTOS)
 - Workflows por tipo de conteúdo:
-  - **Imagens:** GPT Image, Midjourney, DALL-E
+  - **Imagens:** GPT Image 1, Midjourney, Adobe Firefly
   - **Vídeos:** SORA 2, VEO 3, Kling AI
   - **Textos:** ChatGPT, Claude, Gemini
 - Templates prontos por contexto (cada um com 5 exemplos)
@@ -288,7 +288,7 @@ const promptEngineeringNavItems = [...]; // 5 itens
 - 4 tipos de agentes apresentados:
   1. Code Agents (Cursor, Windsurf)
   2. Research Agents (Perplexity, Gemini Deep Research)
-  3. Design Agents (V0, Lovable, Galileo AI)
+  3. Design Agents (v0, Lovable, Stitch)
   4. Data Agents (ChatGPT Advanced Data Analysis, Claude Artifacts)
 - Link para documentação MCP da Anthropic
 - Design com gradientes e animações

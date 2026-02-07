@@ -64,7 +64,7 @@ export default function HeroSection() {
             >
               <div className="px-4 py-1 rounded-full bg-white/30 text-sm font-semibold text-white shadow-sm flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
-                Open Source - AI Made
+                Framework + DARE OS — 2026
               </div>
             </motion.div>
 
@@ -91,7 +91,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.div
-              className="mt-12 flex items-center justify-center relative z-10"
+              className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -99,12 +99,22 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 variant="default"
-                className="bg-white text-primary hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                className="bg-white text-primary hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group w-full sm:w-auto"
                 asChild
               >
-                <a href="#framework" className="flex items-center gap-2">
-                  Explorar Framework
+                <a href="/aplicar" className="flex items-center justify-center gap-2">
+                  Aplicar o DARE
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white/80 text-white hover:bg-white/20 hover:text-white hover:border-white transition-all duration-300 w-full sm:w-auto"
+                asChild
+              >
+                <a href="#framework" className="flex items-center justify-center gap-2">
+                  Explorar Framework
                 </a>
               </Button>
             </motion.div>

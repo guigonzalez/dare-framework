@@ -1,0 +1,25 @@
+# Exploration: MCP Context Builder
+# Prompt para agentes construírem contexto MCP a partir do registry
+
+id: mcp-context-builder
+name: Construir contexto MCP para DARE
+status: exploration
+
+prompt: |
+  Analise o registry de prompts em prompts/registry/ e prompts/context/.
+  Gere um resumo estruturado de contexto para um servidor MCP que exponha:
+  1. Lista de prompts disponíveis por domínio (project, level-1, level-2, level-3)
+  2. Metadados de cada prompt (id, name, use)
+  3. Convenções do projeto (de context/conventions.md)
+  
+  Formato de saída: JSON ou YAML que um MCP server possa consumir.
+
+hypothesis: "Agentes podem derivar contexto MCP automaticamente do registry"
+notes: |
+  - Base para futura integração MCP no DARE OS
+  - Relacionado com AgentsSection na home
+
+experiments:
+  - "2026-02: definir estrutura inicial"
+
+use: Setup MCP / Cursor / Claude Code

@@ -161,9 +161,9 @@ export default function AboutSection() {
             <div className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
               Um framework para todos os níveis de adoção
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">Do Totalmente Manual à Automação Guiada por IA</h3>
+            <h3 className="text-2xl font-bold text-gray-900">Do Artesanal à Orquestração de Agentes</h3>
             <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-              O DARE Framework organiza a adoção de IA em um espectro de sete níveis distintos (0 a 5), ajudando equipes de design a navegar na integração da inteligência artificial de maneira controlada e ética.
+              O DARE Framework organiza a adoção de IA em um espectro de cinco níveis distintos (0 a 4), do manual total aos agentes autônomos com MCP.
             </p>
             
             <div className="mt-8 inline-flex shadow-sm overflow-hidden rounded-lg">

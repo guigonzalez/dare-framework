@@ -1,0 +1,95 @@
+# DARE Framework — Prompt Registry (Projeto)
+# Prompts em produção para agentes MCP, Cursor, Claude Code
+# Baseado no histórico de commits (2024–2026)
+
+meta:
+  project: dare-framework
+  version: "1.0"
+  language: pt-BR
+  last_sync: "2026-02"
+
+entries:
+  - id: add-page
+    name: Adicionar nova página
+    context: |
+      O projeto usa Wouter para rotas. Rotas de aplicação ficam em /aplicar/*.
+      Padrão: criar página em client/src/pages/, registrar em App.tsx,
+      adicionar item em client/src/data/navigation.ts.
+    prompt: |
+      Ao adicionar página em /aplicar/[slug]:
+      1. Criar client/src/pages/[Nome]Page.tsx
+      2. Adicionar <Route path="/aplicar/[slug]" component={[Nome]Page} /> em App.tsx
+      3. Incluir em dareOsNavItems ou guiasNavItems em navigation.ts
+      4. Se tiver seções internas, adicionar aplicarSubNavByPage e IDs nas seções
+    use: Desenvolvimento / rotas
+    verified: true
+
+  - id: update-navigation
+    name: Atualizar navegação
+    context: |
+      Framework e DARE OS são exibidos em pé de igualdade no header.
+      Framework: Sobre, Níveis, Recursos, Manifesto, Contribuir.
+      DARE OS: Visão Geral, Wizard, Ciclo, Packs, Anti-padrões, Referência.
+      Guias: 4 Pilares, Vibe Coding, Prompt Engineering.
+    prompt: |
+      Ao alterar a navegação:
+      1. Atualizar client/src/data/navigation.ts
+      2. Manter Framework e DARE OS visíveis em conjunto
+      3. Atualizar Header.tsx e Footer.tsx se a estrutura mudar
+      4. Mobile: ordem Início → Framework → DARE OS → Guias
+    use: Desenvolvimento / UI
+    verified: true
+
+  - id: add-framework-level
+    name: Adicionar ou alterar nível do framework
+    context: |
+      frameworkLevels.ts define 5 níveis (0–4). Edição 2026.
+      Ferramentas deprecadas: DALL-E 3→GPT Image 1, Galileo→Stitch.
+    prompt: |
+      Ao alterar níveis:
+      1. Editar client/src/data/frameworkLevels.ts
+      2. Manter FRAMEWORK_LEVELS_VERSION atualizado
+      3. Sincronizar dare-framework-content.json se for conteúdo público
+      4. Atualizar ResourcesSection.tsx se houver novos recursos por nível
+    use: Conteúdo / framework
+    verified: true
+
+  - id: pack-structure
+    name: Trabalhar com packs DARE OS
+    context: |
+      Packs em client/src/packs/level-[0-3]/ com README, PRD, SDD,
+      governance, prompts/registry.yaml, eval/rubric.md.
+    prompt: |
+      Ao editar packs:
+      1. Manter estrutura consistente entre níveis
+      2. prompts/registry.yaml: level, description, entries[]
+      3. Cada entry: id, name, prompt, use, verified
+      4. Atualizar pack-loader.ts se a estrutura mudar
+    use: Packs DARE OS
+    verified: true
+
+  - id: fix-route
+    name: Corrigir rota ou link
+    context: |
+      Rotas: /, /aplicar, /aplicar/wizard, /aplicar/dare-os, /aplicar/packs, etc.
+      Contato: LinkedIn em vez de e-mail.
+    prompt: |
+      Ao corrigir links:
+      1. Usar caminhos absolutos /aplicar/... ou âncoras /#framework
+      2. Verificar se a seção/ID existe na página de destino
+      3. Contato: LinkedIn (guigonzalez)
+    use: Correção de bugs
+    verified: true
+
+  - id: deploy-github-pages
+    name: Deploy e GitHub Pages
+    context: |
+      Deploy via .github/workflows/gh-pages.yml.
+      Build: npm run build → client/dist/
+    prompt: |
+      Ao alterar deploy:
+      1. Manter gh-pages.yml funcional
+      2. Garantir SPA routing (404.html)
+      3. Não commitar secrets
+    use: DevOps
+    verified: true

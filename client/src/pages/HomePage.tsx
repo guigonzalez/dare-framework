@@ -1,5 +1,4 @@
 import AboutSection from "@/components/AboutSection";
-import AgentsSection from "@/components/AgentsSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ContributeSection from "@/components/ContributeSection";
 import FrameworkSection from "@/components/FrameworkSection";
@@ -15,7 +14,6 @@ export default function HomePage() {
       <FrameworkSection />
       <ResourcesSection />
       <BenefitsSection />
-      <AgentsSection />
       <ManifestoSection />
       <ContributeSection />
     </main>

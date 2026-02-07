@@ -1,0 +1,7 @@
+# DARE OS Prompt Registry – Nível 0
+# Nível 0 não utiliza prompts de IA. Este arquivo serve como placeholder
+# para manter a estrutura do pack e documentar a decisão.
+
+level: 0
+description: Artesanal – Nenhum prompt de IA utilizado
+entries: []

@@ -94,6 +94,16 @@ Docs/
 ├── PROJECT_ANALYSIS.md              # Complete project analysis
 ├── TECHNICAL_STACK.md               # Technology inventory
 └── COMPONENT_ARCHITECTURE.md        # Component documentation
+
+prompts/                              # Prompt registry (Exploration → Candidates → Registry)
+├── README.md                        # Visão geral e fluxo
+├── SCHEMA.md                        # Schema de prompts
+├── WORKFLOW.md                      # Promoção exploration → candidates → registry
+├── registry.yaml                    # Registry principal (produção)
+├── exploration/                     # Rascunhos e experimentos
+├── candidates/                      # Prompts em avaliação
+├── registry/                        # Registries estruturados (project.yaml)
+└── context/                         # Contexto do histórico de commits
 ```
 
 ---

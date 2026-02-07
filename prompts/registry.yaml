@@ -1,0 +1,56 @@
+# DARE Framework — Prompt Registry (ponto de entrada)
+# Registry em produção. Exploration e Candidates em prompts/exploration/ e prompts/candidates/
+
+meta:
+  project: dare-framework
+  version: "1.0"
+  language: pt-BR
+  last_sync: "2026-02"
+
+# Prompts verificados (produção). Ver registry/project.yaml para cópia estruturada.
+prompts:
+  - id: add-page
+    name: Adicionar nova página
+    context: |
+      Rotas em /aplicar/*. Criar em pages/, registrar em App.tsx e navigation.ts.
+    prompt: |
+      Ao adicionar página em /aplicar/[slug]:
+      1. Criar client/src/pages/[Nome]Page.tsx
+      2. Adicionar <Route path="/aplicar/[slug]" component={[Nome]Page} /> em App.tsx
+      3. Incluir em dareOsNavItems ou guiasNavItems em navigation.ts
+      4. Se tiver seções, adicionar aplicarSubNavByPage e IDs
+    verified: true
+
+  - id: update-navigation
+    name: Atualizar navegação
+    context: |
+      Framework e DARE OS em pé de igualdade. Não esconder um no dropdown do outro.
+    prompt: |
+      Ao alterar navegação: atualizar navigation.ts, Header.tsx, Footer.tsx.
+      Mobile: Início → Framework → DARE OS → Guias
+    verified: true
+
+  - id: add-framework-level
+    name: Adicionar ou alterar nível do framework
+    prompt: |
+      Editar frameworkLevels.ts, atualizar FRAMEWORK_LEVELS_VERSION,
+      sincronizar dare-framework-content.json e ResourcesSection.tsx
+    verified: true
+
+  - id: pack-structure
+    name: Trabalhar com packs DARE OS
+    prompt: |
+      Manter estrutura em level-[0-3]/. prompts/registry.yaml: level, description, entries[]
+    verified: true
+
+  - id: fix-route
+    name: Corrigir rota ou link
+    prompt: |
+      Usar /aplicar/... ou /#framework. Verificar IDs. Contato: LinkedIn.
+    verified: true
+
+  - id: deploy-github-pages
+    name: Deploy e GitHub Pages
+    prompt: |
+      Manter gh-pages.yml, SPA routing, sem secrets.
+    verified: true

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award, Lightbulb, Code } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Building2, Users, Rocket, Mail, ExternalLink, Github, MessageCircle, BookOpen, Award, Lightbulb, Code, Wand2, Package, Layers } from "lucide-react";
+import { config } from "@/data/config";
 
 const realApplications = [
   {
@@ -23,9 +24,8 @@ export default function ApplyPage() {
 
   return (
     <main className="flex-grow bg-gradient-to-b from-white via-gray-50 to-white">
-        {/* Hero Section */}
+        {/* Hero — Framework + DARE OS em conjunto */}
         <section id="about" className="relative py-16 sm:py-24 overflow-hidden">
-          {/* Decorative background */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -40,31 +40,102 @@ export default function ApplyPage() {
               >
                 <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Framework Open Source
+                  Framework + DARE OS — 2026
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-600 to-blue-600 bg-clip-text text-transparent">
                   A IA não substitui o designer — ela amplifica quem pensa com método
                 </h1>
                 <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
-                  O DARE Framework ajuda times a estruturar decisões de IA com confiabilidade, propósito e retorno.
+                  O <a href="/#framework" className="text-primary hover:underline font-medium">Framework DARE</a> define 5 níveis (0–4) de maturidade. O <strong>DARE OS</strong> é o sistema que coloca isso em prática — Wizard, Packs e Ciclo.
                 </p>
-                <p className="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
-                  Usado por times de design, produto e inovação para transformar IA em raciocínio estratégico — não em hype.
+                <p className="text-base text-gray-500 max-w-2xl mx-auto">
+                  Usado por times de design, produto e inovação para transformar IA em raciocínio estratégico.
                 </p>
-                {/* TEMPORARILY HIDDEN - Link to #modelos section */}
-                {/*
-                <a
-                  href="#modelos"
-                  className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
-                >
-                  Descubra como aplicar o DARE
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                */}
               </motion.div>
             </div>
           </div>
         </section>
+
+        {/* DARE OS — Sistema operacional do framework */}
+        {config.DARE_OS_MVP && (
+        <section id="dare-os" className="py-16 bg-gradient-to-b from-primary/5 to-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                  <Layers className="w-4 h-4 mr-2" />
+                  DARE OS
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                  Do conceito à operação
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  O sistema prático que conecta o framework aos fluxos de trabalho. Wizard, Packs e Ciclo de Vida para guiar o uso de IA com governança.
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.a
+                  href="/aplicar/wizard"
+                  className="group p-6 bg-gradient-to-br from-primary/5 to-purple-50 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Wand2 className="w-10 h-10 text-primary mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-2">Wizard</h3>
+                  <p className="text-sm text-gray-600 mb-4">Recomendação determinística do nível DARE (0–3) em 5 perguntas.</p>
+                  <span className="text-sm font-medium text-primary group-hover:underline">Iniciar Wizard →</span>
+                </motion.a>
+                <motion.a
+                  href="/aplicar/packs"
+                  className="group p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl border-2 border-purple-200 hover:border-purple-400 transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <Package className="w-10 h-10 text-purple-600 mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-2">Packs</h3>
+                  <p className="text-sm text-gray-600 mb-4">Template packs por nível com README, PRD, registry e governance.</p>
+                  <span className="text-sm font-medium text-purple-600 group-hover:underline">Ver Packs →</span>
+                </motion.a>
+                <motion.a
+                  href="/aplicar/dare-os"
+                  className="group p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border-2 border-blue-200 hover:border-blue-400 transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <Layers className="w-10 h-10 text-blue-600 mb-3" />
+                  <h3 className="font-semibold text-gray-900 mb-2">Ciclo de Vida</h3>
+                  <p className="text-sm text-gray-600 mb-4">Exploração → Candidatos → Registry → Spec Anchoring → Gates.</p>
+                  <span className="text-sm font-medium text-blue-600 group-hover:underline">Ver Ciclo →</span>
+                </motion.a>
+              </div>
+              <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+                <a href="/aplicar/agentes" className="text-gray-600 hover:text-primary transition-colors">
+                  Agentes & MCP →
+                </a>
+                <a href="/aplicar/anti-padroes" className="text-gray-600 hover:text-primary transition-colors">
+                  Anti-padrões →
+                </a>
+                <a href="/aplicar/referencia" className="text-gray-600 hover:text-primary transition-colors">
+                  Referência →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
 
         {/* Real Applications Section */}
         <section id="aplicacoes" className="py-16 bg-white">
@@ -128,8 +199,8 @@ export default function ApplyPage() {
           </div>
         </section>
 
-        {/* Educational Resources Section */}
-        <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        {/* Guias educacionais */}
+        <section id="guias" className="py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
               <motion.div
@@ -141,7 +212,7 @@ export default function ApplyPage() {
               >
                 <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   <Lightbulb className="w-4 h-4 mr-2" />
-                  Recursos Educacionais
+                  Guias
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                   Aprenda a dominar IA no Design
@@ -170,7 +241,7 @@ export default function ApplyPage() {
                       <h3 className="ml-4 text-2xl font-bold text-gray-900">Vibe Coding</h3>
                     </div>
                     <p className="text-gray-600 mb-6 flex-grow">
-                      Aprenda a metodologia revolucionária de Andrej Karpathy que transforma descrições em linguagem natural em código funcional. Domine as 6 ferramentas essenciais de 2025.
+                      Aprenda a metodologia revolucionária de Andrej Karpathy que transforma descrições em linguagem natural em código funcional. Domine as ferramentas essenciais de 2026.
                     </p>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-center text-sm text-gray-700">
@@ -179,7 +250,7 @@ export default function ApplyPage() {
                       </li>
                       <li className="flex items-center text-sm text-gray-700">
                         <CheckCircle className="w-4 h-4 text-purple-600 mr-2 flex-shrink-0" />
-                        Cursor, Replit, Claude, V0, Windsurf, Lovable
+                        Cursor, Bolt.new, v0, Claude Code, Lovable, Replit
                       </li>
                       <li className="flex items-center text-sm text-gray-700">
                         <CheckCircle className="w-4 h-4 text-purple-600 mr-2 flex-shrink-0" />
@@ -222,7 +293,7 @@ export default function ApplyPage() {
                       </li>
                       <li className="flex items-center text-sm text-gray-700">
                         <CheckCircle className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" />
-                        Workflows para GPT Image, SORA 2, VEO 3, Kling AI
+                        Workflows para imagens, vídeos e textos (GPT Image 1, Midjourney 7, Adobe Firefly)
                       </li>
                       <li className="flex items-center text-sm text-gray-700">
                         <CheckCircle className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" />

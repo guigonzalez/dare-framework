@@ -3,13 +3,33 @@ import { Github, Linkedin, Edit3, User, BookOpen, Clock, Tag, Sparkles } from "l
 
 const changelog = [
   {
+    version: "2.4.0",
+    date: "7 de Fevereiro de 2026",
+    type: "minor",
+    changes: [
+      "Novos nomes dos níveis: Artesanal, Backstage, Geração de Assets, Prompt-to-Prototype, Orquestração de Agentes"
+    ]
+  },
+  {
+    version: "2.2.0",
+    date: "7 de Fevereiro de 2026",
+    type: "minor",
+    changes: [
+      "Revisão de navegação: DARE OS em destaque",
+      "Aplicar e DARE OS unificados sob /aplicar",
+      "Home simplificada (5 itens de nav)",
+      "Hero com badge Atualizado 2026",
+      "Página Aplicar com DARE OS no topo"
+    ]
+  },
+  {
     version: "2.0.0",
     date: "13 de Outubro de 2025",
     type: "major",
     changes: [
       "Expandido de 6 para 7 níveis do framework",
       "Adicionado novo Nível 3.5 - IA Colaborativa Avançada",
-      "Atualização de todas as ferramentas para 2025 (Figma Make, Claude 3.5 Sonnet, Cursor AI)",
+      "Atualização de todas as ferramentas para 2026 (GPT Image 1, Stitch, Ideogram 3.0, Figma Make, Claude Opus 4.x, v0, Bolt.new)",
       "Métricas quantificadas para cada nível (25-40%, 50-70%, etc.)",
       "Redesign completo da interface com animações modernas",
       "Implementação de navegação por setas na seção de Recursos"

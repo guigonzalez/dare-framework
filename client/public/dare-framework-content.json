@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "title": "DARE Framework - Design AI Reliable Engagement",
+    "description": "Um framework colaborativo para adoção estratégica de IA em processos de design",
+    "version": "2.4.0",
+    "license": "CC BY-SA 4.0",
+    "researchUpdated": "2026-02",
+    "levelsVersion": "2026",
+    "config": {
+      "DARE_OS_MVP": true
+    }
+  },
+  "hero": {
+    "badge": "Open Source - AI Made",
+    "title": {
+      "line1": "Design AI Reliable",
+      "line2": "Engagement Framework"
+    },
+    "subtitle": "Um framework colaborativo para adoção estratégica de IA em processos de design— equilibrando inovação com criatividade humana.",
+    "cta": {
+      "primary": "Explorar Framework",
+      "secondary": "Aplicar o DARE"
+    }
+  },
+  "about": {
+    "badge": "O que é o DARE Framework?",
+    "title": "Sobre o DARE Framework",
+    "description": "O Design AI Reliable Engagement (DARE) Framework oferece a designers, agências e organizações uma abordagem estruturada para adoção de inteligência artificial em fluxos de trabalho de design—de UI e UX até motion e branding.",
+    "cards": [
+      {
+        "title": "Orientado pela Comunidade",
+        "description": "Inspirado em modelos como Creative Commons, o DARE Framework é aberto para contribuição pública e adaptação, criando um sistema vivo que evolui com a tecnologia de IA."
+      },
+      {
+        "title": "Centrado no Humano",
+        "description": "O DARE enfatiza que a IA deve aprimorar—não substituir—a criatividade humana, estabelecendo diretrizes que preservam a integridade do trabalho de design enquanto aproveitam as vantagens da IA."
+      },
+      {
+        "title": "Transparência",
+        "description": "O framework fornece diretrizes claras sobre divulgação do uso de IA no trabalho de design, ajudando a estabelecer padrões éticos e construir confiança com clientes e usuários."
+      },
+      {
+        "title": "Prático",
+        "description": "Cada nível do framework inclui ferramentas, processos e considerações específicas, tornando-o imediatamente aplicável aos desafios de design do mundo real."
+      }
+    ],
+    "footer": {
+      "badge": "Um framework para todos os níveis de adoção",
+      "title": "Do Artesanal à Orquestração de Agentes",
+      "description": "O DARE Framework organiza a adoção de IA em cinco níveis progressivos (0 a 4), do artesanal à orquestração de agentes, ajudando equipes a integrar inteligência artificial de forma controlada e ética."
+    }
+  },
+  "frameworkLevels": [
+    {
+      "id": 0,
+      "name": "Nível 0 – Artesanal",
+      "shortName": "Artesanal",
+      "tagline": "Nenhuma IA. Só cérebro, mão e suor.",
+      "description": "Tudo feito à moda antiga. O designer conduz pesquisa, criação e entrega com ferramentas tradicionais, sem IA.",
+      "appropriateUses": ["Projetos sensíveis à identidade", "Branding rígido", "Entregas finais"],
+      "pros": ["Máximo controle", "Refinamento detalhado", "Autoria completa"],
+      "cons": ["Lento", "Pouco escalável", "Sujeito a retrabalho braçal"],
+      "risks": "Ineficiência em processos repetitivos; prazos potencialmente mais longos; maior custo por hora de trabalho."
+    },
+    {
+      "id": 1,
+      "name": "Nível 1 – Backstage",
+      "shortName": "Backstage",
+      "tagline": "A IA te ajuda, mas não cria.",
+      "description": "Uso pontual da IA para tarefas operacionais: resumir pesquisas, organizar dados, revisar textos, gerar insights.",
+      "tools": ["ChatGPT (GPT-5.2)", "Claude Opus 4.6", "Notion AI", "Figma AI", "Miro AI", "Canva AI"],
+      "appropriateUses": ["Research e análise de dados", "Documentação e síntese", "Organização de insights"],
+      "pros": ["25-40% redução no tempo de research", "Mantém integridade criativa", "Baixo risco de derivação"],
+      "cons": ["Nenhuma aceleração no design em si", "Benefícios limitados em processos puramente visuais"],
+      "risks": "Confiança excessiva em insights gerados por IA sem verificação; viés de dados influenciando decisões de design."
+    },
+    {
+      "id": 2,
+      "name": "Nível 2 – Geração de Assets",
+      "shortName": "Geração de Assets",
+      "tagline": "Você cria, a IA preenche.",
+      "description": "A IA entra para gerar partes do design (imagens, textos, ícones, padrões). Designer controla a composição.",
+      "tools": ["Midjourney 7", "GPT Image 1", "Adobe Firefly", "Figma Draw", "Ideogram 3.0", "Leonardo.AI", "Flux Pro"],
+      "appropriateUses": ["Criação de assets visuais", "Ilustrações e ícones", "Mockups e imagens conceituais"],
+      "pros": ["50-70% aceleração na criação de assets", "Expande possibilidades visuais", "Reduz dependência de bibliotecas de assets"],
+      "cons": ["Risco de quebra de consistência", "Visual potencialmente genérico", "Dependência de prompts bem escritos"],
+      "risks": "Questões de direitos autorais com imagens geradas; falta de consistência entre elementos visuais; estéticas derivativas."
+    },
+    {
+      "id": 3,
+      "name": "Nível 3 – Prompt-to-Prototype",
+      "shortName": "Prompt-to-Prototype",
+      "tagline": "IA propõe e monta, você direciona.",
+      "description": "A IA sugere layouts, fluxos e telas; co-edição em tempo real; prompt-to-prototype. O designer edita, mistura e atua como diretor de arte.",
+      "tools": ["Figma AI", "Stitch", "Uizard", "Cursor", "Claude Artifacts", "v0 by Vercel", "Bolt.new", "Figma Make"],
+      "appropriateUses": ["Prototipagem rápida", "Exploração de variações", "Wireframes e layouts", "Prompt-to-prototype", "MVPs e sprints rápidos"],
+      "pros": ["60-90% aceleração concept-to-prototype", "Múltiplas variações instantâneas", "Co-criação iterativa em tempo real"],
+      "cons": ["Requer curadoria crítica", "Risco de vício criativo", "Exige ajustes para virar produto real"],
+      "risks": "Atrofia de habilidades criativas; homogeneização visual; necessidade de checkpoints de revisão humana."
+    },
+    {
+      "id": 4,
+      "name": "Nível 4 – Orquestração de Agentes",
+      "shortName": "Orquestração de Agentes",
+      "tagline": "IA como agentes autônomos com contexto.",
+      "description": "Agentes de IA que executam tarefas complexas de forma independente. Acesso contextual via MCP, orquestração de workflows e co-criação agentic.",
+      "tools": ["Claude com MCP", "Cursor Agent Mode", "Agentic Workflows", "MCP Servers customizados", "Multi-Agent Systems"],
+      "appropriateUses": ["Agentes copiloto com contexto do projeto", "Agentes co-criadores via MCP", "Orquestração de múltiplos agentes", "Workflows agentic"],
+      "pros": ["Contexto unificado via MCP", "Execução autônoma com governança", "Integração com ferramentas e dados"],
+      "cons": ["Curva de aprendizado em MCP", "Requer governança e gates", "Risco de sobre-dependência"],
+      "risks": "Perda de controle em execuções autônomas; necessidade de gates e revisão humana; governança de agentes essencial."
+    }
+  ],
+  "levelContracts": [
+    {
+      "id": 0,
+      "name": "Nível 0 – Artesanal",
+      "shortName": "Artesanal",
+      "tagline": "Nenhuma IA. Só cérebro, mão e suor.",
+      "description": "Tudo feito à moda antiga. O designer conduz pesquisa, criação e entrega com ferramentas tradicionais, sem IA.",
+      "aiCanDo": [],
+      "aiCannotDo": ["Gerar ou editar artefatos", "Assistir em decisões", "Automatizar tarefas repetitivas"],
+      "requiredGates": ["Decisão explícita de não usar IA documentada", "Critérios de aceite definidos manualmente"],
+      "typicalUseCases": ["Projetos sensíveis à identidade", "Branding rígido", "Entregas finais com requisitos não verbalizáveis"],
+      "whenNotToUse": ["Quando há tarefas repetitivas que a IA faria bem", "Quando tempo é crítico e IA poderia acelerar", "Quando regras são claras e validação é possível"]
+    },
+    {
+      "id": 1,
+      "name": "Nível 1 – Backstage",
+      "shortName": "Backstage",
+      "tagline": "A IA te ajuda, mas não cria.",
+      "description": "Uso pontual da IA para tarefas operacionais: resumir pesquisas, organizar dados, revisar textos, gerar insights.",
+      "aiCanDo": ["Resumir e sintetizar textos", "Organizar dados e insights", "Revisar rascunhos e sugerir melhorias", "Gerar ideias e brainstorm auxiliar"],
+      "aiCannotDo": ["Criar entregas finais", "Substituir decisão humana", "Gerar assets visuais ou código"],
+      "requiredGates": ["Documentação de escopo de uso da IA", "Verificação humana obrigatória em insights críticos"],
+      "typicalUseCases": ["Research e análise de dados", "Documentação e síntese", "Organização de insights"],
+      "whenNotToUse": ["Quando output da IA virará entrega final sem edição significativa", "Quando não há critério para validar qualidade dos insights", "Quando impacto de erro é alto"]
+    },
+    {
+      "id": 2,
+      "name": "Nível 2 – Geração de Assets",
+      "shortName": "Geração de Assets",
+      "tagline": "Você cria, a IA preenche.",
+      "description": "A IA entra para gerar partes do design (imagens, textos, ícones, padrões). Designer controla a composição.",
+      "aiCanDo": ["Gerar imagens a partir de prompts", "Criar ícones e ilustrações", "Sugerir padrões e texturas", "Preencher layouts com conteúdo de suporte"],
+      "aiCannotDo": ["Decidir composição ou hierarquia visual", "Garantir consistência de marca", "Substituir direção de arte"],
+      "requiredGates": ["Spec anchoring (referências visuais documentadas)", "Critérios de aceite para outputs gerados", "Revisão de consistência antes de aprovação"],
+      "typicalUseCases": ["Criação de assets visuais", "Ilustrações e ícones", "Mockups e imagens conceituais"],
+      "whenNotToUse": ["Quando identidade visual é crítica e não há referências claras", "Quando não há como validar qualidade objetivamente", "Quando direitos autorais são sensíveis"]
+    },
+    {
+      "id": 3,
+      "name": "Nível 3 – Prompt-to-Prototype",
+      "shortName": "Prompt-to-Prototype",
+      "tagline": "IA propõe e monta, você direciona.",
+      "description": "A IA sugere layouts, fluxos e telas; co-edição em tempo real; prompt-to-prototype. O designer edita e atua como diretor de arte.",
+      "aiCanDo": ["Sugerir layouts, wireframes e fluxos", "Gerar variações e protótipos", "Co-criar em tempo real", "Prompt-to-prototype"],
+      "aiCannotDo": ["Substituir julgamento criativo", "Garantir usabilidade sem validação", "Manter consistência estratégica sem supervisão"],
+      "requiredGates": ["Registry de prompts", "Rubrica de avaliação para outputs", "Checkpoint de revisão humana antes de aprovação"],
+      "typicalUseCases": ["Prototipagem rápida", "Exploração de variações", "Prompt-to-prototype", "MVPs e sprints rápidos"],
+      "whenNotToUse": ["Quando regras explícitas não existem", "Quando validação objetiva não é possível", "Quando impacto de falha é alto"]
+    },
+    {
+      "id": 4,
+      "name": "Nível 4 – Orquestração de Agentes",
+      "shortName": "Orquestração de Agentes",
+      "tagline": "IA como agentes autônomos com contexto.",
+      "description": "Agentes de IA com acesso contextual via MCP, orquestração de workflows e execução autônoma com governança.",
+      "aiCanDo": ["Executar tarefas complexas de forma autônoma", "Acessar contexto via MCP", "Orquestrar múltiplos agentes", "Co-criar com contexto completo do projeto"],
+      "aiCannotDo": ["Operar sem gates e governança", "Substituir revisão humana crítica", "Aprovar entregas sem checkpoints"],
+      "requiredGates": ["Governança de agentes documentada", "MCP e contexto definidos", "Gates e revisão humana"],
+      "typicalUseCases": ["Agentes copiloto com MCP", "Agentes co-criadores", "Orquestração de workflows agentic"],
+      "whenNotToUse": ["Quando não há governança de agentes", "Quando contexto não pode ser estruturado", "Quando impacto de falha é alto e irreversível"],
+      "externalLink": "/aplicar/agentes"
+    }
+  ],
+  "manifesto": {
+    "badge": "Nossos Valores",
+    "title": "Manifesto do Framework DARE",
+    "principles": [
+      {
+        "title": "IA como ferramenta, não como mestre",
+        "description": "Acreditamos que a inteligência artificial deve amplificar a criatividade humana, não substituí-la. O DARE posiciona a IA como uma ferramenta colaborativa no conjunto de ferramentas do designer, sujeita à sua direção criativa e julgamento."
+      },
+      {
+        "title": "Transparência acima da opacidade",
+        "description": "Defendemos uma comunicação clara sobre como e quando a IA é usada nos processos de design. Clientes, usuários e equipes merecem entender o papel que a automação desempenha no trabalho criativo."
+      },
+      {
+        "title": "Resultados centrados no ser humano",
+        "description": "O objetivo final do design permanece inalterado: criar soluções que atendam às necessidades humanas. A IA deve avançar essa missão, não comprometê-la através da homogeneização ou diminuição da empatia."
+      },
+      {
+        "title": "Adaptabilidade com responsabilidade",
+        "description": "Reconhecemos que as capacidades da IA continuarão a evoluir. O Framework DARE fornece uma estrutura flexível para incorporar novas ferramentas e técnicas, mantendo limites de uso responsáveis."
+      },
+      {
+        "title": "Avanço inclusivo",
+        "description": "Apoiamos a democratização do design enquanto preservamos o valor da expertise. O nível adequado de integração de IA deve ser determinado pelas necessidades do projeto, não apenas por capacidades técnicas."
+      }
+    ]
+  },
+  "apply": {
+    "hero": {
+      "badge": "Framework Open Source",
+      "title": "A IA não substitui o designer — ela amplifica quem pensa com método",
+      "subtitle": "O DARE Framework ajuda times a estruturar decisões de IA com confiabilidade, propósito e retorno.",
+      "description": "Usado por times de design, produto e inovação para transformar IA em raciocínio estratégico — não em hype."
+    },
+    "realApplications": [
+      {
+        "company": "Startups que deixam a IA explicar suas decisões",
+        "use": "não apenas executá-las",
+        "result": "60% mais clareza em governança de IA desde o início"
+      },
+      {
+        "company": "Squads que sabem quando automatizar",
+        "use": "e quando pensar junto com a IA",
+        "result": "Redução de 40% em retrabalho por escolhas mal fundamentadas"
+      },
+      {
+        "company": "Consultorias que falam a mesma língua da IA",
+        "use": "e do cliente",
+        "result": "Alinhamento de expectativas em 70% menos tempo"
+      }
+    ],
+    "dareOsBridge": {
+      "badge": "DARE OS",
+      "title": "Do conceito à operação",
+      "description": "O DARE OS é o sistema prático que conecta o framework aos fluxos de trabalho. Wizard, Packs e Ciclo de Vida para guiar o uso de IA com governança."
+    }
+  },
+  "navigation": {
+    "dareOsPrimary": [
+      { "href": "/aplicar", "label": "Visão Geral" },
+      { "href": "/aplicar/wizard", "label": "Wizard" },
+      { "href": "/aplicar/dare-os", "label": "Ciclo" },
+      { "href": "/aplicar/packs", "label": "Packs" }
+    ],
+    "framework": [
+      { "href": "/#about", "label": "Sobre" },
+      { "href": "/#framework", "label": "Níveis" },
+      { "href": "/#recursos", "label": "Recursos" },
+      { "href": "/#manifesto", "label": "Manifesto" },
+      { "href": "/#contribute", "label": "Contribuir" }
+    ],
+    "aplicar": {
+      "dareOs": [
+        { "href": "/aplicar", "label": "Visão Geral" },
+        { "href": "/aplicar/wizard", "label": "Wizard" },
+        { "href": "/aplicar/dare-os", "label": "Ciclo de Vida" },
+        { "href": "/aplicar/packs", "label": "Packs" },
+        { "href": "/aplicar/anti-padroes", "label": "Anti-padrões" },
+        { "href": "/aplicar/referencia", "label": "Referência" }
+      ],
+      "guias": [
+        { "href": "/aplicar/pilares", "label": "4 Pilares DARE" },
+        { "href": "/aplicar/vibe-coding", "label": "Vibe Coding" },
+        { "href": "/aplicar/prompt-engineering", "label": "Prompt Engineering" }
+      ]
+    }
+  },
+  "wizard": {
+    "version": "1.0",
+    "title": "Decision Wizard",
+    "subtitle": "Recomendação determinística do nível DARE (0–3) para seu contexto",
+    "questions": [
+      {
+        "id": "workType",
+        "label": "Qual o tipo de trabalho?",
+        "options": [
+          { "value": "design", "label": "Design" },
+          { "value": "product", "label": "Produto" },
+          { "value": "development", "label": "Desenvolvimento" },
+          { "value": "hybrid", "label": "Híbrido" }
+        ]
+      },
+      {
+        "id": "impactOfFailure",
+        "label": "Qual o impacto de uma falha?",
+        "options": [
+          { "value": "low", "label": "Baixo" },
+          { "value": "medium", "label": "Médio" },
+          { "value": "high", "label": "Alto" }
+        ]
+      },
+      {
+        "id": "taskNature",
+        "label": "Qual a natureza da tarefa?",
+        "options": [
+          { "value": "repetitive", "label": "Repetitiva" },
+          { "value": "semi-structured", "label": "Semi-estruturada" },
+          { "value": "exploratory", "label": "Exploratória" }
+        ]
+      },
+      {
+        "id": "explicitRulesExist",
+        "label": "Existem regras explícitas que governam o resultado?",
+        "options": [
+          { "value": "yes", "label": "Sim" },
+          { "value": "partial", "label": "Parcialmente" },
+          { "value": "no", "label": "Não" }
+        ]
+      },
+      {
+        "id": "canValidateOutput",
+        "label": "O resultado pode ser validado ou testado objetivamente?",
+        "options": [
+          { "value": "yes", "label": "Sim" },
+          { "value": "partial", "label": "Parcialmente" },
+          { "value": "no", "label": "Não" }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "conditions": { "impactOfFailure": "high", "explicitRulesExist": "no" },
+        "level": 0,
+        "reason": "Impacto alto com regras indefinidas. O risco de falha é inaceitável sem governança explícita. Recomendamos Nível 0 até que regras sejam documentadas.",
+        "gates": ["Documentar requisitos explícitos", "Estabelecer critérios de aceite"],
+        "risks": ["Outputs imprevisíveis", "Falhas críticas sem mitigação", "Retrabalho caro"]
+      },
+      {
+        "conditions": { "impactOfFailure": "high", "canValidateOutput": "no" },
+        "level": 0,
+        "reason": "Impacto alto sem capacidade de validação objetiva. Sem testes, não há como detectar erros antes que causem dano.",
+        "gates": ["Definir métricas de validação", "Criar critérios de verificação"],
+        "risks": ["Erros não detectados", "Qualidade inconsistente", "Perda de confiança"]
+      },
+      {
+        "conditions": { "taskNature": "exploratory", "impactOfFailure": "high" },
+        "level": 0,
+        "reason": "Tarefas exploratórias com impacto alto exigem controle humano total. A IA não deve influenciar decisões críticas em terreno incerto.",
+        "gates": ["Mapear incertezas", "Definir checkpoints de decisão humana"],
+        "risks": ["Deriva de objetivo", "Escalada de risco", "Decisões não fundamentadas"]
+      },
+      {
+        "conditions": { "impactOfFailure": "high" },
+        "level": 0,
+        "reason": "Com impacto alto, adotamos postura conservadora. Nível 0 até que todas as condições favoráveis estejam presentes.",
+        "gates": ["Revisão humana obrigatória", "Documentação de decisões"],
+        "risks": ["Escala de falha", "Responsabilidade não atribuída"]
+      },
+      {
+        "conditions": { "canValidateOutput": "yes", "taskNature": "repetitive", "explicitRulesExist": "yes", "impactOfFailure": "low" },
+        "level": 3,
+        "reason": "Tarefa repetitiva, com regras claras, validação possível e impacto baixo. Condições ideais para IA como copiloto.",
+        "gates": ["Registry de prompts", "Rubrica de avaliação", "Checkpoint de revisão"],
+        "risks": ["Uso excessivo sem revisão crítica"]
+      },
+      {
+        "conditions": { "canValidateOutput": "yes", "taskNature": "repetitive", "explicitRulesExist": "yes", "impactOfFailure": "medium" },
+        "level": 3,
+        "reason": "Condições favoráveis com impacto médio. IA como copiloto é apropriada, com gates reforçados.",
+        "gates": ["Registry de prompts", "Rubrica de avaliação", "Revisão humana obrigatória"],
+        "risks": ["Falha em edge cases"]
+      },
+      {
+        "conditions": { "canValidateOutput": "yes", "taskNature": "repetitive", "explicitRulesExist": "yes" },
+        "level": 3,
+        "reason": "Regras claras, validação possível e tarefa repetitiva. Nível 3 adequado.",
+        "gates": ["Registry de prompts", "Rubrica de avaliação"],
+        "risks": ["Variabilidade em cenários não cobertos"]
+      },
+      {
+        "conditions": { "canValidateOutput": "yes", "taskNature": "semi-structured", "explicitRulesExist": "yes" },
+        "level": 2,
+        "reason": "Tarefa semi-estruturada com regras e validação. IA como acelerador visual/operacional é adequada.",
+        "gates": ["Spec anchoring", "Critérios de aceite documentados"],
+        "risks": ["Inconsistência em casos ambíguos"]
+      },
+      {
+        "conditions": { "explicitRulesExist": "yes", "canValidateOutput": "partial" },
+        "level": 2,
+        "reason": "Regras existem mas validação é parcial. Nível 2 com supervisão reforçada.",
+        "gates": ["Revisão de outputs", "Checkpoint antes de aprovação"],
+        "risks": ["Erros sutis não detectados"]
+      },
+      {
+        "conditions": { "explicitRulesExist": "yes", "impactOfFailure": "low" },
+        "level": 1,
+        "reason": "Regras existem e impacto é baixo. IA assistiva pode acelerar tarefas operacionais.",
+        "gates": ["Documentação de uso", "Verificação pontual"],
+        "risks": ["Uso excessivo sem verificação"]
+      },
+      {
+        "conditions": { "explicitRulesExist": "partial", "impactOfFailure": "low" },
+        "level": 1,
+        "reason": "Regras parciais com baixo impacto. IA assistiva para suporte, sem geração de entregas finais.",
+        "gates": ["Definir escopo de uso da IA", "Revisão humana em decisões"],
+        "risks": ["Extrapolação além do escopo"]
+      },
+      {
+        "conditions": { "taskNature": "repetitive", "canValidateOutput": "yes" },
+        "level": 2,
+        "reason": "Tarefa repetitiva e validável. Nível 2 apropriado, com cuidado no impacto.",
+        "gates": ["Registry de prompts", "Amostragem de validação"],
+        "risks": ["Regras implícitas não capturadas"]
+      }
+    ],
+    "defaultLevel": 0,
+    "defaultReason": "Sem correspondência específica nas regras, recomendamos Nível 0 por precaução. Revise as condições e considere documentar regras e critérios de validação.",
+    "defaultGates": ["Documentar requisitos", "Definir critérios de validação", "Revisão humana obrigatória"],
+    "defaultRisks": ["Incerteza nas condições", "Falhas não mitigadas"],
+    "levelDescriptions": {
+      "0": { "name": "Artesanal", "shortName": "Artesanal", "tagline": "Nenhuma IA. Controle total." },
+      "1": { "name": "Backstage", "shortName": "Backstage", "tagline": "A IA te ajuda, mas não cria." },
+      "2": { "name": "Geração de Assets", "shortName": "Geração de Assets", "tagline": "Você cria, a IA preenche." },
+      "3": { "name": "Prompt-to-Prototype", "shortName": "Prompt-to-Prototype", "tagline": "IA propõe e monta, você direciona." },
+      "4": { "name": "Orquestração de Agentes", "shortName": "Orquestração de Agentes", "tagline": "IA como agentes autônomos com contexto." }
+    }
+  },
+  "lifecycle": {
+    "title": "DARE OS Lifecycle",
+    "subtitle": "Ciclo unificado: da exploração ao gate de aprovação",
+    "phases": [
+      {
+        "id": "exploration",
+        "name": "Prompt Exploration",
+        "definition": "Fase inicial de experimentação com prompts. Conversas abertas, testes de variações e descoberta de padrões. O foco é aprender o que funciona antes de formalizar.",
+        "inputs": ["Contexto do projeto", "Objetivos de design/desenvolvimento", "Ferramentas de IA disponíveis"],
+        "outputs": ["Log de exploração", "Prompts candidatos identificados", "Lições aprendidas"]
+      },
+      {
+        "id": "candidates",
+        "name": "Prompt Candidates",
+        "definition": "Consolidação checkpoint. Prompts que mostraram valor na exploração são selecionados e refinados. Ainda não são oficiais, mas passam por primeiros testes de reprodutibilidade.",
+        "inputs": ["Log de exploração", "Prompts que funcionaram", "Critérios de sucesso"],
+        "outputs": ["Lista de candidatos", "Versões iniciais documentadas", "Checklist de validação"]
+      },
+      {
+        "id": "registry",
+        "name": "Prompt Registry",
+        "definition": "Prompts candidatos validados são promovidos ao registry. Cada entrada inclui variáveis, contexto de uso e critérios de aceite. O registry é a fonte única de verdade para prompts em uso.",
+        "inputs": ["Candidatos validados", "Variáveis identificadas", "Contexto de uso documentado"],
+        "outputs": ["Registry atualizado", "Entradas versionadas", "Documentação de uso"]
+      },
+      {
+        "id": "spec-anchoring",
+        "name": "Spec Anchoring",
+        "definition": "Especificações são ancoradas a artefatos concretos. Referências visuais, critérios de aceite e requisitos ficam explícitos. Reduz ambiguidade e deriva.",
+        "inputs": ["Registry de prompts", "Requisitos do projeto", "Referências visuais"],
+        "outputs": ["Specs ancoradas", "Critérios de aceite explícitos", "Links para referências"]
+      },
+      {
+        "id": "context-gates",
+        "name": "Context Design Gates",
+        "definition": "Checkpoints onde o contexto é validado antes de prosseguir. Garante que especificações, prompts e artefatos estão alinhados. Nenhuma aprovação sem passar pelo gate.",
+        "inputs": ["Artefatos a aprovar", "Specs ancoradas", "Checklist do gate"],
+        "outputs": ["Aprovação ou retorno", "Registro de decisão", "Contexto validado"]
+      }
+    ],
+    "exampleFlow": {
+      "exploration": "Conversa no ChatGPT: 'Me sugira 3 variações de hero para um SaaS de produtividade'",
+      "candidates": "2 prompts extraídos e testados 3x cada; 1 descartado por inconsistência",
+      "registry": "Entrada 'hero-saas-variations' no registry com variáveis [contexto, tom, CTA]",
+      "specAnchoring": "Spec vinculada a referências: Figma frame X, paleta Y, copy guidelines Z",
+      "contextGates": "Gate de aprovação: spec ancorada? Registry usado? Rubrica aplicada?"
+    }
+  },
+  "antiPatterns": [
+    { "id": "prompt-drift", "title": "Deriva de prompt sem registro", "signal": "Prompts evoluem em conversas mas não são documentados no registry.", "whyDangerous": "Impossível reproduzir resultados; regressões silenciosas; perda de conhecimento.", "fix": "Adicionar Prompt Registry; consolidar prompts validados; versionar.", "commonLevel": 2 },
+    { "id": "no-validation-gate", "title": "Outputs aprovados sem validação", "signal": "Artefatos gerados por IA são aprovados sem critérios objetivos de verificação.", "whyDangerous": "Erros passam para produção; qualidade inconsistente; risco legal/ético.", "fix": "Criar rubrica de avaliação; gate de validação humana obrigatório.", "commonLevel": 2 },
+    { "id": "high-impact-no-rules", "title": "Alto impacto sem regras explícitas", "signal": "Projetos de alto impacto usam IA sem requisitos documentados.", "whyDangerous": "Falhas críticas; responsabilidade não atribuída; outputs imprevisíveis.", "fix": "Documentar requisitos; estabelecer critérios de aceite; considerar Nível 0.", "commonLevel": 3 },
+    { "id": "exploratory-autopilot", "title": "Tarefa exploratória em modo autopiloto", "signal": "IA gera entregas em terreno incerto sem checkpoints de decisão humana.", "whyDangerous": "Deriva de objetivo; decisões não fundamentadas; perda de controle.", "fix": "Adicionar checkpoints de decisão humana; mapear incertezas; Nível 0 até clarificar.", "commonLevel": 3 },
+    { "id": "insight-without-verification", "title": "Insight da IA usado sem verificação", "signal": "Insights de síntese ou análise são incorporados a decisões sem checagem.", "whyDangerous": "Viés propagado; alucinações influenciando estratégia; confiança excessiva.", "fix": "Gate de verificação humana para insights críticos; documentar fonte.", "commonLevel": 1 },
+    { "id": "no-spec-anchoring", "title": "Geração visual sem spec anchoring", "signal": "IA gera imagens/assets sem referências visuais documentadas.", "whyDangerous": "Inconsistência de marca; retrabalho; estéticas genéricas.", "fix": "Documentar referências visuais; paleta e estilo definidos; critérios de aceite.", "commonLevel": 2 },
+    { "id": "copilot-without-curation", "title": "Copiloto sem curadoria crítica", "signal": "Propostas da IA são aceitas sem edição significativa.", "whyDangerous": "Design preguiçoso; homogeneização; perda de identidade.", "fix": "Checkpoint de curadoria; rubrica de avaliação; revisão obrigatória.", "commonLevel": 3 },
+    { "id": "skip-exploration-phase", "title": "Pular fase de exploração", "signal": "Prompts vão direto para registry sem fase de exploração/candidatos.", "whyDangerous": "Registry poluído; prompts subótimos congelados; pouca iteração.", "fix": "Implementar Prompt Exploration; consolidar candidatos; depois registrar.", "commonLevel": 2 },
+    { "id": "manual-override-hidden", "title": "Override manual escondido", "signal": "Decisões manuais sobrescrevem regras da IA sem documentação.", "whyDangerous": "Auditoria impossível; regras não evoluem; inconsistência.", "fix": "Documentar overrides em governance; revisar regras periodicamente.", "commonLevel": 3 },
+    { "id": "no-gate-before-approval", "title": "Aprovação sem gate de contexto", "signal": "Artefatos aprovados sem passar por Context Design Gates.", "whyDangerous": "Contexto inadequado; especificações desalinhadas; retrabalho.", "fix": "Implementar Context Design Gates; checklist antes de aprovação.", "commonLevel": 2 },
+    { "id": "registry-as-chat-log", "title": "Registry como log de chat", "signal": "Registry contém prompts brutos de conversas, não versões validadas.", "whyDangerous": "Prompts não reproduzíveis; variáveis implícitas; baixa confiabilidade.", "fix": "Consolidar apenas prompts testados; documentar variáveis; versionar.", "commonLevel": 2 }
+  ],
+  "packs": {
+    "level-0": {
+      "name": "Artesanal",
+      "howToUse": ["Defina o escopo: Documente explicitamente por que IA não será usada neste projeto.", "Estabeleça critérios: Crie critérios de aceite manuais e checkpoints de revisão.", "Registre a decisão: Use o governance.md para registrar a decisão de Nível 0.", "Mantenha consistência: Todos os artefatos são produzidos sem assistência de IA."],
+      "whenToUse": ["Projetos sensíveis à identidade", "Branding rígido com requisitos não verbalizáveis", "Entregas finais onde controle total é essencial"],
+      "artifacts": ["README.md", "PRD.md", "SDD.md", "prompts/registry.yaml", "eval/rubric.md", "governance.md"]
+    },
+    "level-1": {
+      "name": "Backstage",
+      "howToUse": ["Defina o escopo da IA: Liste as tarefas em que a IA pode ajudar (resumir, organizar, revisar).", "Registre os prompts: Use prompts/registry.yaml para prompts de síntese e organização.", "Configure verificação: Todo insight usado em decisões deve passar por verificação humana.", "Use o governance: Documente quando e como a IA foi usada."],
+      "whenToUse": ["Research e análise de dados", "Documentação e síntese", "Organização de insights"],
+      "artifacts": ["README.md", "PRD.md", "SDD.md", "prompts/registry.yaml", "eval/rubric.md", "governance.md"]
+    },
+    "level-2": {
+      "name": "Geração de Assets",
+      "howToUse": ["Spec anchoring: Documente referências visuais e critérios de aceite para outputs.", "Registre prompts: Use prompts/registry.yaml para prompts de geração de imagens/assets.", "Configure revisão: Todo asset gerado passa por revisão de consistência.", "Governance: Documente uso e mantenha referências visuais atualizadas."],
+      "whenToUse": ["Criação de assets visuais", "Ilustrações e ícones", "Mockups e imagens conceituais"],
+      "artifacts": ["README.md", "PRD.md", "SDD.md", "prompts/registry.yaml", "eval/rubric.md", "governance.md"]
+    },
+    "level-3": {
+      "name": "Prompt-to-Prototype",
+      "howToUse": ["Registry de prompts: Mantenha prompts de layouts, fluxos e protótipos em prompts/registry.yaml.", "Rubrica de avaliação: Use eval/rubric.md para avaliar outputs da IA.", "Checkpoint de revisão: Nenhum output aprovado sem revisão humana.", "Governance: Documente decisões e evolução dos prompts."],
+      "whenToUse": ["Prototipagem rápida", "Exploração de variações", "Prompt-to-prototype", "MVPs e sprints rápidos"],
+      "artifacts": ["README.md", "PRD.md", "SDD.md", "prompts/registry.yaml", "eval/rubric.md", "governance.md"]
+    },
+    "level-4": {
+      "name": "Orquestração de Agentes",
+      "howToUse": ["Consulte o guia em /aplicar/agentes para MCP, Cursor Agent Mode e workflows agentic.", "Governança de agentes: documente gates e revisão humana.", "MCP e contexto: defina fontes de contexto para os agentes."],
+      "whenToUse": ["Agentes copiloto com MCP", "Agentes co-criadores", "Orquestração de workflows agentic"],
+      "artifacts": ["README.md", "PRD.md", "SDD.md", "prompts/registry.yaml", "governance.md", "mcp-config"],
+      "externalLink": "/aplicar/agentes"
+    }
+  },
+  "reference": {
+    "title": "Referência",
+    "description": "Documentação e repositório de referência do DARE Framework",
+    "repoUrl": "https://github.com/guigonzalez/dare-framework",
+    "structure": {
+      "Wizard": "Recomendação determinística de nível (0–4)",
+      "Packs": "Template packs por nível com README, PRD, SDD, registry, rubrica e governance",
+      "Lifecycle": "Exploração → Candidatos → Registry → Spec Anchoring → Context Gates",
+      "Anti-padrões": "Padrões que quebram níveis e como corrigir"
+    },
+    "license": "DARE Framework e DARE OS são licenciados sob Creative Commons BY-SA 4.0."
+  },
+  "contribute": {
+    "changelog": [
+      {
+        "version": "2.4.0",
+        "date": "7 de Fevereiro de 2026",
+        "type": "minor",
+        "changes": ["Novos nomes dos níveis: Artesanal, Backstage, Geração de Assets, Prompt-to-Prototype, Orquestração de Agentes"]
+      },
+      {
+        "version": "2.3.0",
+        "date": "7 de Fevereiro de 2026",
+        "type": "minor",
+        "changes": ["Revisão dos níveis: de 7 para 5 (0–4)", "Nível 3 unificado: Co-criação (ex-Copiloto + Colaborativa + Co-criação Modular)", "Nível 4: Agentes (ex-Automação), foco em agentes autônomos e MCP", "Alinhamento em todo o site e conteúdo JSON"]
+      },
+      {
+        "version": "2.1.0",
+        "date": "7 de Fevereiro de 2026",
+        "type": "minor",
+        "changes": ["DALL·E 3 → GPT Image 1 (deprecated)", "Galileo AI → Stitch (Google Labs)", "Ideogram 2.0 → Ideogram 3.0", "Consistência de ferramentas em todo o conteúdo"]
+      },
+      {
+        "version": "2.0.0",
+        "date": "13 de Outubro de 2025",
+        "type": "major",
+        "changes": ["Expandido de 6 para 7 níveis do framework", "Adicionado novo Nível 3.5 - IA Colaborativa Avançada", "Atualização de todas as ferramentas para 2026 (GPT Image 1, Stitch, Ideogram 3.0, Figma Make, Claude Opus 4.x, v0, Bolt.new)", "Métricas quantificadas para cada nível (25-40%, 50-70%, etc.)", "Redesign completo da interface com animações modernas", "Implementação de navegação por setas na seção de Recursos"]
+      },
+      {
+        "version": "1.5.0",
+        "date": "Setembro de 2024",
+        "type": "minor",
+        "changes": ["Melhorias de acessibilidade (WCAG 2.1 AA)", "Adicionadas cores temáticas para cada conceito", "Otimização de performance e carregamento", "Documentação expandida"]
+      },
+      {
+        "version": "1.0.0",
+        "date": "Agosto de 2024",
+        "type": "major",
+        "changes": ["Lançamento inicial do DARE Framework", "6 níveis de adoção de IA definidos", "Documentação completa em português", "Website interativo publicado"]
+      }
+    ]
+  }
+}

@@ -307,12 +307,11 @@ const dimensions = [
 ];
 
 const dareNiveis = [
-  { nivel: 0, nome: "Manual Total", range: [0, 30], description: "Processos totalmente manuais" },
-  { nivel: 1, nome: "IA Assistiva", range: [31, 45], description: "IA como ferramenta de suporte" },
-  { nivel: 2, nome: "Acelerador Visual", range: [46, 60], description: "IA acelera produção visual" },
-  { nivel: 3, nome: "Copiloto", range: [61, 75], description: "IA como parceiro de criação" },
-  { nivel: 4, nome: "Co-criação Modular", range: [76, 90], description: "IA integrada ao processo" },
-  { nivel: 5, nome: "Automação Guiada", range: [91, 100], description: "IA autônoma com supervisão" }
+  { nivel: 0, nome: "Artesanal", range: [0, 25], description: "Processos totalmente manuais" },
+  { nivel: 1, nome: "Backstage", range: [26, 45], description: "IA nos bastidores (pesquisa, síntese)" },
+  { nivel: 2, nome: "Geração de Assets", range: [46, 60], description: "IA gera imagens, ícones, conteúdos" },
+  { nivel: 3, nome: "Prompt-to-Prototype", range: [61, 80], description: "IA propõe e monta, você direciona" },
+  { nivel: 4, nome: "Orquestração de Agentes", range: [81, 100], description: "Agentes autônomos com contexto via MCP" }
 ];
 
 // Flatten all questions into a single array

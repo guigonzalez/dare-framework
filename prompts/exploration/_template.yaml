@@ -1,0 +1,26 @@
+# Template para Prompt Exploration
+# Copie este arquivo como exploration/[seu-id].yaml
+
+id: seu-id-kebab-case
+name: Nome legível do prompt
+status: exploration
+
+# O prompt em si (obrigatório)
+prompt: |
+  Seu prompt aqui.
+  Use placeholders em [MAIÚSCULAS] quando houver variáveis.
+
+# Hipótese que está testando (opcional)
+hypothesis: "O que você espera que este prompt alcance?"
+
+# Notas de iteração (opcional)
+notes: |
+  - Primeira versão
+  - Testado em [contexto]
+
+# Registro de experimentos (opcional)
+experiments:
+  - "YYYY-MM: descrição do teste"
+
+# Caso de uso (opcional)
+use: Domínio ou cenário

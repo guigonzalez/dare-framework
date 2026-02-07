@@ -1,0 +1,63 @@
+# DARE OS Prompt Registry – Nível 2
+# Prompts para geração visual: imagens, ícones, padrões
+# Ferramentas: Midjourney 7, GPT Image 1, Figma Draw, Ideogram 3.0, Adobe Firefly, etc.
+
+level: 2
+description: Geração de Assets – Prompts para geração de assets
+
+entries:
+  - id: icon-set
+    name: Gerar ícone
+    prompt: |
+      Crie um ícone [DESCRIÇÃO] no estilo [REFERÊNCIA].
+      Formato: vetorial, fundo transparente.
+      Mantenha consistência com: [PALETA/TIPOGRAFIA]
+    use: Ícones e ilustrações
+    verified: true
+
+  - id: hero-image
+    name: Imagem hero
+    prompt: |
+      Gere uma imagem para hero de [CONTEXTO].
+      Estilo: [REFERÊNCIA].
+      Aspect ratio: [RATIO]
+    use: Imagens conceituais e mockups
+    verified: true
+
+  - id: illustration
+    name: Ilustração
+    prompt: |
+      Ilustração para [CONTEXTO/USO].
+      Estilo: [REFERÊNCIA].
+      Elementos: [ELEMENTOS OBRIGATÓRIOS]
+      Evitar: [ELEMENTOS A EVITAR]
+    use: Ilustrações de suporte
+    verified: true
+
+  - id: pattern-texture
+    name: Padrão ou textura
+    prompt: |
+      Padrão ou textura [DESCRIÇÃO] para [USO].
+      Estilo: [REFERÊNCIA].
+      Tileable/seamless.
+      Cores: [PALETA]
+    use: Backgrounds e padrões
+    verified: true
+
+  - id: mockup
+    name: Mockup de produto
+    prompt: |
+      Mockup de [PRODUTO/TELA] em [CONTEXTO].
+      Estilo: [REFERÊNCIA].
+      Perspectiva: [ANGULO]
+    use: Apresentação e concept
+    verified: true
+
+  - id: avatar-character
+    name: Avatar ou personagem
+    prompt: |
+      Avatar/personagem [DESCRIÇÃO] para [USO].
+      Estilo: [REFERÊNCIA].
+      Consistência visual: [PALETA/ESTILO]
+    use: Personas, onboarding, storytelling
+    verified: true

@@ -84,8 +84,8 @@ O **Figma anunciou 5 grandes atualizações** que redefinem completamente o work
 
 - **Adicionar**: Figma Draw para **ilustração vetorial assistida**
 - **Adicionar**: Adobe Firefly integrado ao Creative Suite
-- **Atualizar**: Midjourney V6 com **melhor prompt consistency**
-- **Adicionar**: Ideogram 2.0 para **texto em imagens**
+- **Atualizado (fev/2026):** Midjourney 7. **Substituir**: DALL·E 3 → GPT Image 1 (DALL-E deprecated)
+- **Atualizado (fev/2026):** Ideogram 2.0 → Ideogram 3.0 para **texto em imagens**
 
 
 #### **Nível 3 - Copiloto** (Expande conceito)
@@ -100,7 +100,7 @@ O **Figma anunciou 5 grandes atualizações** que redefinem completamente o work
 - **Destaque**: Figma Make como **prompt-to-prototype principal**
 - **Adicionar**: V0 by Vercel para **sistemas de design escaláveis**
 - **Adicionar**: Claude Artifacts para **co-criação iterativa**
-- **Manter**: Uizard e Galileo AI (contextualizados)
+- **Atualizado (fev/2026):** Galileo AI → Stitch (Google Labs). **Manter**: Uizard
 
 
 #### **Nível 5 - Automação Guiada** (Novo foco)

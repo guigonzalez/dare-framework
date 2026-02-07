@@ -1,0 +1,24 @@
+# Template para Prompt Candidate
+# Promovido de exploration/, em avaliação para registry
+
+id: seu-id-kebab-case
+name: Nome legível do prompt
+status: candidate
+
+prompt: |
+  Prompt refinado após exploração.
+  [PLACEHOLDERS] onde houver variáveis.
+
+# De qual exploration veio
+promoted_from: exploration/seu-id
+
+# Resultados da avaliação
+eval_notes: |
+  - Cenário 1: [resultado]
+  - Cenário 2: [resultado]
+
+eval_score: 4  # 1-5, opcional
+tested_at: "YYYY-MM-DD"
+
+# Caso de uso
+use: Domínio ou cenário

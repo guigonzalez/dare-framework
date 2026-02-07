@@ -61,7 +61,7 @@ export default function ResourcesSection() {
 
     switch (level) {
       case 0:
-        title = "Nível 0 - Manual Total";
+        title = "Nível 0 - Artesanal";
         content = `
           <p><strong>No Nível 0, o designer trabalha completamente sem assistência de IA.</strong></p>
           
@@ -92,7 +92,7 @@ export default function ResourcesSection() {
         `;
         break;
       case 1:
-        title = "Nível 1 - IA Assistiva";
+        title = "Nível 1 - Backstage";
         content = `
           <p><strong>No Nível 1, a IA te ajuda, mas não cria.</strong></p>
 
@@ -100,8 +100,8 @@ export default function ResourcesSection() {
 
           <h4>Ferramentas principais:</h4>
           <ul>
-            <li>ChatGPT - organização de pesquisas e resumos</li>
-            <li>Claude 3.5 Sonnet - research e insights avançados</li>
+            <li>ChatGPT (GPT-5.2) - organização de pesquisas e resumos</li>
+            <li>Claude Opus 4.6 - research e insights avançados</li>
             <li>Notion AI - documentação e síntese</li>
             <li>Figma AI - auto-complete inteligente</li>
             <li>Miro AI - construção de mapas mentais</li>
@@ -131,7 +131,7 @@ export default function ResourcesSection() {
         `;
         break;
       case 2:
-        title = "Nível 2 - Acelerador Visual";
+        title = "Nível 2 - Geração de Assets";
         content = `
           <p><strong>No Nível 2, você cria, a IA preenche.</strong></p>
 
@@ -139,11 +139,11 @@ export default function ResourcesSection() {
 
           <h4>Ferramentas principais:</h4>
           <ul>
-            <li>Midjourney V6 - geração de imagens com melhor consistência</li>
-            <li>DALL·E 3 - criação de assets visuais personalizados</li>
+            <li>Midjourney 7 - geração de imagens com melhor consistência</li>
+            <li>GPT Image 1 - criação de assets visuais personalizados</li>
             <li>Adobe Firefly - integrado ao Creative Suite</li>
             <li>Figma Draw - ilustração vetorial assistida</li>
-            <li>Ideogram 2.0 - texto em imagens</li>
+            <li>Ideogram 3.0 - texto em imagens</li>
           </ul>
 
           <h4>Apropriado para:</h4>
@@ -171,161 +171,80 @@ export default function ResourcesSection() {
         `;
         break;
       case 3:
-        title = "Nível 3 - Copiloto";
+        title = "Nível 3 - Prompt-to-Prototype";
         content = `
-          <p><strong>No Nível 3, você lidera, a IA propõe.</strong></p>
+          <p><strong>No Nível 3, IA propõe e monta, você direciona.</strong></p>
 
-          <p>A IA sugere layouts, fluxos, conteúdos e transições. O designer edita, mistura, ajusta.</p>
+          <p>A IA sugere layouts, fluxos e telas; co-edição em tempo real; prompt-to-prototype. O designer edita, mistura e atua como diretor de arte.</p>
 
           <h4>Ferramentas principais:</h4>
           <ul>
-            <li>Figma AI - sugestões contextuais de componentes</li>
-            <li>Galileo AI - geração rápida de protótipos</li>
-            <li>Uizard - wireframes e layouts iniciais</li>
-            <li>Cursor AI - prototipagem rápida funcional</li>
-            <li>Claude Artifacts - parceiro de ideação</li>
+            <li>Figma AI, Stitch, Uizard - sugestões e protótipos</li>
+            <li>Cursor, Claude Artifacts - co-criação iterativa</li>
+            <li>v0 by Vercel, Bolt.new, Figma Make - prompt-to-prototype</li>
           </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Prototipagem rápida</li>
-            <li>Exploração de variações</li>
-            <li>Wireframes e layouts iniciais</li>
+            <li>Prototipagem rápida e exploração de variações</li>
+            <li>Prompt-to-prototype e MVPs rápidos</li>
+            <li>Co-criação em tempo real</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>60-80% redução no tempo de prototipagem</li>
+            <li>60-90% aceleração concept-to-prototype</li>
             <li>Múltiplas variações instantâneas</li>
-            <li>Aceleração significativa do processo criativo</li>
+            <li>Co-criação iterativa em tempo real</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
             <li>Requer curadoria crítica</li>
-            <li>Risco de vício criativo (design preguiçoso)</li>
-            <li>Resultados podem parecer formulaicos</li>
+            <li>Risco de vício criativo</li>
+            <li>Exige ajustes para virar produto real</li>
           </ul>
 
-          <p><strong>Riscos:</strong> Atrofia das habilidades criativas fundamentais; homogeneização visual; perda de identidade de marca única.</p>
-        `;
-        break;
-      case 3.5:
-        title = "Nível 3.5 - IA Colaborativa Avançada";
-        content = `
-          <p><strong>No Nível 3.5, a IA atua como parceira de pensamento em tempo real.</strong></p>
-
-          <p>Co-edição simultânea entre humano e IA. Feedback contextual instantâneo sobre decisões de design. Iteração em tempo real com validação automática em workspace compartilhado.</p>
-
-          <h4>Ferramentas principais:</h4>
-          <ul>
-            <li>Claude 3.5 + Artifacts - co-criação iterativa</li>
-            <li>Cursor Composer - desenvolvimento iterativo</li>
-            <li>Figma AI Avançado - sugestões em tempo real</li>
-          </ul>
-
-          <h4>Apropriado para:</h4>
-          <ul>
-            <li>Co-criação iterativa</li>
-            <li>Validação em tempo real</li>
-            <li>Desenvolvimento colaborativo</li>
-          </ul>
-
-          <h4>Prós:</h4>
-          <ul>
-            <li>70-90% melhoria na qualidade de iterações</li>
-            <li>Feedback contextual instantâneo</li>
-            <li>Colaboração em tempo real</li>
-          </ul>
-
-          <h4>Contras:</h4>
-          <ul>
-            <li>Curva de aprendizado mais íngreme</li>
-            <li>Requer adaptação do workflow</li>
-            <li>Risco de sobre-dependência</li>
-          </ul>
-
-          <p><strong>Riscos:</strong> Perda de controle criativo em iterações rápidas; sobre-dependência de validação por IA; necessidade de manter competências críticas ativas.</p>
+          <p><strong>Riscos:</strong> Atrofia de habilidades criativas; homogeneização visual; necessidade de checkpoints de revisão humana.</p>
         `;
         break;
       case 4:
-        title = "Nível 4 - Co-criação Modular";
+        title = "Nível 4 - Orquestração de Agentes";
         content = `
-          <p><strong>No Nível 4, a IA monta, você direciona.</strong></p>
+          <p><strong>No Nível 4, a IA atua como agentes autônomos com contexto.</strong></p>
 
-          <p>IA gera telas inteiras, animações ou identidades parciais com base em prompts. Designer atua como diretor de arte.</p>
+          <p>Agentes de IA que executam tarefas complexas de forma independente. Acesso contextual via MCP, orquestração de workflows e co-criação agentic.</p>
 
           <h4>Ferramentas principais:</h4>
           <ul>
-            <li>Figma Make - prompt-to-prototype principal</li>
-            <li>V0 by Vercel - sistemas de design escaláveis</li>
-            <li>Claude Artifacts - co-criação iterativa</li>
-            <li>Uizard - wireframes em protótipos de alta fidelidade</li>
-            <li>Galileo AI - geração automática de UI</li>
+            <li>Claude com MCP - agentes com contexto do projeto</li>
+            <li>Cursor Agent Mode - desenvolvimento agentic</li>
+            <li>Agentic Workflows, MCP Servers customizados</li>
+            <li>Multi-Agent Systems</li>
           </ul>
 
           <h4>Apropriado para:</h4>
           <ul>
-            <li>Prompt-to-prototype</li>
-            <li>Sistemas de design escaláveis</li>
-            <li>MVPs e sprints rápidos</li>
+            <li>Agentes copiloto com MCP</li>
+            <li>Agentes co-criadores com contexto completo</li>
+            <li>Orquestração de workflows agentic</li>
           </ul>
 
           <h4>Prós:</h4>
           <ul>
-            <li>80-95% redução no tempo concept-to-prototype</li>
-            <li>Útil para sprints, MVPs e testes</li>
-            <li>Amplia possibilidades para não-designers</li>
+            <li>Contexto unificado via MCP</li>
+            <li>Execução autônoma com governança</li>
+            <li>Integração com ferramentas e dados</li>
           </ul>
 
           <h4>Contras:</h4>
           <ul>
-            <li>Falta finesse em detalhes</li>
-            <li>Exige ajustes pesados para virar produto real</li>
-            <li>Design potencialmente desconectado dos objetivos</li>
+            <li>Curva de aprendizado em MCP</li>
+            <li>Requer governança e gates</li>
+            <li>Risco de sobre-dependência</li>
           </ul>
 
-          <p><strong>Riscos:</strong> Problemas de usabilidade não detectados; sistemas visuais incoerentes; limitação pela capacidade de articular prompts; necessidade de checkpoints de revisão humana.</p>
-        `;
-        break;
-      case 5:
-        title = "Nível 5 - Automação Guiada por Prompt";
-        content = `
-          <p><strong>No Nível 5, você descreve, a IA entrega.</strong></p>
-
-          <p>O design é quase totalmente gerado via linguagem natural. Criação, layout, conteúdo e até protótipo funcional vêm prontos.</p>
-
-          <h4>Ferramentas principais:</h4>
-          <ul>
-            <li>Cursor Composer - desenvolvimento multi-arquivo</li>
-            <li>Figma Sites - design-to-website automático</li>
-            <li>Bolt.new - MVPs completos</li>
-            <li>V0.dev - prototipagem rápida</li>
-            <li>GPT-Engineer - geração de código funcional</li>
-          </ul>
-
-          <h4>Apropriado para:</h4>
-          <ul>
-            <li>Desenvolvimento multi-arquivo</li>
-            <li>Design-to-website automático</li>
-            <li>MVPs completos</li>
-          </ul>
-
-          <h4>Prós:</h4>
-          <ul>
-            <li>90-98% automação de tarefas repetitivas</li>
-            <li>Extremamente veloz para testes de conceito</li>
-            <li>Democratiza o processo de design</li>
-          </ul>
-
-          <h4>Contras:</h4>
-          <ul>
-            <li>Baixo controle granular</li>
-            <li>Outputs podem ser genéricos</li>
-            <li>Revisão crítica obrigatória</li>
-          </ul>
-
-          <p><strong>Riscos:</strong> Desconexão entre design e necessidades de negócio; problemas de acessibilidade; experiências homogêneas; desvalorização da expertise de design; necessidade de governança estruturada.</p>
+          <p><strong>Riscos:</strong> Perda de controle em execuções autônomas; necessidade de gates e revisão humana; governança de agentes essencial.</p>
         `;
         break;
       default:
@@ -412,7 +331,7 @@ export default function ResourcesSection() {
       <div className="container mx-auto px-4 relative z-20">
         <div className="text-center mb-16">
           <div className="inline-block p-2 px-4 rounded-full bg-blue-100/50 text-blue-700 font-medium text-sm mb-4">
-            Nível 0 até Nível 5
+            Nível 0 até Nível 4
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             Ferramentas Recomendadas
@@ -474,56 +393,38 @@ export default function ResourcesSection() {
                 </motion.button>
 
                 <div ref={scrollRefAll} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {renderLevelCard(0, "Manual Total", [
+                  {renderLevelCard(0, "Artesanal", [
                     "Caneta e papel para esboços iniciais",
                     "Figma ou Adobe XD para wireframes simples e protótipos básicos",
                     "Processos analógicos de design, sem automação de IA"
                   ], true)}
                   
-                  {renderLevelCard(1, "IA Assistiva", [
-                    "ChatGPT para organização de pesquisas e resumos",
-                    "Claude 3.5 Sonnet para research e insights avançados",
+                  {renderLevelCard(1, "Backstage", [
+                    "ChatGPT (GPT-5.2) para organização de pesquisas e resumos",
+                    "Claude Opus 4.6 para research e insights avançados",
                     "Notion AI para documentação e síntese",
                     "Figma AI para auto-complete inteligente",
                     "Miro AI para construção de mapas mentais"
                   ], true)}
                   
-                  {renderLevelCard(2, "Acelerador Visual", [
-                    "Midjourney V6 para geração de imagens com melhor consistência",
-                    "DALL·E 3 para criação de assets visuais personalizados",
+                  {renderLevelCard(2, "Geração de Assets", [
+                    "Midjourney 7 para geração de imagens com melhor consistência",
+                    "GPT Image 1 para criação de assets visuais personalizados",
                     "Adobe Firefly integrado ao Creative Suite",
                     "Figma Draw para ilustração vetorial assistida",
-                    "Ideogram 2.0 para texto em imagens"
+                    "Ideogram 3.0 para texto em imagens"
                   ], true)}
                   
-                  {renderLevelCard(3, "Copiloto", [
-                    "Figma AI para sugestões contextuais de componentes",
-                    "Galileo AI para geração rápida de protótipos",
-                    "Uizard para wireframes e layouts iniciais",
-                    "Cursor AI para prototipagem rápida funcional",
-                    "Claude Artifacts para parceiro de ideação"
+                  {renderLevelCard(3, "Prompt-to-Prototype", [
+                    "Figma AI, Stitch, Uizard - sugestões e protótipos",
+                    "Cursor, Claude Artifacts - co-criação iterativa",
+                    "v0, Bolt.new, Figma Make - prompt-to-prototype"
                   ], true)}
 
-                  {renderLevelCard(3.5, "IA Colaborativa", [
-                    "Claude 3.5 + Artifacts para co-criação iterativa",
-                    "Cursor Composer para desenvolvimento iterativo",
-                    "Figma AI Avançado para sugestões em tempo real"
-                  ], true)}
-                  
-                  {renderLevelCard(4, "Co-criação Modular", [
-                    "Figma Make para prompt-to-prototype principal",
-                    "V0 by Vercel para sistemas de design escaláveis",
-                    "Claude Artifacts para co-criação iterativa",
-                    "Uizard para wireframes em protótipos de alta fidelidade",
-                    "Galileo AI para geração automática de UI"
-                  ], true)}
-
-                  {renderLevelCard(5, "Automação Guiada", [
-                    "Cursor Composer para desenvolvimento multi-arquivo",
-                    "Figma Sites para design-to-website automático",
-                    "Bolt.new para MVPs completos",
-                    "V0.dev para prototipagem rápida",
-                    "GPT-Engineer para geração de código funcional"
+                  {renderLevelCard(4, "Orquestração de Agentes", [
+                    "Claude com MCP - agentes com contexto",
+                    "Cursor Agent Mode - desenvolvimento agentic",
+                    "Agentic Workflows, MCP Servers customizados"
                   ], true)}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
@@ -556,26 +457,26 @@ export default function ResourcesSection() {
                 </motion.button>
 
                 <div ref={scrollRefBasic} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {renderLevelCard(0, "Manual Total", [
+                  {renderLevelCard(0, "Artesanal", [
                     "Caneta e papel para esboços iniciais",
                     "Figma ou Adobe XD para wireframes simples e protótipos básicos",
                     "Processos analógicos de design, sem automação de IA"
                   ])}
 
-                  {renderLevelCard(1, "IA Assistiva", [
-                    "ChatGPT para organização de pesquisas e resumos",
-                    "Claude 3.5 Sonnet para research e insights avançados",
+                  {renderLevelCard(1, "Backstage", [
+                    "ChatGPT (GPT-5.2) para organização de pesquisas e resumos",
+                    "Claude Opus 4.6 para research e insights avançados",
                     "Notion AI para documentação e síntese",
                     "Figma AI para auto-complete inteligente",
                     "Miro AI para construção de mapas mentais"
                   ])}
 
-                  {renderLevelCard(2, "Acelerador Visual", [
-                    "Midjourney V6 para geração de imagens com melhor consistência",
-                    "DALL·E 3 para criação de assets visuais personalizados",
+                  {renderLevelCard(2, "Geração de Assets", [
+                    "Midjourney 7 para geração de imagens com melhor consistência",
+                    "GPT Image 1 para criação de assets visuais personalizados",
                     "Adobe Firefly integrado ao Creative Suite",
                     "Figma Draw para ilustração vetorial assistida",
-                    "Ideogram 2.0 para texto em imagens"
+                    "Ideogram 3.0 para texto em imagens"
                   ])}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
@@ -608,18 +509,10 @@ export default function ResourcesSection() {
                 </motion.button>
 
                 <div ref={scrollRefIntermediate} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {renderLevelCard(3, "Copiloto", [
-                    "Figma AI para sugestões contextuais de componentes",
-                    "Galileo AI para geração rápida de protótipos",
-                    "Uizard para wireframes e layouts iniciais",
-                    "Cursor AI para prototipagem rápida funcional",
-                    "Claude Artifacts para parceiro de ideação"
-                  ])}
-
-                  {renderLevelCard(3.5, "IA Colaborativa", [
-                    "Claude 3.5 + Artifacts para co-criação iterativa",
-                    "Cursor Composer para desenvolvimento iterativo",
-                    "Figma AI Avançado para sugestões em tempo real"
+                  {renderLevelCard(3, "Prompt-to-Prototype", [
+                    "Figma AI, Stitch, Uizard - sugestões e protótipos",
+                    "Cursor, Claude Artifacts - co-criação iterativa",
+                    "v0, Bolt.new, Figma Make - prompt-to-prototype"
                   ])}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">
@@ -652,20 +545,10 @@ export default function ResourcesSection() {
                 </motion.button>
 
                 <div ref={scrollRefAdvanced} className="flex overflow-x-auto scrollbar-hide pb-10 pt-4 space-x-4 md:space-x-6 snap-x px-2 md:px-4 rounded-lg mx-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {renderLevelCard(4, "Co-criação Modular", [
-                    "Figma Make para prompt-to-prototype principal",
-                    "V0 by Vercel para sistemas de design escaláveis",
-                    "Claude Artifacts para co-criação iterativa",
-                    "Uizard para wireframes em protótipos de alta fidelidade",
-                    "Galileo AI para geração automática de UI"
-                  ])}
-
-                  {renderLevelCard(5, "Automação Guiada", [
-                    "Cursor Composer para desenvolvimento multi-arquivo",
-                    "Figma Sites para design-to-website automático",
-                    "Bolt.new para MVPs completos",
-                    "V0.dev para prototipagem rápida",
-                    "GPT-Engineer para geração de código funcional"
+                  {renderLevelCard(4, "Orquestração de Agentes", [
+                    "Claude com MCP - agentes com contexto",
+                    "Cursor Agent Mode - desenvolvimento agentic",
+                    "Agentic Workflows, MCP Servers customizados"
                   ])}
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 py-2">

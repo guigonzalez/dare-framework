@@ -4,6 +4,25 @@ Todas as mudanças importantes no projeto serão documentadas neste arquivo.
 
 ---
 
+## [2.1.0] - 2026-02-07
+
+### 🔄 Atualização de Ferramentas (Fev/2026)
+
+Correção de ferramentas deprecated ou descontinuadas para garantir consistência do conteúdo.
+
+#### Ferramentas substituídas
+- **DALL·E 3** → **GPT Image 1** (deprecado pela OpenAI, sunset 12/05/2026)
+- **Galileo AI** → **Stitch** (Google Labs — Galileo foi adquirido e descontinuado)
+- **Ideogram 2.0** → **Ideogram 3.0** (versão atual, mar/2025)
+
+#### Arquivos atualizados
+- `frameworkLevels.ts` — Níveis 2, 3 e 4
+- `dare-framework-content.json`
+- `ResourcesSection.tsx` — Modais e cards
+- `ApplyPage.tsx`, `PromptEngineeringPage.tsx`, `ContributeSection.tsx`
+
+---
+
 ## [2.0.0] - 2025-10-13
 
 ### 🚀 Principais Mudanças

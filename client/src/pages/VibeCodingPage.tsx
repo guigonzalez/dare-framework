@@ -22,7 +22,7 @@ const tools = [
     gradient: "from-orange-500 to-red-500"
   },
   {
-    name: "Claude 3.5 Sonnet",
+    name: "Claude Opus 4.6",
     icon: Brain,
     description: "O Arquiteto de Software",
     bestFor: "Arquitetura de sistemas, análise técnica profunda",
@@ -31,7 +31,7 @@ const tools = [
     gradient: "from-purple-500 to-pink-500"
   },
   {
-    name: "V0 by Vercel",
+    name: "v0 by Vercel",
     icon: Palette,
     description: "O Designer de UI",
     bestFor: "Componentes React, interfaces modernas, design systems",
@@ -61,12 +61,12 @@ const tools = [
 
 const useCases = [
   { icon: Rocket, case: "MVP/Startup", tools: "Replit Agent → Lovable" },
-  { icon: Wrench, case: "Refactoring Legacy", tools: "Cursor → Claude 3.5" },
-  { icon: Palette, case: "UI/UX Development", tools: "V0 → Cursor" },
-  { icon: Code, case: "Backend/APIs", tools: "Claude 3.5 → Cursor" },
-  { icon: Bug, case: "Debugging Complexo", tools: "Cursor → Claude 3.5" },
+  { icon: Wrench, case: "Refactoring Legacy", tools: "Cursor → Claude Opus 4.6" },
+  { icon: Palette, case: "UI/UX Development", tools: "v0 → Cursor" },
+  { icon: Code, case: "Backend/APIs", tools: "Claude Opus 4.6 → Cursor" },
+  { icon: Bug, case: "Debugging Complexo", tools: "Cursor → Claude Opus 4.6" },
   { icon: Users, case: "Full-Stack App", tools: "Lovable → Replit Agent" },
-  { icon: Zap, case: "Performance Critical", tools: "Windsurf → Claude 3.5" }
+  { icon: Zap, case: "Performance Critical", tools: "Bolt.new → Claude Code" }
 ];
 
 export default function VibeCodingPage() {
@@ -95,7 +95,7 @@ export default function VibeCodingPage() {
             >
               <div className="inline-flex items-center justify-center px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                 <Sparkles className="w-4 h-4 mr-2" />
-                Guia Completo 2025
+                Guia Completo 2026
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Vibe Coding: O Futuro do Desenvolvimento
@@ -178,7 +178,7 @@ export default function VibeCodingPage() {
                 Ferramentas Essenciais
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                As 6 Ferramentas de 2025
+                As 6 Ferramentas de 2026
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Cada ferramenta tem seu contexto ideal e diferencial único

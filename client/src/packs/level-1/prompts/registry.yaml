@@ -1,0 +1,58 @@
+# DARE OS Prompt Registry – Nível 1
+# Prompts assistivos: síntese, organização, revisão
+# IA auxilia; humano produz entregas finais
+
+level: 1
+description: Backstage – Prompts para suporte operacional (research, síntese)
+
+entries:
+  - id: summarize
+    name: Resumir texto
+    prompt: |
+      Resuma o seguinte texto em bullet points principais, mantendo fidelidade ao conteúdo original.
+      [INSERIR TEXTO]
+    use: Síntese de pesquisas e documentos
+    verified: true
+
+  - id: organize
+    name: Organizar insights
+    prompt: |
+      Organize os seguintes insights em categorias lógicas, com títulos claros.
+      [INSERIR INSIGHTS]
+    use: Estruturação de pesquisa
+    verified: true
+
+  - id: review-draft
+    name: Revisar rascunho
+    prompt: |
+      Revise o seguinte rascunho e sugira melhorias em clareza, estrutura e tom.
+      Não reescreva; liste sugestões específicas.
+      [INSERIR RASCUNHO]
+    use: Revisão de copy e documentação
+    verified: true
+
+  - id: brainstorm
+    name: Brainstorm auxiliar
+    prompt: |
+      Sugira [N] ideias para [CONTEXTO/OBJETIVO].
+      Considerar: [RESTRIÇÕES/REFERÊNCIAS]
+      Formato: bullet points breves.
+    use: Geração de ideias iniciais
+    verified: true
+
+  - id: extract-key-points
+    name: Extrair pontos-chave
+    prompt: |
+      Extraia os pontos-chave do seguinte texto em uma lista estruturada.
+      [INSERIR TEXTO]
+    use: Análise de documentos e entrevistas
+    verified: true
+
+  - id: compare-options
+    name: Comparar opções
+    prompt: |
+      Compare as seguintes opções considerando [CRITÉRIOS].
+      Apresente prós e contras de cada uma.
+      [OPÇÃO A] / [OPÇÃO B] / [OPÇÃO C]
+    use: Análise comparativa para decisões
+    verified: true

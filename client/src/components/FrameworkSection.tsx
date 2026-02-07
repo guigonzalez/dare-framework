@@ -34,14 +34,14 @@ export default function FrameworkSection() {
       aiDependencyBarRef.current &&
       progressBarRef.current
     ) {
-      const humanControlValues = [100, 90, 75, 60, 50, 40, 20];
-      const speedValues = [16, 30, 50, 70, 80, 85, 95];
-      const aiDependencyValues = [0, 15, 35, 60, 75, 80, 95];
+      const humanControlValues = [100, 90, 75, 60, 25];
+      const speedValues = [16, 30, 50, 85, 95];
+      const aiDependencyValues = [0, 15, 35, 75, 95];
       
       humanControlBarRef.current.style.width = `${humanControlValues[activeLevel]}%`;
       speedBarRef.current.style.width = `${speedValues[activeLevel]}%`;
       aiDependencyBarRef.current.style.width = `${aiDependencyValues[activeLevel]}%`;
-      progressBarRef.current.style.width = `${(activeLevel / 6) * 100}%`;
+      progressBarRef.current.style.width = `${(activeLevel / 4) * 100}%`;
     }
   }, [activeLevel]);
   
@@ -63,11 +63,11 @@ export default function FrameworkSection() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center px-4 py-1 mb-3 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-              7 níveis de adoção de IA
+              5 níveis — Edição 2026
             </div>
             <h2 className="gradient-text">Níveis do Framework DARE</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              Sete níveis progressivos de integração de IA no design, de abordagens totalmente manuais à automação avançada — cada um com seus casos de uso apropriados.
+              Cinco níveis progressivos de integração de IA no design, do manual total aos agentes autônomos com MCP.
             </p>
           </div>
           
@@ -263,7 +263,7 @@ export default function FrameworkSection() {
                 </Button>
                 
                 <span className="flex items-center text-sm text-gray-500 font-medium">
-                  Nível {activeLevel === 0 ? 0 : activeLevel === 1 ? 1 : activeLevel === 2 ? 2 : activeLevel === 3 ? 3 : activeLevel === 4 ? '3.5' : activeLevel === 5 ? 4 : 5} de 5
+                  Nível {levels[activeLevel]?.id ?? activeLevel} de 4
                 </span>
                 
                 <Button

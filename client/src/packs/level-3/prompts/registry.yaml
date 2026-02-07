@@ -1,0 +1,72 @@
+# DARE OS Prompt Registry – Nível 3
+# Prompts para copiloto: layouts, fluxos, protótipos
+# Ferramentas: Figma AI, Stitch, Uizard, Cursor, Claude Artifacts
+
+level: 3
+description: Prompt-to-Prototype – Prompts para sugestão e montagem de design
+
+entries:
+  - id: layout-suggestion
+    name: Sugerir layout
+    prompt: |
+      Sugira um layout para [CONTEXTO/TELA].
+      Requisitos: [REQUISITOS]
+      Referências: [LINKS/IMAGENS]
+      Inclua justificativa breve para a sugestão.
+    use: Prototipagem e wireframes
+    verified: true
+
+  - id: flow-exploration
+    name: Explorar fluxo
+    prompt: |
+      Proponha 2–3 variações de fluxo para [JORNADA].
+      Considerar: [OBJETIVOS]
+      Comparar prós e contras de cada.
+    use: Exploração de UX
+    verified: true
+
+  - id: wireframe-variations
+    name: Variações de wireframe
+    prompt: |
+      Gere 2–3 variações de wireframe para [TELA/CONTEXTO].
+      Requisitos: [REQUISITOS]
+      Foco em: [HIERARQUIA / ELEMENTOS-CHAVE]
+    use: Exploração de layouts
+    verified: true
+
+  - id: navigation-structure
+    name: Estrutura de navegação
+    prompt: |
+      Proponha uma estrutura de navegação para [PRODUTO/APP].
+      Considerar: [PÁGINAS/SECÕES]
+      Justifique a hierarquia sugerida.
+    use: Information architecture
+    verified: true
+
+  - id: content-suggestion
+    name: Sugestão de conteúdo
+    prompt: |
+      Sugira conteúdo (copy, CTAs, headings) para [CONTEXTO/TELA].
+      Tom: [TOM]
+      Objetivo: [OBJETIVO]
+      Restrições: [RESTRIÇÕES]
+    use: Copy e microcopy
+    verified: true
+
+  - id: component-variations
+    name: Variações de componente
+    prompt: |
+      Proponha 2–3 variações do componente [COMPONENTE] para [CONTEXTO].
+      Design system: [REFERÊNCIA]
+      Considerar: acessibilidade, responsividade.
+    use: Componentes e design system
+    verified: true
+
+  - id: user-flow-diagram
+    name: Diagrama de fluxo do usuário
+    prompt: |
+      Crie um diagrama de fluxo do usuário para [JORNADA].
+      Etapas: [ETAPAS]
+      Inclua decisões, ramificações e exceções.
+    use: Documentação de fluxos
+    verified: true

@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "workType",
+      "label": "Qual o tipo de trabalho?",
+      "options": [
+        { "value": "design", "label": "Design" },
+        { "value": "product", "label": "Produto" },
+        { "value": "development", "label": "Desenvolvimento" },
+        { "value": "hybrid", "label": "Híbrido" }
+      ]
+    },
+    {
+      "id": "impactOfFailure",
+      "label": "Qual o impacto de uma falha?",
+      "options": [
+        { "value": "low", "label": "Baixo" },
+        { "value": "medium", "label": "Médio" },
+        { "value": "high", "label": "Alto" }
+      ]
+    },
+    {
+      "id": "taskNature",
+      "label": "Qual a natureza da tarefa?",
+      "options": [
+        { "value": "repetitive", "label": "Repetitiva" },
+        { "value": "semi-structured", "label": "Semi-estruturada" },
+        { "value": "exploratory", "label": "Exploratória" }
+      ]
+    },
+    {
+      "id": "explicitRulesExist",
+      "label": "Existem regras explícitas que governam o resultado?",
+      "options": [
+        { "value": "yes", "label": "Sim" },
+        { "value": "partial", "label": "Parcialmente" },
+        { "value": "no", "label": "Não" }
+      ]
+    },
+    {
+      "id": "canValidateOutput",
+      "label": "O resultado pode ser validado ou testado objetivamente?",
+      "options": [
+        { "value": "yes", "label": "Sim" },
+        { "value": "partial", "label": "Parcialmente" },
+        { "value": "no", "label": "Não" }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "conditions": { "impactOfFailure": "high", "explicitRulesExist": "no" },
+      "level": 0,
+      "reason": "Impacto alto com regras indefinidas. O risco de falha é inaceitável sem governança explícita. Recomendamos Nível 0 até que regras sejam documentadas.",
+      "gates": ["Documentar requisitos explícitos", "Estabelecer critérios de aceite"],
+      "risks": ["Outputs imprevisíveis", "Falhas críticas sem mitigação", "Retrabalho caro"]
+    },
+    {
+      "conditions": { "impactOfFailure": "high", "canValidateOutput": "no" },
+      "level": 0,
+      "reason": "Impacto alto sem capacidade de validação objetiva. Sem testes, não há como detectar erros antes que causem dano.",
+      "gates": ["Definir métricas de validação", "Criar critérios de verificação"],
+      "risks": ["Erros não detectados", "Qualidade inconsistente", "Perda de confiança"]
+    },
+    {
+      "conditions": { "taskNature": "exploratory", "impactOfFailure": "high" },
+      "level": 0,
+      "reason": "Tarefas exploratórias com impacto alto exigem controle humano total. A IA não deve influenciar decisões críticas em terreno incerto.",
+      "gates": ["Mapear incertezas", "Definir checkpoints de decisão humana"],
+      "risks": ["Deriva de objetivo", "Escalada de risco", "Decisões não fundamentadas"]
+    },
+    {
+      "conditions": { "impactOfFailure": "high" },
+      "level": 0,
+      "reason": "Com impacto alto, adotamos postura conservadora. Nível 0 até que todas as condições favoráveis estejam presentes.",
+      "gates": ["Revisão humana obrigatória", "Documentação de decisões"],
+      "risks": ["Escala de falha", "Responsabilidade não atribuída"]
+    },
+    {
+      "conditions": { "canValidateOutput": "yes", "taskNature": "repetitive", "explicitRulesExist": "yes", "impactOfFailure": "low" },
+      "level": 3,
+      "reason": "Tarefa repetitiva, com regras claras, validação possível e impacto baixo. Condições ideais para IA como copiloto.",
+      "gates": ["Registry de prompts", "Rubrica de avaliação", "Checkpoint de revisão"],
+      "risks": ["Uso excessivo sem revisão crítica"]
+    },
+    {
+      "conditions": { "canValidateOutput": "yes", "taskNature": "repetitive", "explicitRulesExist": "yes", "impactOfFailure": "medium" },
+      "level": 3,
+      "reason": "Condições favoráveis com impacto médio. IA como copiloto é apropriada, com gates reforçados.",
+      "gates": ["Registry de prompts", "Rubrica de avaliação", "Revisão humana obrigatória"],
+      "risks": ["Falha em edge cases"]
+    },
+    {
+      "conditions": { "canValidateOutput": "yes", "taskNature": "repetitive", "explicitRulesExist": "yes" },
+      "level": 3,
+      "reason": "Regras claras, validação possível e tarefa repetitiva. Nível 3 adequado.",
+      "gates": ["Registry de prompts", "Rubrica de avaliação"],
+      "risks": ["Variabilidade em cenários não cobertos"]
+    },
+    {
+      "conditions": { "canValidateOutput": "yes", "taskNature": "semi-structured", "explicitRulesExist": "yes" },
+      "level": 2,
+      "reason": "Tarefa semi-estruturada com regras e validação. IA como acelerador visual/operacional é adequada.",
+      "gates": ["Spec anchoring", "Critérios de aceite documentados"],
+      "risks": ["Inconsistência em casos ambíguos"]
+    },
+    {
+      "conditions": { "explicitRulesExist": "yes", "canValidateOutput": "partial" },
+      "level": 2,
+      "reason": "Regras existem mas validação é parcial. Nível 2 com supervisão reforçada.",
+      "gates": ["Revisão de outputs", "Checkpoint antes de aprovação"],
+      "risks": ["Erros sutis não detectados"]
+    },
+    {
+      "conditions": { "explicitRulesExist": "yes", "impactOfFailure": "low" },
+      "level": 1,
+      "reason": "Regras existem e impacto é baixo. IA assistiva pode acelerar tarefas operacionais.",
+      "gates": ["Documentação de uso", "Verificação pontual"],
+      "risks": ["Uso excessivo sem verificação"]
+    },
+    {
+      "conditions": { "explicitRulesExist": "partial", "impactOfFailure": "low" },
+      "level": 1,
+      "reason": "Regras parciais com baixo impacto. IA assistiva para suporte, sem geração de entregas finais.",
+      "gates": ["Definir escopo de uso da IA", "Revisão humana em decisões"],
+      "risks": ["Extrapolação além do escopo"]
+    },
+    {
+      "conditions": { "taskNature": "repetitive", "canValidateOutput": "yes" },
+      "level": 2,
+      "reason": "Tarefa repetitiva e validável. Nível 2 apropriado, com cuidado no impacto.",
+      "gates": ["Registry de prompts", "Amostragem de validação"],
+      "risks": ["Regras implícitas não capturadas"]
+    }
+  ],
+  "defaultLevel": 0,
+  "defaultReason": "Sem correspondência específica nas regras, recomendamos Nível 0 por precaução. Revise as condições e considere documentar regras e critérios de validação.",
+  "defaultGates": ["Documentar requisitos", "Definir critérios de validação", "Revisão humana obrigatória"],
+  "defaultRisks": ["Incerteza nas condições", "Falhas não mitigadas"],
+  "levelDescriptions": {
+    "0": {
+      "name": "Artesanal",
+      "shortName": "Artesanal",
+      "tagline": "Nenhuma IA. Controle total."
+    },
+    "1": {
+      "name": "Backstage",
+      "shortName": "Backstage",
+      "tagline": "A IA te ajuda, mas não cria."
+    },
+    "2": {
+      "name": "Geração de Assets",
+      "shortName": "Geração de Assets",
+      "tagline": "Você cria, a IA preenche."
+    },
+    "3": {
+      "name": "Prompt-to-Prototype",
+      "shortName": "Prompt-to-Prototype",
+      "tagline": "IA propõe e monta, você direciona."
+    },
+    "4": {
+      "name": "Orquestração de Agentes",
+      "shortName": "Orquestração de Agentes",
+      "tagline": "IA como agentes autônomos com contexto."
+    }
+  }
+}
