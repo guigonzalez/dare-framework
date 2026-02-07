@@ -2,48 +2,27 @@
 
 O projeto possui dois ambientes:
 
-| Ambiente | Branch | URL | Workflow |
-|----------|--------|-----|----------|
-| **Produção** | `main` | www.dareframework.com.br | `gh-pages.yml` |
-| **Homolog** | `staging` | dare-framework-homolog.pages.dev | `homolog.yml` |
+| Ambiente | Branch | URL |
+|----------|--------|-----|
+| **Produção** | `main` | www.dareframework.com.br (GitHub Pages) |
+| **Homolog** | `staging` | Via Vercel (ver abaixo) |
 
-## Configurar Homolog (Cloudflare Pages)
+## Configurar Homolog (Vercel — recomendado)
 
-### 1. Criar conta Cloudflare
-- Acesse [cloudflare.com](https://cloudflare.com) e crie uma conta (plano gratuito).
+O domínio de produção usa GitHub Pages. Para homolog, use **Vercel** (grátis, sem configuração de secrets no GitHub):
 
-### 2. Criar projeto Pages
-- Dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git** (pode pular, vamos usar Direct Upload).
-- Ou: **Create project** → **Direct Upload**.
-- Nome sugerido: `dare-framework-homolog`.
+1. Acesse [vercel.com](https://vercel.com) e faça login (GitHub).
+2. **Add New** → **Project** → importe o repositório `dare-framework`.
+3. Configuração:
+   - **Framework Preset:** Vite
+   - **Root Directory:** `client`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+4. Em **Settings** → **Git**:
+   - **Production Branch:** `main` (ou desmarque se não quiser deploy automático de main no Vercel)
+   - Cada branch (incluindo `staging`) e cada PR recebe uma URL de preview.
 
-### 3. Obter credenciais
+5. **Deploy.** O branch `staging` terá uma URL fixa, por exemplo:
+   - `dare-framework-git-staging-guigonzalez.vercel.app`
 
-**Account ID:**
-- Dashboard → qualquer site/projeto → Overview → **Account ID** (lado direito).
-
-**API Token:**
-- My Profile → **API Tokens** → **Create Token**.
-- Use o template **Edit Cloudflare Workers** ou **Custom token** com permissão:
-  - Account → **Cloudflare Pages** → **Edit**
-- Copie o token (só aparece uma vez).
-
-### 4. Adicionar secrets no GitHub
-- Repositório → **Settings** → **Secrets and variables** → **Actions**.
-- **New repository secret**:
-  - `CLOUDFLARE_API_TOKEN` = token criado acima
-  - `CLOUDFLARE_ACCOUNT_ID` = ID da conta
-
-### 5. Deploy
-- Crie a branch `staging`: `git checkout -b staging && git push -u origin staging`
-- Ou faça push para `staging`.
-- O workflow roda automaticamente e publica em `https://dare-framework-homolog.pages.dev`.
-
-## Alternativa: Vercel (sem configuração extra)
-
-1. Acesse [vercel.com](https://vercel.com) e conecte o repositório.
-2. **Production Branch** = `main`
-3. Todas as PRs recebem preview automático (ex: `dare-framework-xxx.vercel.app`).
-4. Para homolog fixo: crie branch `staging` e configure em Vercel para ter URL permanente.
-
-Nenhum workflow ou secret é necessário — só conectar o repo.
+Nenhum secret ou workflow extra é necessário — só conectar o repositório.

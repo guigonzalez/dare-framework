@@ -67,7 +67,7 @@ npm run build
 
 ## 🧪 Homolog (Staging)
 
-O projeto inclui workflow de homologação. Push na branch `staging` publica em Cloudflare Pages (URL ao vivo).
+Push na branch `staging` e conecte o repositório ao [Vercel](https://vercel.com) para obter uma URL de preview ao vivo.
 
 Consulte [Docs/HOMOLOG.md](Docs/HOMOLOG.md) para configurar.
 
