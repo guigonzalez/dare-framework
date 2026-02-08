@@ -79,7 +79,7 @@ export default function Footer() {
             <a href="/aplicar" className="hover:text-white transition">Visão Geral</a>
             {config.DARE_OS_MVP && (
               <>
-                <a href="/aplicar/wizard" className="hover:text-white transition">Wizard</a>
+                <a href="/aplicar/teste-maturidade" className="hover:text-white transition">Teste de Maturidade</a>
                 <a href="/aplicar/dare-os" className="hover:text-white transition">Ciclo</a>
                 <a href="/aplicar/packs" className="hover:text-white transition">Packs</a>
                 <a href="/aplicar/agentes" className="hover:text-white transition">Agentes & MCP</a>

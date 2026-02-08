@@ -46,7 +46,7 @@ export default function ApplyPage() {
                   A IA não substitui o designer — ela amplifica quem pensa com método
                 </h1>
                 <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
-                  O <a href="/#framework" className="text-primary hover:underline font-medium">Framework DARE</a> define 5 níveis (0–4) de maturidade. O <strong>DARE OS</strong> é o sistema que coloca isso em prática — Wizard, Packs e Ciclo.
+                  O <a href="/#framework" className="text-primary hover:underline font-medium">Framework DARE</a> define 5 níveis (0–4) de maturidade. O <strong>DARE OS</strong> é o sistema que coloca isso em prática — Teste de Maturidade, Packs e Ciclo.
                 </p>
                 <p className="text-base text-gray-500 max-w-2xl mx-auto">
                   Usado por times de design, produto e inovação para transformar IA em raciocínio estratégico.
@@ -76,13 +76,13 @@ export default function ApplyPage() {
                   Do conceito à operação
                 </h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  O sistema prático que conecta o framework aos fluxos de trabalho. Wizard, Packs e Ciclo de Vida para guiar o uso de IA com governança.
+                  O sistema prático que conecta o framework aos fluxos de trabalho. Teste de Maturidade, Packs e Ciclo de Vida para guiar o uso de IA com governança.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <motion.a
-                  href="/aplicar/wizard"
+                  href="/aplicar/teste-maturidade"
                   className="group p-6 bg-gradient-to-br from-primary/5 to-purple-50 rounded-xl border-2 border-primary/20 hover:border-primary/40 transition-all"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -90,9 +90,9 @@ export default function ApplyPage() {
                   transition={{ duration: 0.5 }}
                 >
                   <Wand2 className="w-10 h-10 text-primary mb-3" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Wizard</h3>
-                  <p className="text-sm text-gray-600 mb-4">Recomendação determinística do nível DARE (0–3) em 5 perguntas.</p>
-                  <span className="text-sm font-medium text-primary group-hover:underline">Iniciar Wizard →</span>
+                  <h3 className="font-semibold text-gray-900 mb-2">Teste de Maturidade</h3>
+                  <p className="text-sm text-gray-600 mb-4">Contexto do projeto + maturidade organizacional. Nível DARE recomendado em ~15 min.</p>
+                  <span className="text-sm font-medium text-primary group-hover:underline">Iniciar Teste →</span>
                 </motion.a>
                 <motion.a
                   href="/aplicar/packs"
@@ -405,202 +405,6 @@ export default function ApplyPage() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Journey Section */}
-        <section id="modelos" className="py-16 bg-gradient-to-b from-white to-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-              <motion.div
-                className="text-center mb-16"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                  Como o DARE se expande na sua organização
-                </h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Uma jornada progressiva: de entender sua maturidade até transformar o DARE em padrão do time
-                </p>
-              </motion.div>
-
-              <div className="relative">
-                {/* Connection Line - Hidden when only 1 card */}
-                {/* <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-emerald-200 z-0"></div> */}
-
-                <div className="grid grid-cols-1 gap-8 relative z-10 max-w-xl mx-auto">
-                  {/* Step 1 - Maturity Model */}
-                  <motion.div
-                    className="relative"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 h-full">
-                      {/* Header */}
-                      <div className="mb-6">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1">Descubra seu Nível DARE</h3>
-                        <p className="text-sm text-blue-600 font-medium">15 minutos • Gratuito • Sem cadastro</p>
-                      </div>
-
-                      <h4 className="text-xl font-semibold text-gray-900 mb-3">DARE Maturity Model</h4>
-                      <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                        Avaliação científica baseada em <strong>5 dimensões organizacionais</strong> que determina com precisão qual nível DARE (0-5) sua empresa está pronta para adotar — sem chutômetro, com método.
-                      </p>
-
-                      {/* Conversational Form Highlight */}
-                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-4 mb-5 border border-blue-200">
-                        <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                            <MessageCircle className="w-5 h-5 text-blue-600" />
-                          </div>
-                          <div>
-                            <h5 className="text-sm font-semibold text-gray-900 mb-1">Interface Conversacional com IA</h5>
-                            <p className="text-xs text-gray-600 leading-relaxed">
-                              Experiência de chat humanizada com assistente virtual que simula uma conversa real. Sistema inteligente de perguntas progressivas com feedback em tempo real e transições contextuais entre dimensões.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Technical Benefits */}
-                      <div className="space-y-2 mb-6">
-                        <div className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                          <p className="text-xs text-gray-700"><strong>25 perguntas estratégicas</strong> cobrindo Maturidade Técnica, Capacidade Organizacional, Competência da Equipe, Contexto de Negócio e Marca</p>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                          <p className="text-xs text-gray-700"><strong>Algoritmo de scoring ponderado</strong> que normaliza respostas e aplica pesos diferenciados por dimensão</p>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                          <p className="text-xs text-gray-700"><strong>Relatório detalhado</strong> com análise por dimensão, score final (0-100) e recomendação de nível com roadmap de evolução</p>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                          <p className="text-xs text-gray-700"><strong>Validação científica:</strong> baseado em frameworks de maturidade organizacional e adoção de tecnologia</p>
-                        </div>
-                      </div>
-
-                      {/* CTA */}
-                      <div className="space-y-3">
-                        <a
-                          href="/aplicar/teste-maturidade"
-                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group"
-                        >
-                          Iniciar Teste Conversacional
-                          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <p className="text-center text-xs text-gray-500">
-                          Usado por times de design, produto e inovação para decisões estruturadas de IA
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Step 2 - Licensing - HIDDEN */}
-                  {/* <motion.div
-                    className="relative"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                  >
-                    <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 h-full relative overflow-hidden">
-                      <div className="absolute top-4 right-4">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
-                          <Award className="w-3 h-3 mr-1" />
-                          Pro
-                        </span>
-                      </div>
-
-                      <div className="flex items-start gap-3 mb-6">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                          2
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900">Adote</h3>
-                          <p className="text-sm text-purple-600 font-medium">Licença anual</p>
-                        </div>
-                      </div>
-
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Licenciamento Corporativo</h4>
-                      <p className="text-gray-600 text-sm mb-6">
-                        Transforme o DARE na linguagem comum de IA responsável de toda sua organização
-                      </p>
-
-                      <a
-                        href="/aplicar/proposta"
-                        className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
-                      >
-                        Calcular investimento
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </a>
-                    </div>
-                  </motion.div> */}
-
-                  {/* Step 3 - Consulting - HIDDEN */}
-                  {/* <motion.div
-                    className="relative"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 h-full relative overflow-hidden">
-                      <div className="absolute top-4 right-4">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-md">
-                          <Award className="w-3 h-3 mr-1" />
-                          Pro
-                        </span>
-                      </div>
-
-                      <div className="flex items-start gap-3 mb-6">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                          3
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900">Implemente</h3>
-                          <p className="text-sm text-emerald-600 font-medium">Hands-on</p>
-                        </div>
-                      </div>
-
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Consultoria Estratégica</h4>
-                      <p className="text-gray-600 text-sm mb-6">
-                        Aplique o DARE em projetos reais com mentoria especializada do início ao fim
-                      </p>
-
-                      <a
-                        href="https://calendar.app.google/7zs5wDSwXJRvgv2V6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
-                      >
-                        Agendar conversa
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </a>
-                    </div>
-                  </motion.div> */}
-                </div>
-              </div>
-
-              <motion.div
-                className="mt-12 text-center"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <p className="text-gray-500 text-sm">
-                  💡 Comece pelo teste gratuito e evolua no seu ritmo
-                </p>
               </motion.div>
             </div>
           </div>

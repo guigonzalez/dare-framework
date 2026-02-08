@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle, TrendingUp, Target, Users, Shield, Award, Download, Bot, User } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle, TrendingUp, Target, Users, Shield, Award, Download, Bot, User, AlertTriangle, ExternalLink } from "lucide-react";
+import wizardRules from "@/data/wizard-rules.json";
+import { EmailCaptureCard } from "@/components/EmailCaptureCard";
+import { evaluateWizard, type WizardResult } from "@/lib/wizard-evaluate";
+import { levelContracts } from "@/data/levelContracts";
 
 // Estrutura das perguntas por dimensão
 const dimensions = [
@@ -314,6 +318,16 @@ const dareNiveis = [
   { nivel: 4, nome: "Orquestração de Agentes", range: [81, 100], description: "Agentes autônomos com contexto via MCP" }
 ];
 
+// Wizard: contexto do projeto (fase inicial)
+const wizardConfig = {
+  questions: wizardRules.questions as Array<{ id: string; label: string; options: Array<{ value: string; label: string }> }>,
+  rules: wizardRules.rules as Parameters<typeof evaluateWizard>[1]["rules"],
+  defaultLevel: wizardRules.defaultLevel as number,
+  defaultReason: wizardRules.defaultReason as string,
+  defaultGates: wizardRules.defaultGates as string[],
+  defaultRisks: wizardRules.defaultRisks as string[],
+};
+
 // Flatten all questions into a single array
 const allQuestions = dimensions.flatMap(dim =>
   dim.questions.map(q => ({
@@ -336,17 +350,26 @@ type Message = {
   id: string;
   type: 'ai' | 'user' | 'intro' | 'transition';
   content: string;
-  options?: Array<{ value: number; label: string }>;
+  options?: Array<{ value: number | string; label: string }>;
   questionId?: string;
 };
+
+type Phase = 'contexto' | 'maturidade' | 'results';
+
+const WIZARD_COUNT = 5;
+const TOTAL_QUESTIONS = WIZARD_COUNT + allQuestions.length;
 
 export default function MaturityTestPage() {
   const [started, setStarted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [phase, setPhase] = useState<Phase>('contexto');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [wizardAnswers, setWizardAnswers] = useState<Record<string, string>>({});
+  const [wizardResult, setWizardResult] = useState<WizardResult | null>(null);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [isTyping, setIsTyping] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [wizardEarlyExit, setWizardEarlyExit] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -362,7 +385,7 @@ export default function MaturityTestPage() {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  const addAIMessage = (content: string, options?: Array<{ value: number; label: string }>, questionId?: string, type: 'ai' | 'transition' = 'ai') => {
+  const addAIMessage = (content: string, options?: Array<{ value: number | string; label: string }>, questionId?: string, type: 'ai' | 'transition' = 'ai') => {
     setIsTyping(true);
     setTimeout(() => {
       setMessages(prev => [...prev, {
@@ -373,12 +396,12 @@ export default function MaturityTestPage() {
         questionId
       }]);
       setIsTyping(false);
-    }, 800); // Simulate typing delay
+    }, 800);
   };
 
   const handleStart = () => {
     setStarted(true);
-    const introMessage = "Olá! 👋 Sou o assistente virtual do DARE Framework. Vou fazer algumas perguntas para entender o nível de maturidade da sua organização em relação à adoção de IA. São 25 perguntas rápidas, levará cerca de 15 minutos. Vamos começar?";
+    const introMessage = "Olá! 👋 Sou o assistente virtual do DARE Framework. Primeiro vou fazer 5 perguntas rápidas sobre o contexto do seu projeto (tipo de trabalho, impacto, validação). Depois, 25 perguntas sobre a maturidade organizacional. Tudo isso leva cerca de 15 minutos. Vamos começar?";
 
     setMessages([{
       id: 'intro',
@@ -387,15 +410,14 @@ export default function MaturityTestPage() {
       options: undefined
     }]);
 
-    // Start with first question after intro
+    // Start with first wizard question (contexto)
     setTimeout(() => {
-      const firstQuestion = allQuestions[0];
-      addAIMessage(firstQuestion.question, firstQuestion.options, firstQuestion.id);
+      const firstQ = wizardConfig.questions[0];
+      addAIMessage(firstQ.label, firstQ.options, firstQ.id);
     }, 1200);
   };
 
-  const handleAnswer = (questionId: string, value: number, label: string) => {
-    // Add user's answer to chat
+  const handleAnswer = (questionId: string, value: number | string, label: string) => {
     setMessages(prev => [...prev, {
       id: `user-${Date.now()}`,
       type: 'user',
@@ -403,62 +425,132 @@ export default function MaturityTestPage() {
       questionId
     }]);
 
-    // Store answer
-    setAnswers(prev => ({ ...prev, [questionId]: value }));
+    if (phase === 'contexto') {
+      const strValue = String(value);
+      setWizardAnswers(prev => ({ ...prev, [questionId]: strValue }));
 
-    const nextIndex = currentQuestionIndex + 1;
+      const nextIndex = currentQuestionIndex + 1;
 
-    // Check if we completed a dimension and need a transition
-    if (nextIndex < allQuestions.length) {
-      const currentDimension = allQuestions[currentQuestionIndex].dimensionId;
-      const nextDimension = allQuestions[nextIndex].dimensionId;
-
-      if (currentDimension !== nextDimension) {
-        // Add transition message
+      if (nextIndex < WIZARD_COUNT) {
         setTimeout(() => {
-          addAIMessage(transitionMessages[currentDimension], undefined, undefined, 'transition');
-
-          // Then add next question
-          setTimeout(() => {
-            const nextQuestion = allQuestions[nextIndex];
-            addAIMessage(nextQuestion.question, nextQuestion.options, nextQuestion.id);
-            setCurrentQuestionIndex(nextIndex);
-          }, 1200);
-        }, 600);
-      } else {
-        // Same dimension, just ask next question
-        setTimeout(() => {
-          const nextQuestion = allQuestions[nextIndex];
-          addAIMessage(nextQuestion.question, nextQuestion.options, nextQuestion.id);
+          const nextQ = wizardConfig.questions[nextIndex];
+          addAIMessage(nextQ.label, nextQ.options, nextQ.id);
           setCurrentQuestionIndex(nextIndex);
         }, 600);
+      } else {
+        // Wizard completo: avaliar
+        const updatedAnswers = { ...wizardAnswers, [questionId]: strValue };
+        setWizardAnswers(updatedAnswers);
+
+        const result = evaluateWizard(updatedAnswers, {
+          rules: wizardConfig.rules,
+          defaultLevel: wizardConfig.defaultLevel,
+          defaultReason: wizardConfig.defaultReason,
+          defaultGates: wizardConfig.defaultGates,
+          defaultRisks: wizardConfig.defaultRisks,
+        });
+        setWizardResult(result);
+
+        if (result.level === 0) {
+          setWizardEarlyExit(true);
+          setTimeout(() => {
+            addAIMessage("Com base no contexto do seu projeto, recomendo começar pelo Nível 0 (Artesanal). É uma postura conservadora para minimizar riscos.");
+
+            setTimeout(() => {
+              setShowResults(true);
+              setPhase('results');
+            }, 2000);
+          }, 600);
+        } else {
+          setPhase('maturidade');
+          setCurrentQuestionIndex(0);
+          setTimeout(() => {
+            addAIMessage("Entendi o contexto. Agora vamos explorar a maturidade organizacional em 5 dimensões.", undefined, undefined, 'transition');
+
+            setTimeout(() => {
+              const firstMaturity = allQuestions[0];
+              addAIMessage(firstMaturity.question, firstMaturity.options, firstMaturity.id);
+            }, 1200);
+          }, 600);
+        }
       }
     } else {
-      // All questions answered, show final message and results
-      setTimeout(() => {
-        addAIMessage("Perfeito! Terminamos todas as perguntas. Estou analisando suas respostas para gerar seu relatório de maturidade...");
+      // fase maturidade
+      setAnswers(prev => ({ ...prev, [questionId]: value as number }));
 
+      const nextIndex = currentQuestionIndex + 1;
+
+      if (nextIndex < allQuestions.length) {
+        const currentDim = allQuestions[currentQuestionIndex].dimensionId;
+        const nextDim = allQuestions[nextIndex].dimensionId;
+
+        if (currentDim !== nextDim) {
+          setTimeout(() => {
+            addAIMessage(transitionMessages[currentDim], undefined, undefined, 'transition');
+            setTimeout(() => {
+              const nextQ = allQuestions[nextIndex];
+              addAIMessage(nextQ.question, nextQ.options, nextQ.id);
+              setCurrentQuestionIndex(nextIndex);
+            }, 1200);
+          }, 600);
+        } else {
+          setTimeout(() => {
+            const nextQ = allQuestions[nextIndex];
+            addAIMessage(nextQ.question, nextQ.options, nextQ.id);
+            setCurrentQuestionIndex(nextIndex);
+          }, 600);
+        }
+      } else {
         setTimeout(() => {
-          setShowResults(true);
-        }, 2000);
-      }, 600);
+          addAIMessage("Perfeito! Terminamos todas as perguntas. Estou analisando suas respostas para gerar seu relatório de maturidade...");
+
+          setTimeout(() => {
+            setShowResults(true);
+            setPhase('results');
+          }, 2000);
+        }, 600);
+      }
     }
   };
 
   const calculateResults = () => {
+    if (wizardEarlyExit && wizardResult) {
+      return {
+        finalScore: 0,
+        recommendedLevel: dareNiveis.find(n => n.nivel === wizardResult.level) || dareNiveis[0],
+        wizardResult,
+        wizardCapped: true,
+        dimensionScores: null as Record<string, number> | null,
+      };
+    }
+
     let finalScore = 0;
+    const dimensionScores: Record<string, number> = {};
 
     dimensions.forEach(dimension => {
       const dimensionScore = dimension.questions.reduce((sum, q) => sum + (answers[q.id] || 0), 0);
       const normalizedScore = (dimensionScore / 20) * 100;
+      dimensionScores[dimension.id] = Math.round(normalizedScore);
       finalScore += normalizedScore * dimension.weight;
     });
 
-    const recommendedLevel = dareNiveis.find(
+    const maturityLevel = dareNiveis.find(
       nivel => finalScore >= nivel.range[0] && finalScore <= nivel.range[1]
     ) || dareNiveis[0];
 
-    return { finalScore: Math.round(finalScore), recommendedLevel };
+    const finalLevel = wizardResult
+      ? Math.min(wizardResult.level, maturityLevel.nivel)
+      : maturityLevel.nivel;
+    const wizardCapped = wizardResult ? wizardResult.level < maturityLevel.nivel : false;
+    const recommendedLevel = dareNiveis.find(n => n.nivel === finalLevel) || dareNiveis[0];
+
+    return {
+      finalScore: Math.round(finalScore),
+      recommendedLevel,
+      wizardResult: wizardResult ?? undefined,
+      wizardCapped,
+      dimensionScores,
+    };
   };
 
   const results = showResults ? calculateResults() : null;
@@ -497,17 +589,26 @@ export default function MaturityTestPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>25 perguntas sobre 5 dimensões de maturidade</span>
+                      <span>5 perguntas de contexto + 25 de maturidade organizacional</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Relatório completo com nível DARE recomendado</span>
+                      <span>Relatório com nível DARE, gates, riscos e link para Pack</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>Gratuito • Sem cadastro • ~15 minutos</span>
                     </li>
                   </ul>
+                </div>
+
+                <div className="mb-8 max-w-2xl mx-auto">
+                  <EmailCaptureCard
+                    title="Quer receber novidades do DARE?"
+                    description="Deixe seu e-mail para novidades sobre o framework. Sem spam."
+                    successMessage="Obrigado!"
+                    formContext={{ origem: "teste-inicio", _subject: "DARE - Lead" }}
+                  />
                 </div>
 
                 <button
@@ -527,6 +628,13 @@ export default function MaturityTestPage() {
 
   // Results Screen
   if (showResults && results) {
+    const wr = results.wizardResult;
+    const contract = levelContracts.find(c => c.id === results.recommendedLevel.nivel);
+    const gates = (results.wizardCapped && wr?.gates) ? wr.gates : (contract?.requiredGates ?? []);
+    const risks = (results.wizardCapped && wr?.risks) ? wr.risks : (contract?.whenNotToUse ?? []);
+    const reason = (results.wizardCapped && wr?.reason) ? wr.reason : `Com base na sua avaliação, recomendamos começar pelo Nível ${results.recommendedLevel.nivel} - ${results.recommendedLevel.nome}. Este nível equilibra suas capacidades atuais com o potencial de evolução.`;
+    const packHref = contract?.externalLink ?? `/aplicar/packs/${results.recommendedLevel.nivel}`;
+
     return (
       <main className="flex-grow bg-white">
         <section className="py-12">
@@ -550,75 +658,130 @@ export default function MaturityTestPage() {
                     {results.recommendedLevel.description}
                   </p>
 
-                  <p className="text-sm text-gray-500">
-                    Pontuação: {results.finalScore}/100
-                  </p>
+                  {!results.wizardCapped && (
+                    <p className="text-sm text-gray-500">
+                      Pontuação: {results.finalScore}/100
+                    </p>
+                  )}
                 </div>
 
                 <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-                  <h2 className="text-xl font-bold text-gray-900 mb-5">Maturidade por Dimensão</h2>
+                  <h2 className="text-xl font-bold text-gray-900 mb-5">
+                    {results.wizardCapped ? "Justificativa" : "Recomendações"}
+                  </h2>
+                  <p className="text-gray-700 leading-relaxed mb-5">{reason}</p>
 
-                  <div className="space-y-5">
-                    {dimensions.map(dimension => {
-                      const dimensionScore = dimension.questions.reduce((sum, q) => sum + (answers[q.id] || 0), 0);
-                      const normalizedScore = (dimensionScore / 20) * 100;
-                      const Icon = dimension.icon;
-
-                      return (
-                        <div key={dimension.id}>
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-2">
-                              <Icon className="w-4 h-4 text-gray-600" />
-                              <span className="text-sm font-medium text-gray-900">{dimension.name}</span>
-                            </div>
-                            <span className="text-sm font-semibold text-gray-700">{Math.round(normalizedScore)}%</span>
-                          </div>
-                          <div className="w-full h-2.5 bg-gray-200 rounded-full overflow-hidden">
-                            <motion.div
-                              initial={{ width: 0 }}
-                              animate={{ width: `${normalizedScore}%` }}
-                              transition={{ duration: 0.8, delay: 0.1 }}
-                              className={`h-full bg-gradient-to-r ${dimension.color}`}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 mb-8">
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">Recomendações</h2>
-
-                  <div className="space-y-4 text-gray-700 text-sm">
-                    <p className="leading-relaxed">
-                      Com base na sua avaliação, recomendamos começar pelo <strong>Nível {results.recommendedLevel.nivel} - {results.recommendedLevel.nome}</strong>. Este nível equilibra suas capacidades atuais com o potencial de evolução.
-                    </p>
-
-                    <div className="bg-white rounded-lg p-5 border border-gray-200">
-                      <h3 className="font-semibold text-gray-900 mb-3 text-sm flex items-center gap-2">
-                        <Target className="w-4 h-4 text-primary" />
-                        Próximos Passos:
+                  {gates.length > 0 && (
+                    <div className="mb-5">
+                      <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        Gates obrigatórios
                       </h3>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary font-medium">1.</span>
-                          <span>Compartilhe este resultado com sua liderança</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary font-medium">2.</span>
-                          <span>Estude o framework DARE completo para entender seu nível</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary font-medium">3.</span>
-                          <span>Considere licenciamento ou consultoria para implementação guiada</span>
-                        </li>
+                      <ul className="space-y-2 text-sm text-gray-700">
+                        {gates.map((gate, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-primary font-medium">{i + 1}.</span>
+                            {gate}
+                          </li>
+                        ))}
                       </ul>
                     </div>
-                  </div>
+                  )}
+
+                  {risks.length > 0 && (
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                        <AlertTriangle className="w-4 h-4 text-amber-600" />
+                        Riscos se ignorados
+                      </h3>
+                      <ul className="space-y-2 text-sm text-gray-700">
+                        {risks.map((risk, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-amber-600">•</span>
+                            {risk}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                {results.dimensionScores && (
+                  <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
+                    <h2 className="text-xl font-bold text-gray-900 mb-5">Maturidade por Dimensão</h2>
+                    <div className="space-y-5">
+                      {dimensions.map(dimension => {
+                        const normalizedScore = results.dimensionScores![dimension.id] ?? 0;
+                        const Icon = dimension.icon;
+                        return (
+                          <div key={dimension.id}>
+                            <div className="flex items-center justify-between mb-2">
+                              <div className="flex items-center gap-2">
+                                <Icon className="w-4 h-4 text-gray-600" />
+                                <span className="text-sm font-medium text-gray-900">{dimension.name}</span>
+                              </div>
+                              <span className="text-sm font-semibold text-gray-700">{normalizedScore}%</span>
+                            </div>
+                            <div className="w-full h-2.5 bg-gray-200 rounded-full overflow-hidden">
+                              <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: `${normalizedScore}%` }}
+                                transition={{ duration: 0.8, delay: 0.1 }}
+                                className={`h-full bg-gradient-to-r ${dimension.color}`}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 mb-8">
+                  <h3 className="font-semibold text-gray-900 mb-3 text-sm flex items-center gap-2">
+                    <Target className="w-4 h-4 text-primary" />
+                    Próximos Passos:
+                  </h3>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-medium">1.</span>
+                      <span>Compartilhe este resultado com sua liderança</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-medium">2.</span>
+                      <span>Estude o framework DARE completo para entender seu nível</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-medium">3.</span>
+                      <span>Considere licenciamento ou consultoria para implementação guiada</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mb-8">
+                  <EmailCaptureCard
+                    title="Quer receber novidades do DARE?"
+                    description="Deixe seu e-mail para novidades sobre o framework. Sem spam."
+                    successMessage="Obrigado!"
+                    formContext={{
+                      origem: "teste-resultado",
+                      _subject: `Teste de Maturidade DARE - Nível ${results.recommendedLevel.nivel}`,
+                      nivel: results.recommendedLevel.nivel,
+                      nivelNome: results.recommendedLevel.nome,
+                      pontuacao: results.finalScore,
+                      wizardEarlyExit: results.wizardCapped,
+                    }}
+                  />
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
+                  <a
+                    href={packHref}
+                    className="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all duration-200"
+                  >
+                    Ver Pack do Nível {results.recommendedLevel.nivel}
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </a>
                   <button
                     onClick={() => window.print()}
                     className="inline-flex items-center justify-center px-5 py-2.5 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all duration-200"
@@ -626,17 +789,15 @@ export default function MaturityTestPage() {
                     <Download className="w-4 h-4 mr-2" />
                     Baixar Relatório
                   </button>
-
                   <a
                     href="https://calendar.app.google/7zs5wDSwXJRvgv2V6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all duration-200"
+                    className="inline-flex items-center justify-center px-5 py-2.5 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary/5 transition-all duration-200"
                   >
                     Falar com Especialista
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
-
                   <a
                     href="/"
                     className="inline-flex items-center justify-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200"
@@ -653,7 +814,10 @@ export default function MaturityTestPage() {
   }
 
   // Chat Interface
-  const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
+  const questionsDone = phase === 'contexto'
+    ? currentQuestionIndex + 1
+    : WIZARD_COUNT + currentQuestionIndex + 1;
+  const progress = (questionsDone / TOTAL_QUESTIONS) * 100;
 
   return (
     <main className="flex-grow bg-gradient-to-br from-gray-50 to-gray-100">
@@ -664,7 +828,10 @@ export default function MaturityTestPage() {
             <div className="mb-6 bg-white rounded-lg shadow-sm border border-gray-200 p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-gray-700">
-                  Progresso: {currentQuestionIndex + 1} de {allQuestions.length}
+                  Progresso: {questionsDone} de {TOTAL_QUESTIONS}
+                  {phase === 'contexto' && (
+                    <span className="text-gray-500 ml-1">(contexto do projeto)</span>
+                  )}
                 </span>
                 <span className="text-sm font-semibold text-primary">
                   {Math.round(progress)}%

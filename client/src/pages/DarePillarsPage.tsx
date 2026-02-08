@@ -10,7 +10,7 @@ const pillars = [
     color: "from-blue-500 to-cyan-500",
     bgColor: "from-blue-50 to-cyan-50",
     description: "Define claramente o problema, o objetivo e os critérios de sucesso antes de implementar qualquer automação.",
-    longDescription: "A Decisão é o pilar fundamental que estabelece a direção estratégica do uso de IA. Antes de automatizar, é essencial entender profundamente o problema que está sendo resolvido, definir métricas claras de sucesso e estabelecer limites éticos e operacionais.",
+    longDescription: "A Decisão é o pilar fundamental que estabelece a direção estratégica do uso de IA. Antes de automatizar, é essencial entender profundamente o problema que está sendo resolvido, definir métricas claras de sucesso, estabelecer limites éticos e operacionais, e escolher o nível DARE adequado (0-4) ao contexto.",
     principles: [
       {
         title: "Clareza de Propósito",
@@ -31,6 +31,11 @@ const pillars = [
         title: "Contexto e Restrições",
         description: "Mapeie as condições do ambiente onde a IA vai operar",
         example: "Considere regulamentações (LGPD), infraestrutura disponível, maturidade da equipe"
+      },
+      {
+        title: "Nível DARE Adequado",
+        description: "Escolha o nível (0-4) que equilibra risco, impacto e capacidade de validação",
+        example: "Alto impacto sem regras explícitas → Nível 0. Regras claras e validação possível → Nível 2 ou 3"
       }
     ],
     questions: [
@@ -38,6 +43,7 @@ const pillars = [
       "Como mediremos se a solução está funcionando?",
       "O que acontece se a IA falhar?",
       "Quais decisões devem permanecer humanas?",
+      "Qual nível DARE (0-4) é adequado ao nosso contexto?",
       "Quais são os riscos éticos e de marca?"
     ],
     antiPatterns: [
@@ -55,22 +61,22 @@ const pillars = [
     color: "from-purple-500 to-pink-500",
     bgColor: "from-purple-50 to-pink-50",
     description: "Escolhe as ferramentas e workflows adequados ao nível de maturidade do time e complexidade do problema.",
-    longDescription: "A Automação trata da implementação prática: quais ferramentas usar, como integrar sistemas, e qual nível de autonomia dar à IA. Este pilar conecta a estratégia (Decisão) com a execução técnica.",
+    longDescription: "A Automação trata da implementação prática: quais ferramentas usar (do Backstage à Orquestração de Agentes), como integrar com o DARE OS (Registry, Spec Anchoring, Gates), e qual nível de autonomia dar à IA. Este pilar conecta a estratégia (Decisão) com a execução técnica.",
     principles: [
       {
         title: "Escolha Baseada em Maturidade",
         description: "Selecione ferramentas compatíveis com o nível técnico atual da equipe",
-        example: "Time iniciante: ChatGPT e Midjourney (no-code). Time avançado: APIs customizadas e fine-tuning"
+        example: "Time iniciante: ChatGPT e Midjourney (no-code). Time avançado: Cursor, v0, agentes com MCP"
       },
       {
         title: "Progressão Gradual",
         description: "Comece simples e evolua conforme o time ganha confiança e competência",
-        example: "Fase 1: IA assistiva para research → Fase 2: Geração de variações → Fase 3: Sistemas modulares"
+        example: "Fase 1: Backstage (research) → Fase 2: Geração de Assets → Fase 3: Prompt-to-Prototype ou Orquestração de Agentes"
       },
       {
-        title: "Integração de Sistemas",
-        description: "Conecte a IA com os processos e ferramentas existentes do time",
-        example: "Integrar geração de imagens com Design System, versionamento e aprovações"
+        title: "Integração com DARE OS",
+        description: "Use o ciclo Exploração → Registry → Spec Anchoring → Gates para governar prompts e outputs",
+        example: "Prompts validados no Registry; referências visuais no Spec Anchoring; Context Gates antes de aprovação"
       },
       {
         title: "Autonomia Controlada",
@@ -79,7 +85,7 @@ const pillars = [
       }
     ],
     questions: [
-      "Qual nível DARE estamos hoje? (0-5)",
+      "Qual nível DARE estamos hoje? (0-4)",
       "Quais ferramentas já usamos e quais precisamos adicionar?",
       "Como a IA se integra com nosso workflow atual?",
       "Onde colocar pontos de revisão humana?",
@@ -87,7 +93,7 @@ const pillars = [
     ],
     antiPatterns: [
       "Adotar ferramentas complexas sem capacitação adequada",
-      "Não integrar IA com processos existentes",
+      "Não integrar IA com processos existentes (Registry, Gates)",
       "Dar autonomia total sem supervisão em áreas críticas",
       "Ficar preso em ferramentas básicas quando o time está pronto para evoluir"
     ]
@@ -100,7 +106,7 @@ const pillars = [
     color: "from-emerald-500 to-teal-500",
     bgColor: "from-emerald-50 to-teal-50",
     description: "Mede continuamente se os outputs da IA estão alinhados com as necessidades reais do negócio e dos usuários.",
-    longDescription: "Relevância garante que a IA não está apenas funcionando tecnicamente, mas gerando valor real. Este pilar conecta os outputs da IA com métricas de negócio, satisfação do usuário e objetivos estratégicos.",
+    longDescription: "Relevância garante que a IA não está apenas funcionando tecnicamente, mas gerando valor real. Este pilar conecta os outputs da IA com métricas de negócio, satisfação do usuário e objetivos estratégicos definidos na Decisão.",
     principles: [
       {
         title: "Métricas de Valor",
@@ -119,8 +125,8 @@ const pillars = [
       },
       {
         title: "Evolução Adaptativa",
-        description: "Use insights de relevância para ajustar estratégia e ferramentas",
-        example: "Se IA gera muito mas aprova pouco, revisar prompts ou subir nível de supervisão"
+        description: "Use insights de relevância para ajustar estratégia, ferramentas e nível DARE",
+        example: "Se IA gera muito mas aprova pouco, revisar prompts, gates ou considerar nível mais conservador"
       }
     ],
     questions: [
@@ -145,7 +151,7 @@ const pillars = [
     color: "from-orange-500 to-red-500",
     bgColor: "from-orange-50 to-red-50",
     description: "Garante que o time compreende, confia e evolui continuamente no uso de IA, evitando resistência e estagnação.",
-    longDescription: "Engajamento é o pilar humano do DARE. Tecnologia sozinha não transforma times - é preciso capacitação, motivação, cultura de experimentação e suporte contínuo para que as pessoas adotem e evoluam com a IA.",
+    longDescription: "Engajamento é o pilar humano do DARE. Tecnologia sozinha não transforma times — é preciso capacitação, motivação, cultura de experimentação e suporte contínuo para que as pessoas adotem e evoluam com a IA nos níveis adequados.",
     principles: [
       {
         title: "Capacitação Progressiva",
@@ -188,7 +194,7 @@ const interactionModel = [
   {
     step: "1. Decisão guia Automação",
     description: "Objetivos claros determinam quais ferramentas e nível de automação usar",
-    example: "Decidiu reduzir tempo de iteração em 60%? Isso define se precisa de Midjourney (Nível 2) ou sistema modular (Nível 4)"
+    example: "Decidiu reduzir tempo de iteração em 60%? Isso define se precisa de Geração de Assets (Nível 2) ou Prompt-to-Prototype (Nível 3)"
   },
   {
     step: "2. Automação gera dados de Relevância",

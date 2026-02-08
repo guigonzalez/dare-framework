@@ -9,7 +9,6 @@ import VibeCodingPage from "@/pages/VibeCodingPage";
 import PromptEngineeringPage from "@/pages/PromptEngineeringPage";
 import ProposalPage from "@/pages/ProposalPage";
 import DarePillarsPage from "@/pages/DarePillarsPage";
-import WizardPage from "@/pages/WizardPage";
 import DareOsLifecyclePage from "@/pages/DareOsLifecyclePage";
 import PacksPage from "@/pages/PacksPage";
 import PackDetailPage from "@/pages/PackDetailPage";
@@ -30,7 +29,9 @@ function Router() {
       <Route path="/aplicar/vibe-coding" component={VibeCodingPage} />
       <Route path="/aplicar/prompt-engineering" component={PromptEngineeringPage} />
       {/* TEMPORARILY HIDDEN: <Route path="/aplicar/proposta" component={ProposalPage} /> */}
-      <Route path="/aplicar/wizard" component={WizardPage} />
+      <Route path="/aplicar/wizard">
+        <Redirect to="/aplicar/teste-maturidade" />
+      </Route>
       <Route path="/aplicar/dare-os" component={DareOsLifecyclePage} />
       <Route path="/aplicar/packs/:levelId" component={PackDetailPage} />
       <Route path="/aplicar/packs" component={PacksPage} />
@@ -39,7 +40,7 @@ function Router() {
       <Route path="/aplicar/agentes" component={AgentsMcpPage} />
       {/* Redirects legados para compatibilidade */}
       <Route path="/wizard">
-        <Redirect to="/aplicar/wizard" />
+        <Redirect to="/aplicar/teste-maturidade" />
       </Route>
       <Route path="/dare-os">
         <Redirect to="/aplicar/dare-os" />

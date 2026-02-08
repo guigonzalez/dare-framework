@@ -4,4 +4,6 @@
  */
 export const config = {
   DARE_OS_MVP: true,
+  /** Formspree form ID para captura de email no teste de maturidade. */
+  FORMSPREE_FORM_ID: "mkovnkvw",
 } as const;

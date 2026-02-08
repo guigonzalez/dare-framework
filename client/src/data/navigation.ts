@@ -22,10 +22,9 @@ export const frameworkNavItems: NavItem[] = [
 export const dareOsNavItems: NavItem[] = config.DARE_OS_MVP
   ? [
       { href: "/aplicar", label: "Visão Geral" },
-      { href: "/aplicar/wizard", label: "Wizard" },
+      { href: "/aplicar/teste-maturidade", label: "Teste de Maturidade" },
       { href: "/aplicar/dare-os", label: "Ciclo" },
       { href: "/aplicar/packs", label: "Packs" },
-      { href: "/aplicar/agentes", label: "Agentes & MCP" },
       { href: "/aplicar/anti-padroes", label: "Anti-padrões" },
       { href: "/aplicar/referencia", label: "Referência" },
     ]
@@ -35,7 +34,7 @@ export const dareOsNavItems: NavItem[] = config.DARE_OS_MVP
 export const dareOsPrimaryNav: NavItem[] = config.DARE_OS_MVP
   ? [
       { href: "/aplicar", label: "Visão Geral" },
-      { href: "/aplicar/wizard", label: "Wizard" },
+      { href: "/aplicar/teste-maturidade", label: "Teste de Maturidade" },
       { href: "/aplicar/dare-os", label: "Ciclo" },
       { href: "/aplicar/packs", label: "Packs" },
     ]
@@ -54,6 +53,7 @@ export const guiasNavItems: NavItem[] = [
   { href: "/aplicar/pilares", label: "4 Pilares DARE" },
   { href: "/aplicar/vibe-coding", label: "Vibe Coding" },
   { href: "/aplicar/prompt-engineering", label: "Prompt Engineering" },
+  { href: "/aplicar/agentes", label: "Agentes & MCP" },
 ];
 
 /** Lista plana Aplicar (DARE OS + Guias) */
@@ -85,9 +85,9 @@ export const aplicarSubNavByPage: Record<string, NavItem[]> = {
     { href: "/aplicar/prompt-engineering#templates", label: "Templates" },
     { href: "/aplicar/prompt-engineering#troubleshooting", label: "Troubleshooting" },
   ],
-  "/aplicar/wizard": [
+  "/aplicar/teste-maturidade": [
     { href: "/aplicar", label: "← Voltar" },
-    { href: "/aplicar/wizard", label: "Wizard" },
+    { href: "/aplicar/teste-maturidade", label: "Teste de Maturidade" },
   ],
   "/aplicar/dare-os": [
     { href: "/aplicar", label: "← Voltar" },

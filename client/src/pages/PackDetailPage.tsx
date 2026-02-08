@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { loadPackFiles, PACK_LEVELS } from "@/lib/pack-loader";
 import { levelContracts } from "@/data/levelContracts";
+import { EmailCaptureCard } from "@/components/EmailCaptureCard";
 
 export default function PackDetailPage() {
   const [, params] = useRoute("/aplicar/packs/:levelId");
@@ -17,6 +18,9 @@ export default function PackDetailPage() {
 
   const validLevel = PACK_LEVELS.includes(levelId as "0" | "1" | "2" | "3");
   const contract = levelContracts.find((c) => c.id === parseInt(levelId, 10));
+  const [emailUnlocked, setEmailUnlocked] = useState(() =>
+    typeof localStorage !== "undefined" && !!localStorage.getItem("dare-pack-email")
+  );
 
   useEffect(() => {
     if (!validLevel) {
@@ -73,24 +77,50 @@ export default function PackDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
             >
-              <div className="p-6 border-b border-gray-200">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <h1 className="text-2xl font-bold text-gray-900">
-                      Pack Nível {levelId}
-                    </h1>
-                    <p className="text-gray-600 mt-1">
-                      {contract?.shortName} – {contract?.tagline}
-                    </p>
-                  </div>
-                  <Button onClick={handleDownload} className="gap-2 shrink-0">
-                    <Download className="h-4 w-4" />
-                    Baixar ZIP
-                  </Button>
+              {!emailUnlocked ? (
+                <div className="p-8 sm:p-12">
+                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                    Pack Nível {levelId} – {contract?.shortName}
+                  </h1>
+                  <p className="text-gray-600 mb-6">
+                    Informe seu e-mail para acessar o conteúdo e baixar o pack.
+                  </p>
+                  <EmailCaptureCard
+                    title="Acessar conteúdo do pack"
+                    description="Deixe seu e-mail para desbloquear os arquivos e o download. Sem spam."
+                    successMessage="Pronto! Você já pode ver o conteúdo abaixo."
+                    formContext={{
+                      origem: "pack-detalhe",
+                      nivel: parseInt(levelId, 10),
+                      nivelNome: contract?.shortName ?? "",
+                      _subject: `DARE - Pack Nível ${levelId}`,
+                    }}
+                    onSubmitted={() => {
+                      localStorage.setItem("dare-pack-email", "1");
+                      setEmailUnlocked(true);
+                    }}
+                  />
                 </div>
-              </div>
+              ) : (
+                <>
+                  <div className="p-6 border-b border-gray-200">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div>
+                        <h1 className="text-2xl font-bold text-gray-900">
+                          Pack Nível {levelId}
+                        </h1>
+                        <p className="text-gray-600 mt-1">
+                          {contract?.shortName} – {contract?.tagline}
+                        </p>
+                      </div>
+                      <Button onClick={handleDownload} className="gap-2 shrink-0">
+                        <Download className="h-4 w-4" />
+                        Baixar ZIP
+                      </Button>
+                    </div>
+                  </div>
 
-              {loading ? (
+                  {loading ? (
                 <div className="p-12 text-center text-gray-500">
                   Carregando arquivos...
                 </div>
@@ -124,6 +154,8 @@ export default function PackDetailPage() {
                     ))}
                   </Tabs>
                 </div>
+              )}
+                </>
               )}
             </motion.div>
           </div>
