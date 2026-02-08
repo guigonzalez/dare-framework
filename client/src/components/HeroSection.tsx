@@ -64,7 +64,7 @@ export default function HeroSection() {
             >
               <div className="px-4 py-1 rounded-full bg-white/30 text-sm font-semibold text-white shadow-sm flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
-                Open Source - AI Made
+                Open Source - AI Made · v2.0.0
               </div>
             </motion.div>
 
